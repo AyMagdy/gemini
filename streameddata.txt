@@ -1,28 +1,3 @@
-<class 'list'>
-bytearray(b'{"heartbeat": [{}]}')
-{'heartbeat': [{}]}
-<class 'dict'>
-<class 'list'>
-bytearray(b'{"heartbeat": [{}]}')
-{'heartbeat': [{}]}
-<class 'dict'>
-<class 'list'>
-bytearray(b'{"heartbeat": [{}]}')
-{'heartbeat': [{}]}
-<class 'dict'>
-<class 'list'>
-bytearray(b'{"heartbeat": [{}]}')
-{'heartbeat': [{}]}
-<class 'dict'>
-<class 'list'>
-bytearray(b'{"heartbeat": [{}]}')
-{'heartbeat': [{}]}
-<class 'dict'>
-<class 'list'>
-bytearray(b'{"heartbeat": [{}]}')
-{'heartbeat': [{}]}
-<class 'dict'>
-<class 'list'>
 ^CTraceback (most recent call last):
   File "TCP_Server_Heartbeat.py", line 97, in <module>
     read_frames(socket_client, print_objects_by_class,"PERSON")
