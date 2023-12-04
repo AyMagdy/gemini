@@ -6,16 +6,17 @@ import socket
 import ssl
 from typing import Callable,Literal,TypeAlias
 
+# List of the componets found in the object_list 
 object_key: TypeAlias = Literal['id','uuid','classification','classification_confidence',
                                 'creation_ts','update_ts','dimensions','frame_count','heading',
                                 'initial_position','num_points','position','position_uncertainty',
                                 'velocity','velocity_uncertainty']
-
+# List of the root level information returned from the ouster detect software
 rootinfo_key: TypeAlias = Literal['frame_count','timestamp','objects']
 
+#Ouster detect defined variables
 HOST = socket.gethostbyname(socket.gethostname())
 PORT = 3302
-#Ouster detect defined variables
 ENDIAN_TYPE = "big"
 FRAME_SIZE_B = 4
 ADDRESS = (HOST,PORT)
@@ -44,11 +45,15 @@ def read_frames(socket_client: ssl.SSLContext) -> None:
         return data        
         #callback_function(data, *args)
 
+# Function to get the root information of the streamed object_list data
 def get_root_info(data: dict,key: rootinfo_key)-> str:
         return (data['object_list'][0][key])
 
+# Function to get an individual component of the object_list 
 def get_object_list_arr(data: dict,key: object_key)-> str: 
         return (data['object_list'][0]["objects"][0][key])
+
+
 
 ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
 ssl_context.verify_mode = ssl.CERT_NONE
