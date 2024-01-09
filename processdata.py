@@ -212,8 +212,8 @@ def processing_from_queue(lock:threading.Lock):
             or wether they have collided already.
         """
         veldf = pd.DataFrame.from_dict(vel)
-        posdf = veldf = pd.DataFrame.from_dict(pos)
-        heddf = veldf = pd.DataFrame.from_dict(pos)
+        posdf = pd.DataFrame.from_dict(pos)
+        heddf = pd.DataFrame.from_dict(pos)
         print(posdf)
         # if(get_position_diff(posdf,1,0)['x'] == 0 or get_position_diff(posdf,1,0)['y'] == 0):
         #     print('collision occured')
