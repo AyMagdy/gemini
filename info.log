@@ -1,0 +1,48 @@
+2024-03-20 16:59:36,688 :: INFO :: MainThread :: main :: <module> :: 70 :: hello
+2024-03-20 16:59:36,698 :: INFO :: MainThread :: main :: <module> :: 82 :: CONNECTION ESTABLISHED.....
+2024-03-20 16:59:38,700 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 49 :: queue size is 1
+2024-03-20 16:59:38,700 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 50 :: [<_MainThread(MainThread, started 139631104978944)>, <Thread(Thread-1 (put_object_to_queue), started 139630535439936)>, <Thread(Thread-2 (get_from_queue), initial)>]
+2024-03-20 16:59:38,700 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 53 :: queue is ready
+2024-03-20 16:59:38,700 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 86 :: before waitting for queue
+2024-03-20 16:59:38,701 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 88 :: after waittting for queue
+2024-03-20 16:59:38,701 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 16:59:38,701 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 16:59:38,701 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 122 :: TIMESTAMP data is ready
+2024-03-20 16:59:38,702 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 16:59:38,703 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 16:59:38,703 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 16:59:38,703 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 16:59:38,705 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 86 :: before waitting for queue
+2024-03-20 16:59:38,705 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 88 :: after waittting for queue
+2024-03-20 16:59:40,401 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 49 :: queue size is 1
+2024-03-20 16:59:40,402 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 50 :: [<_MainThread(MainThread, started 139631104978944)>, <Thread(Thread-1 (put_object_to_queue), started 139630535439936)>, <Thread(Thread-2 (get_from_queue), started 139630527047232)>, <Thread(Thread-3 (processing_from_queue), started 139630518654528)>]
+2024-03-20 16:59:40,403 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 53 :: queue is ready
+2024-03-20 16:59:40,403 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 16:59:40,407 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 16:59:40,407 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 16:59:40,408 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 16:59:40,409 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 16:59:40,409 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 16:59:40,411 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 86 :: before waitting for queue
+2024-03-20 16:59:40,412 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 88 :: after waittting for queue
+2024-03-20 16:59:43,429 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 49 :: queue size is 1
+2024-03-20 16:59:43,429 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 16:59:43,432 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 50 :: [<_MainThread(MainThread, started 139631104978944)>, <Thread(Thread-1 (put_object_to_queue), started 139630535439936)>, <Thread(Thread-2 (get_from_queue), started 139630527047232)>, <Thread(Thread-3 (processing_from_queue), started 139630518654528)>]
+2024-03-20 16:59:43,437 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 16:59:43,438 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 16:59:43,441 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 16:59:43,442 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 16:59:43,443 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 16:59:43,444 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 86 :: before waitting for queue
+2024-03-20 16:59:43,449 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 88 :: after waittting for queue
+2024-03-20 16:59:46,435 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 49 :: queue size is 1
+2024-03-20 16:59:46,435 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 50 :: [<_MainThread(MainThread, started 139631104978944)>, <Thread(Thread-1 (put_object_to_queue), started 139630535439936)>, <Thread(Thread-2 (get_from_queue), started 139630527047232)>, <Thread(Thread-3 (processing_from_queue), started 139630518654528)>]
+2024-03-20 16:59:46,437 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 53 :: queue is ready
+2024-03-20 16:59:46,437 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 16:59:46,440 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 16:59:46,441 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 16:59:46,443 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 16:59:46,443 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 16:59:46,444 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 16:59:46,446 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 86 :: before waitting for queue
+2024-03-20 16:59:46,448 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 88 :: after waittting for queue

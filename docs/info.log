@@ -1,0 +1,16 @@
+2024-03-20 17:08:08,070 :: INFO :: MainThread :: main :: main :: 70 :: hello
+2024-03-20 17:08:08,077 :: INFO :: MainThread :: main :: main :: 82 :: CONNECTION ESTABLISHED.....
+2024-03-20 17:08:10,078 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 86 :: before waitting for queue
+2024-03-20 17:08:10,078 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 49 :: queue size is 1
+2024-03-20 17:08:10,078 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 50 :: [<_MainThread(MainThread, started 140351703617536)>, <Thread(Thread-1 (put_object_to_queue), started 140351134041664)>, <Thread(Thread-2 (get_from_queue), started 140351125648960)>, <Thread(Thread-3 (processing_from_queue), started 140351117256256)>]
+2024-03-20 17:08:10,079 :: INFO :: Thread-1 (put_object_to_queue) :: data_processing :: put_object_to_queue :: 53 :: queue is ready
+2024-03-20 17:08:10,079 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 88 :: after waittting for queue
+2024-03-20 17:08:10,079 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 17:08:10,079 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 17:08:10,079 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 122 :: TIMESTAMP data is ready
+2024-03-20 17:08:10,079 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 17:08:10,081 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 115 :: get from queue has taken the LOCK
+2024-03-20 17:08:10,082 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 118 :: inside lock block
+2024-03-20 17:08:10,082 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 123 :: out side lock
+2024-03-20 17:08:10,082 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 86 :: before waitting for queue
+2024-03-20 17:08:10,082 :: INFO :: Thread-2 (get_from_queue) :: data_processing :: get_from_queue :: 88 :: after waittting for queue
