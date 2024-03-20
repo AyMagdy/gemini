@@ -43,8 +43,8 @@ def main():
 
         Description:
             This application is an example for the future work it was made to be generic as possible by using the approch of modularity.
-            in this application the time of collision is calculated:
-            
+            in this application the time of collision is calculated.
+
             1) find the nearest two object to the sensor. (an information retrieved from the object list recieved from the stream)
             2) find the relative velocity magnitude between the same two objects. (the same time stamp is taken in consideratin to make sure the specific required object is found)
             3) find the relative position magnitude between the same two objects. ()
