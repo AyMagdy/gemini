@@ -12,7 +12,7 @@ build:
     python: 
       install:
         -method: pip
-         path: sphinx-rtd-theme
+         path: 'sphinx-rtd-theme'
     # You can also specify other tool versions:
     # nodejs: "19"
     # rust: "1.64"
