@@ -11,14 +11,15 @@ def main():
             This main.py file serves as the entry point for a multi-threaded application that
 
             1) establishes an SSL socket connection, 
-            2) receives data from the connection, 
+            2) receives data from the connection,
             3) processes the data.
 
             The application is structured around a producer-consumer pattern using threads and a queue.
             A log is added for future work which will help id diagnosing and monitoring the health of the system.***REFERE TO LAST SUBTITLE***
     
         Global Constants:
-            DATA_QUEUE is a queue created with a maximum size of 5.(size is fo tessting)
+            DATA_QUEUE is a queue created with a maximum size of 5.(size is fo tessting).
+
             This queue will be used to store data received from the SSL socket connection.
 
             LOCK is created to ensure thread-safe operations when accessing shared resources.
@@ -32,15 +33,19 @@ def main():
 
         Thread Creatin and Execution:
             Three threads are created for different purposes:
-            put_to_queue_thr:    This thread is responsible for READING data from the SSL socket connection and putting it into DATA_QUEUE.It uses the put_object_to_queue function from the processing.data_processing module.
-            read_from_queue_thr: This thread is responsible for RETRIEVING data from DATA_QUEUE and making it available for processing.It uses the get_from_queue function from the processing.data_processing module.
-            process_thr:         This thread is responsible for PROCESSING the data retrieved from the queue.It uses the processing_from_queue function from the processing.data_processing module.
-            The join method is called on each thread to ensure that the main thread waits for their completion before proceeding.
+                put_to_queue_thr:    
+                    This thread is responsible for READING data from the SSL socket connection and putting it into DATA_QUEUE.It uses the put_object_to_queue function from the processing.data_processing module.
+                read_from_queue_thr: 
+                    This thread is responsible for RETRIEVING data from DATA_QUEUE and making it available for processing.It uses the get_from_queue function from the processing.data_processing module.
+                process_thr:
+                    This thread is responsible for PROCESSING the data retrieved from the queue.It uses the processing_from_queue function from the processing.data_processing module.
+                The join method is called on each thread to ensure that the main thread waits for their completion before proceeding.
 
         Description:
             This application is an example for the future work it was made to be generic as possible by using the approch of modularity.
             in this application the time of collision is calculated:
-            1) find the nearest two object to the sensor (an information retrieved from the object list recieved from the stream)
+            
+            1) find the nearest two object to the sensor. (an information retrieved from the object list recieved from the stream)
             2) find the relative velocity magnitude between the same two objects. (the same time stamp is taken in consideratin to make sure the specific required object is found)
             3) find the relative position magnitude between the same two objects. ()
             4) estimate the time of collision between the objects.
