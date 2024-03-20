@@ -96,10 +96,7 @@
 <li><p>processes the data.</p></li>
 </ol>
 <p>The application is structured around a producer-consumer pattern using threads and a queue.
-A log is added for future work which will help id diagnosing and monitoring the health of the system.</p>
-<blockquote>
-<div><p><strong>*REFERE TO LAST SUBTITLE*</strong></p>
-</div></blockquote>
+A log is added for future work which will help id diagnosing and monitoring the health of the system.***REFERE TO LAST SUBTITLE***</p>
 </dd>
 <dt>Global Constants:</dt><dd><p>DATA_QUEUE is a queue created with a maximum size of 5.(size is fo tessting)
 This queue will be used to store data received from the SSL socket connection.</p>
@@ -117,15 +114,11 @@ process_thr:         This thread is responsible for PROCESSING the data retrieve
 The join method is called on each thread to ensure that the main thread waits for their completion before proceeding.</p>
 </dd>
 <dt>Description:</dt><dd><p>This application is an example for the future work it was made to be generic as possible by using the approch of modularity.
-in this application the time of collision is calculated:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>find the nearest two object to the sensor (an information retrieved from the object list recieved from the stream)</p></li>
-<li><p>find the relative velocity magnitude between the same two objects. (the same time stamp is taken in consideratin to make sure the specific required object is found)</p></li>
-<li><p>find the relative position magnitude between the same two objects. ()</p></li>
-<li><p>estimate the time of collision between the objects.</p></li>
-</ol>
-</div></blockquote>
+in this application the time of collision is calculated:
+1) find the nearest two object to the sensor (an information retrieved from the object list recieved from the stream)
+2) find the relative velocity magnitude between the same two objects. (the same time stamp is taken in consideratin to make sure the specific required object is found)
+3) find the relative position magnitude between the same two objects. ()
+4) estimate the time of collision between the objects.</p>
 </dd>
 </dl>
 <p><strong>*ASSUMPTIONS*</strong> is made that both objects are heading towards the sensor. 

@@ -15,8 +15,7 @@ def main():
             3) processes the data.
 
             The application is structured around a producer-consumer pattern using threads and a queue.
-            A log is added for future work which will help id diagnosing and monitoring the health of the system.
-                                ***REFERE TO LAST SUBTITLE***
+            A log is added for future work which will help id diagnosing and monitoring the health of the system.***REFERE TO LAST SUBTITLE***
     
         Global Constants:
             DATA_QUEUE is a queue created with a maximum size of 5.(size is fo tessting)
@@ -41,10 +40,10 @@ def main():
         Description:
             This application is an example for the future work it was made to be generic as possible by using the approch of modularity.
             in this application the time of collision is calculated:
-                1) find the nearest two object to the sensor (an information retrieved from the object list recieved from the stream)
-                2) find the relative velocity magnitude between the same two objects. (the same time stamp is taken in consideratin to make sure the specific required object is found)
-                3) find the relative position magnitude between the same two objects. ()
-                4) estimate the time of collision between the objects.
+            1) find the nearest two object to the sensor (an information retrieved from the object list recieved from the stream)
+            2) find the relative velocity magnitude between the same two objects. (the same time stamp is taken in consideratin to make sure the specific required object is found)
+            3) find the relative position magnitude between the same two objects. ()
+            4) estimate the time of collision between the objects.
         
         ***ASSUMPTIONS*** is made that both objects are heading towards the sensor. 
         for future work this will be taken in consideration for robust results.
