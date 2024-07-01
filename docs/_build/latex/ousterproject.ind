@@ -6,255 +6,255 @@
 
   \bigletter A
   \item \spxentry{add\_event\_zone\_zones()}\spxextra{in module gemini\_event\_zone\_API}, 
-		\hyperpage{34}
+		\hyperpage{32}
   \item \spxentry{add\_perception\_profile()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{27}
-  \item \spxentry{add\_senor()}\spxextra{in module gemini\_perception\_API}, \hyperpage{27}
-  \item \spxentry{add\_zone\_id()}\spxextra{in module gemini\_event\_zone\_API}, \hyperpage{35}
-  \item \spxentry{ADDRESS}\spxextra{in module connection.socket\_connection}, \hyperpage{11}
-  \item \spxentry{aggregation\_data()}\spxextra{in module gemini\_data\_recording}, \hyperpage{37}
+		\hyperpage{25}
+  \item \spxentry{add\_senor()}\spxextra{in module gemini\_perception\_API}, \hyperpage{25}
+  \item \spxentry{add\_zone\_id()}\spxextra{in module gemini\_event\_zone\_API}, \hyperpage{33}
+  \item \spxentry{ADDRESS}\spxextra{in module connection.socket\_connection}, \hyperpage{9}
+  \item \spxentry{aggregation\_data()}\spxextra{in module gemini\_data\_recording}, \hyperpage{35}
   \item \spxentry{AGGREGATION\_DATA\_ENDPOINT}\spxextra{gemini\_data\_recording.DataEndPoint attribute}, 
-		\hyperpage{37}
+		\hyperpage{35}
   \item \spxentry{ALL\_EXTRINSICS}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{27}
+		\hyperpage{25}
 
   \indexspace
   \bigletter C
-  \item \spxentry{calc\_pos\_mag\_diff()}\spxextra{in module processing.utils}, \hyperpage{14}
-  \item \spxentry{calc\_vel\_mag\_diff()}\spxextra{in module processing.utils}, \hyperpage{14}
-  \item \spxentry{clear\_all\_lidars()}\spxextra{in module gemini\_perception\_API}, \hyperpage{28}
+  \item \spxentry{calc\_pos\_mag\_diff()}\spxextra{in module processing.utils}, \hyperpage{12}
+  \item \spxentry{calc\_vel\_mag\_diff()}\spxextra{in module processing.utils}, \hyperpage{12}
+  \item \spxentry{clear\_all\_lidars()}\spxextra{in module gemini\_perception\_API}, \hyperpage{26}
   \item \spxentry{connect\_to\_ssl\_socket()}\spxextra{in module connection.socket\_connection}, 
-		\hyperpage{11}
+		\hyperpage{9}
   \item \spxentry{connection.socket\_connection}
-    \subitem \spxentry{module}, \hyperpage{11}
+    \subitem \spxentry{module}, \hyperpage{9}
 
   \indexspace
   \bigletter D
   \item \spxentry{DEFAULT\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{26}
+		\hyperpage{24}
   \item \spxentry{DIAGNOSTICS}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}, 
-		\hyperpage{34}
+		\hyperpage{32}
 
   \indexspace
   \bigletter G
   \item \spxentry{gemini\_data\_recording}
-    \subitem \spxentry{module}, \hyperpage{36}
-  \item \spxentry{gemini\_event\_zone\_API}
     \subitem \spxentry{module}, \hyperpage{34}
+  \item \spxentry{gemini\_event\_zone\_API}
+    \subitem \spxentry{module}, \hyperpage{32}
   \item \spxentry{gemini\_lidar\_hub\_API}
-    \subitem \spxentry{module}, \hyperpage{17}
+    \subitem \spxentry{module}, \hyperpage{15}
   \item \spxentry{gemini\_login}
-    \subitem \spxentry{module}, \hyperpage{16}
+    \subitem \spxentry{module}, \hyperpage{14}
   \item \spxentry{gemini\_perception\_API}
-    \subitem \spxentry{module}, \hyperpage{26}
+    \subitem \spxentry{module}, \hyperpage{24}
   \item \spxentry{GET\_ALL\_EVENTS}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}, 
-		\hyperpage{34}
-  \item \spxentry{get\_all\_sensors()}\spxextra{in module gemini\_perception\_API}, \hyperpage{28}
-  \item \spxentry{get\_dis\_from\_sensor()}\spxextra{in module processing.utils}, \hyperpage{15}
+		\hyperpage{32}
+  \item \spxentry{get\_all\_sensors()}\spxextra{in module gemini\_perception\_API}, \hyperpage{26}
+  \item \spxentry{get\_dis\_from\_sensor()}\spxextra{in module processing.utils}, \hyperpage{13}
   \item \spxentry{get\_event\_zone\_all\_zones()}\spxextra{in module gemini\_event\_zone\_API}, 
-		\hyperpage{35}
+		\hyperpage{33}
   \item \spxentry{get\_event\_zone\_telemetry()}\spxextra{in module gemini\_event\_zone\_API}, 
-		\hyperpage{36}
+		\hyperpage{34}
   \item \spxentry{get\_from\_queue()}\spxextra{in module processing.data\_processing}, 
-		\hyperpage{13}
-  \item \spxentry{get\_hed\_df()}\spxextra{in module processing.utils}, \hyperpage{15}
+		\hyperpage{11}
+  \item \spxentry{get\_hed\_df()}\spxextra{in module processing.utils}, \hyperpage{13}
   \item \spxentry{get\_lidar\_hub\_active\_rec()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{get\_lidar\_hub\_all\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{get\_lidar\_hub\_default\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{19}
+		\hyperpage{17}
   \item \spxentry{get\_lidar\_hub\_diagnostics()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{19}
+		\hyperpage{17}
   \item \spxentry{get\_lidar\_hub\_event\_active()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{20}
+		\hyperpage{18}
   \item \spxentry{get\_lidar\_hub\_event\_alerts()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{20}
+		\hyperpage{18}
   \item \spxentry{get\_lidar\_hub\_event\_realtime()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{21}
+		\hyperpage{19}
   \item \spxentry{get\_lidar\_hub\_event\_timeseries()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{21}
+		\hyperpage{19}
   \item \spxentry{get\_lidar\_hub\_event\_zones()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{21}
+		\hyperpage{19}
   \item \spxentry{get\_lidar\_hub\_health()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{22}
+		\hyperpage{20}
   \item \spxentry{get\_lidar\_hub\_info()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{22}
+		\hyperpage{20}
   \item \spxentry{get\_lidar\_hub\_telemetry()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{23}
+		\hyperpage{21}
   \item \spxentry{get\_lidar\_hub\_world\_coordinates()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{23}
+		\hyperpage{21}
   \item \spxentry{get\_nearest\_from\_sensor()}\spxextra{in module processing.utils}, 
-		\hyperpage{15}
-  \item \spxentry{get\_object\_list\_arr()}\spxextra{in module utilities.utilities}, \hyperpage{12}
+		\hyperpage{13}
+  \item \spxentry{get\_object\_list\_arr()}\spxextra{in module utilities.utilities}, \hyperpage{10}
   \item \spxentry{get\_perception\_profile\_by\_name()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{29}
+		\hyperpage{27}
   \item \spxentry{get\_perception\_profile\_defaults()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{29}
+		\hyperpage{27}
   \item \spxentry{get\_perception\_profile\_list()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{29}
+		\hyperpage{27}
   \item \spxentry{get\_perception\_settings()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{29}
-  \item \spxentry{get\_pos\_df()}\spxextra{in module processing.utils}, \hyperpage{15}
+		\hyperpage{27}
+  \item \spxentry{get\_pos\_df()}\spxextra{in module processing.utils}, \hyperpage{13}
   \item \spxentry{GET\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{26}
-  \item \spxentry{get\_root\_info()}\spxextra{in module utilities.utilities}, \hyperpage{12}
+		\hyperpage{24}
+  \item \spxentry{get\_root\_info()}\spxextra{in module utilities.utilities}, \hyperpage{10}
   \item \spxentry{get\_sensor\_by\_status()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{30}
+		\hyperpage{28}
   \item \spxentry{get\_underlay\_config()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{30}
-  \item \spxentry{get\_underlay\_map()}\spxextra{in module gemini\_perception\_API}, \hyperpage{30}
-  \item \spxentry{get\_vel\_df()}\spxextra{in module processing.utils}, \hyperpage{16}
+		\hyperpage{28}
+  \item \spxentry{get\_underlay\_map()}\spxextra{in module gemini\_perception\_API}, \hyperpage{28}
+  \item \spxentry{get\_vel\_df()}\spxextra{in module processing.utils}, \hyperpage{14}
 
   \indexspace
   \bigletter H
-  \item \spxentry{HOST}\spxextra{in module connection.socket\_connection}, \hyperpage{11}
+  \item \spxentry{HOST}\spxextra{in module connection.socket\_connection}, \hyperpage{9}
 
   \indexspace
   \bigletter I
   \item \spxentry{ICP\_ALGORITHM}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{27}
+		\hyperpage{25}
   \item \spxentry{IMU\_POSE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{27}
+		\hyperpage{25}
 
   \indexspace
   \bigletter J
-  \item \spxentry{json\_binary\_data()}\spxextra{in module gemini\_data\_recording}, \hyperpage{37}
+  \item \spxentry{json\_binary\_data()}\spxextra{in module gemini\_data\_recording}, \hyperpage{35}
   \item \spxentry{JSON\_BINARY\_DATA\_ENDPOINT}\spxextra{gemini\_data\_recording.DataEndPoint attribute}, 
-		\hyperpage{36}
+		\hyperpage{34}
 
   \indexspace
   \bigletter L
   \item \spxentry{LIDAR\_HUB\_ACTIVE\_REC}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{LIDAR\_HUB\_DEFAULTS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{17}
+		\hyperpage{15}
   \item \spxentry{LIDAR\_HUB\_EVENT\_ZONES}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{17}
+		\hyperpage{15}
   \item \spxentry{LIDAR\_HUB\_EVENT\_ZONES\_ACTIVE}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{LIDAR\_HUB\_EVENT\_ZONES\_ALERTS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{LIDAR\_HUB\_EVENT\_ZONES\_REALTME}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{LIDAR\_HUB\_EVENT\_ZONES\_TIMESERIES}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{LIDAR\_HUB\_RESET}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{LIDAR\_HUB\_SETTINGS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{17}
+		\hyperpage{15}
   \item \spxentry{LIDAR\_HUB\_START\_REC}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{LIDAR\_HUB\_STOP\_REC}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{18}
+		\hyperpage{16}
   \item \spxentry{LIDAR\_HUB\_WORLD}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{17}
+		\hyperpage{15}
   \item \spxentry{LIDAR\_TELEMETRY}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{17}
+		\hyperpage{15}
   \item \spxentry{LIST\_OF\_ALL\_SENSORS}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{26}
+		\hyperpage{24}
   \item \spxentry{LIST\_PROFILES}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{26}
+		\hyperpage{24}
   \item \spxentry{LOAD\_BACKGROUND}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{26}
-  \item \spxentry{load\_backgrounds()}\spxextra{in module gemini\_perception\_API}, \hyperpage{30}
-  \item \spxentry{login\_ouster()}\spxextra{in module gemini\_login}, \hyperpage{16}
+		\hyperpage{24}
+  \item \spxentry{load\_backgrounds()}\spxextra{in module gemini\_perception\_API}, \hyperpage{28}
+  \item \spxentry{login\_ouster()}\spxextra{in module gemini\_login}, \hyperpage{14}
 
   \indexspace
   \bigletter M
   \item \spxentry{main}
-    \subitem \spxentry{module}, \hyperpage{11}
-  \item \spxentry{main()}\spxextra{in module main}, \hyperpage{11}
+    \subitem \spxentry{module}, \hyperpage{9}
+  \item \spxentry{main()}\spxextra{in module main}, \hyperpage{9}
   \item \spxentry{module}
-    \subitem \spxentry{connection.socket\_connection}, \hyperpage{11}
-    \subitem \spxentry{gemini\_data\_recording}, \hyperpage{36}
-    \subitem \spxentry{gemini\_event\_zone\_API}, \hyperpage{34}
-    \subitem \spxentry{gemini\_lidar\_hub\_API}, \hyperpage{17}
-    \subitem \spxentry{gemini\_login}, \hyperpage{16}
-    \subitem \spxentry{gemini\_perception\_API}, \hyperpage{26}
-    \subitem \spxentry{main}, \hyperpage{11}
-    \subitem \spxentry{processing.data\_processing}, \hyperpage{13}
-    \subitem \spxentry{processing.utils}, \hyperpage{14}
-    \subitem \spxentry{utilities.utilities}, \hyperpage{12}
+    \subitem \spxentry{connection.socket\_connection}, \hyperpage{9}
+    \subitem \spxentry{gemini\_data\_recording}, \hyperpage{34}
+    \subitem \spxentry{gemini\_event\_zone\_API}, \hyperpage{32}
+    \subitem \spxentry{gemini\_lidar\_hub\_API}, \hyperpage{15}
+    \subitem \spxentry{gemini\_login}, \hyperpage{14}
+    \subitem \spxentry{gemini\_perception\_API}, \hyperpage{24}
+    \subitem \spxentry{main}, \hyperpage{9}
+    \subitem \spxentry{processing.data\_processing}, \hyperpage{11}
+    \subitem \spxentry{processing.utils}, \hyperpage{12}
+    \subitem \spxentry{utilities.utilities}, \hyperpage{10}
 
   \indexspace
   \bigletter O
-  \item \spxentry{object\_key}\spxextra{in module utilities.utilities}, \hyperpage{12}
+  \item \spxentry{object\_key}\spxextra{in module utilities.utilities}, \hyperpage{10}
 
   \indexspace
   \bigletter P
   \item \spxentry{PORT\_OBJECT\_LIST}\spxextra{in module connection.socket\_connection}, 
-		\hyperpage{11}
+		\hyperpage{9}
   \item \spxentry{processing.data\_processing}
-    \subitem \spxentry{module}, \hyperpage{13}
+    \subitem \spxentry{module}, \hyperpage{11}
   \item \spxentry{processing.utils}
-    \subitem \spxentry{module}, \hyperpage{14}
+    \subitem \spxentry{module}, \hyperpage{12}
   \item \spxentry{processing\_from\_queue()}\spxextra{in module processing.data\_processing}, 
-		\hyperpage{14}
+		\hyperpage{12}
   \item \spxentry{put\_object\_to\_queue()}\spxextra{in module processing.data\_processing}, 
-		\hyperpage{14}
+		\hyperpage{12}
 
   \indexspace
   \bigletter R
-  \item \spxentry{recv\_stream()}\spxextra{in module utilities.utilities}, \hyperpage{13}
+  \item \spxentry{recv\_stream()}\spxextra{in module utilities.utilities}, \hyperpage{11}
   \item \spxentry{remove\_perception\_profile()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{31}
-  \item \spxentry{remove\_sensor()}\spxextra{in module gemini\_perception\_API}, \hyperpage{31}
+		\hyperpage{29}
+  \item \spxentry{remove\_sensor()}\spxextra{in module gemini\_perception\_API}, \hyperpage{29}
   \item \spxentry{REMOVE\_ZONE\_ID}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}, 
-		\hyperpage{34}
-  \item \spxentry{reset\_lidar\_hub()}\spxextra{in module gemini\_lidar\_hub\_API}, \hyperpage{23}
-  \item \spxentry{reset\_lidar\_hub\_default\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{24}
-  \item \spxentry{RESTORE\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{27}
-  \item \spxentry{restore\_to\_defaults()}\spxextra{in module gemini\_perception\_API}, 
 		\hyperpage{32}
-  \item \spxentry{rootinfo\_key}\spxextra{in module utilities.utilities}, \hyperpage{13}
+  \item \spxentry{reset\_lidar\_hub()}\spxextra{in module gemini\_lidar\_hub\_API}, \hyperpage{21}
+  \item \spxentry{reset\_lidar\_hub\_default\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}, 
+		\hyperpage{22}
+  \item \spxentry{RESTORE\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
+		\hyperpage{25}
+  \item \spxentry{restore\_to\_defaults()}\spxextra{in module gemini\_perception\_API}, 
+		\hyperpage{30}
+  \item \spxentry{rootinfo\_key}\spxextra{in module utilities.utilities}, \hyperpage{11}
 
   \indexspace
   \bigletter S
-  \item \spxentry{save\_backgrounds()}\spxextra{in module gemini\_perception\_API}, \hyperpage{32}
+  \item \spxentry{save\_backgrounds()}\spxextra{in module gemini\_perception\_API}, \hyperpage{30}
   \item \spxentry{set\_lidar\_hub\_all\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{24}
+		\hyperpage{22}
   \item \spxentry{set\_lidar\_hub\_world\_coordinates()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{25}
+		\hyperpage{23}
   \item \spxentry{set\_perception\_current\_profile()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{33}
+		\hyperpage{31}
   \item \spxentry{set\_perception\_setting()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{33}
+		\hyperpage{31}
   \item \spxentry{SET\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{26}
+		\hyperpage{24}
   \item \spxentry{set\_underlay\_config()}\spxextra{in module gemini\_perception\_API}, 
-		\hyperpage{34}
-  \item \spxentry{set\_underlay\_map()}\spxextra{in module gemini\_perception\_API}, \hyperpage{34}
+		\hyperpage{32}
+  \item \spxentry{set\_underlay\_map()}\spxextra{in module gemini\_perception\_API}, \hyperpage{32}
   \item \spxentry{SETTINGS}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{26}
+		\hyperpage{24}
   \item \spxentry{start\_lidar\_hub\_rec()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{25}
+		\hyperpage{23}
   \item \spxentry{STATIC\_INFO}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}, 
-		\hyperpage{34}
+		\hyperpage{32}
   \item \spxentry{STATIC\_INFO}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{17}
+		\hyperpage{15}
   \item \spxentry{stop\_lidar\_hub\_rec()}\spxextra{in module gemini\_lidar\_hub\_API}, 
-		\hyperpage{25}
+		\hyperpage{23}
   \item \spxentry{SYSTEM\_DIAGNOSTICS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{17}
+		\hyperpage{15}
   \item \spxentry{SYSTEM\_HEALTH}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}, 
-		\hyperpage{17}
+		\hyperpage{15}
 
   \indexspace
   \bigletter T
-  \item \spxentry{time\_to\_col()}\spxextra{in module processing.utils}, \hyperpage{16}
-  \item \spxentry{TIMESTAMP}\spxextra{in module processing.data\_processing}, \hyperpage{13}
+  \item \spxentry{time\_to\_col()}\spxextra{in module processing.utils}, \hyperpage{14}
+  \item \spxentry{TIMESTAMP}\spxextra{in module processing.data\_processing}, \hyperpage{11}
 
   \indexspace
   \bigletter U
   \item \spxentry{UNDERLAY\_CONFIG}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{26}
+		\hyperpage{24}
   \item \spxentry{UNDERLAY\_MAP}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}, 
-		\hyperpage{26}
-  \item \spxentry{URL}\spxextra{in module gemini\_login}, \hyperpage{16}
+		\hyperpage{24}
+  \item \spxentry{URL}\spxextra{in module gemini\_login}, \hyperpage{14}
   \item \spxentry{utilities.utilities}
-    \subitem \spxentry{module}, \hyperpage{12}
+    \subitem \spxentry{module}, \hyperpage{10}
 
 \end{sphinxtheindex}

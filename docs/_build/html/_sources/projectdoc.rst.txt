@@ -354,7 +354,7 @@ by checking on these 4-bytes we know the size of the expected data to receive. s
 
 
 Refrences
-=========
+---------
 The source code can be found at the `github repository <https://github.com/AyMagdy/gemini/tree/main/src>`_ .
 
 The HTML page of this documentation can be found at `readthedocs link <https://ousterdetect.readthedocs.io/en/latest/>`_.
