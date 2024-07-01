@@ -23,7 +23,7 @@ extensions = ['sphinx.ext.viewcode','sphinx.ext.autodoc','enum_tools.autoenum',]
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
-html_output_dir = '$READTHEDOCS_OUTPUT/html'
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
