@@ -1,3 +1,7 @@
 {
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+    "esbonio.sphinx.buildDir" : "${workspaceFolder}/docs/_build/html",
+    "esbonio.sphinx.confDir"  : "${workspaceFolder}/docs",
+    "esbonio.sphinx.srcDir"   : "${workspaceFolder}/docs",
+    "python.terminal.cwd": "${workspaceFolder}/src",
 }
