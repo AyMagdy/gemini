@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>project documentation &mdash; Ouster Project 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Code documentation" href="codedoc.html" />
+    <link rel="prev" title="Welcome to Ouster Project’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ouster Project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">project documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recieved-stream-data">Recieved stream data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-flow-and-execution">Code flow and Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-shape">Data shape</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shape-of-received-data-from-stream">shape of received data from stream</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#data-integrity">Data integrity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="codedoc.html">Code documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ouster Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">project documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/projectdoc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="project-documentation">
+<h1>project documentation<a class="headerlink" href="#project-documentation" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="introduction">
+<h2>introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The whole idea of this project is to make the best use of the <a class="reference external" href="https://ouster.com/products/software/gemini">Ouster Gemini</a>, A new kind of core spatial intelligence software that accurately detects, classifies, and tracks people, objects, and vehicles.
+It is purpose built to address the critical need for highly accurate and dependable data, analytics, and live time tracking in the ITS, security, and crowd analytics industry. Through out this project the valubale
+data taken from the Gemini perception is received for furthur processing to make the most out of it that helps in creating more robust and convenient applications.
+The project can be said to be divided into to parts first the part which can deals with the <em>configuration</em> of the ouster Gemini as a software and second that deals with the <em>received stream data</em> which will be the core of the application we want to develop.</p>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p>In this part the given APIs from Ouster are used to set the required settings, as well most of the GUI functions can be made through out scripts.
+as GUI seemes to be a more convinient way to alter these settings but through the scripts it may be way to help in creating the required application,
+for more explanation about each set of APIs refere to <a class="reference internal" href="codedoc.html#apisection"><span class="std std-ref">code documentation APIs</span></a> where the documentation and how to use information are given.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>Lidar_hub configuration -<a class="reference internal" href="gemini_lidar_hub_API.html"><span class="doc">Lidar Hub</span></a>-</dt><dd><p>deals with Sensor Management, Recording, Settings, Registration, Execution, Point Zones, Event Zones, Security, Diagnostics, Static.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>perception configuration -<a class="reference internal" href="gemini_perception_API.html"><span class="doc">perception</span></a>-</dt><dd><p>deals with the required settings for ouster detect software that sets the work flow of the perception as detection of objects and the perception id.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Event Zones -<a class="reference internal" href="gemini_event_zone_API.html"><span class="doc">Event Zones</span></a>-</dt><dd><p>deals with zones and the events ocurring in each zone.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Gemini data: -<a class="reference internal" href="gemini_data_recording.html"><span class="doc">Data Recording</span></a>-</dt><dd><p>deals with the output data of the gemini software</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>gemini_login: -<a class="reference internal" href="gemini_login.html"><span class="doc">Login</span></a>-</dt><dd><p>creates an authorized session for HTTPS requests, it is shared among the above modules to provide the base <cite>URL</cite> and authentication to send requests.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not all APIs are implemented some APIs are still under development.</p>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The implemented APIs must be used with caution and response check is the user responsibility as all implementations returns only status code without error handling.</p>
+</div>
+</section>
+<section id="recieved-stream-data">
+<h2>Recieved stream data<a class="headerlink" href="#recieved-stream-data" title="Link to this heading"></a></h2>
+<p>Here as will be refered to as <cite>src</cite> or <cite>source code</cite> is the main starting point for making use of the Ouster detect software data since the Ouster software stack outputs
+reliable and filtered data, this data can be furthur furnished to develop a well established application. Relying on TCP servers <em>data will be streamed</em>, <em>saved to a queue</em> and
+from the queue <em>data will be fetched for processing</em>. All this will be done concurently using threads.</p>
+<p>the available JSON Streams.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>object_list</p></li>
+<li><p>occupations</p></li>
+<li><p>clusters</p></li>
+<li><p>diagnostics</p></li>
+<li><p>aggregation_realtime</p></li>
+<li><p>aggregation_timeseries</p></li>
+</ul>
+</div></blockquote>
+<p>refere to <a class="reference external" href="https://static.ouster.dev/ouster-detect/connecting_to_output/connecting-to-output.html">user manual</a>  for more specifications.</p>
+</section>
+<section id="code-flow-and-execution">
+<h2>Code flow and Execution<a class="headerlink" href="#code-flow-and-execution" title="Link to this heading"></a></h2>
+<p>After the socket connection is established, Three threads are created</p>
+<blockquote>
+<div><blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>put_to_queue_thr:</dt><dd><p>This thread is responsible for <strong>READING</strong> data from the SSL socket connection and putting it into <code class="docutils literal notranslate"><span class="pre">DATA_QUEUE</span></code> . It uses the <code class="docutils literal notranslate"><span class="pre">put_object_to_queue</span></code> function from the <code class="docutils literal notranslate"><span class="pre">processing.data_processing</span></code> module.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>read_from_queue_thr:</dt><dd><p>This thread is responsible for <strong>RETRIEVING</strong> data from <code class="docutils literal notranslate"><span class="pre">DATA_QUEUE</span></code> and making it available for processing.It uses the <code class="docutils literal notranslate"><span class="pre">get_from_queue</span></code> function from the <code class="docutils literal notranslate"><span class="pre">processing.data_processing</span></code> module.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>process_thr:</dt><dd><p>This thread is responsible for <strong>PROCESSING</strong> the data retrieved from the queue.It uses the <code class="docutils literal notranslate"><span class="pre">processing_from_queue</span></code> function from the <code class="docutils literal notranslate"><span class="pre">processing.data_processing</span></code> module.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<p>This application is an example for the future work it was made to be generic as possible by using the approch of modularity.
+in this application the time of collision is calculated following the preceeding steps.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>find the nearest two object to the sensor. (an information retrieved from the object list recieved from the stream)</p></li>
+<li><p>find the relative velocity magnitude between the same two objects. (the same time stamp is taken in consideratin to make sure the specific required object is found)</p></li>
+<li><p>find the relative position magnitude between the same two objects.</p></li>
+<li><p>estimate the time of collision between the objects.</p></li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>assumptions are made that both objects are heading towards the sensor and the written code is just a test for what may come later.</p>
+</div>
+</section>
+<section id="data-shape">
+<h2>Data shape<a class="headerlink" href="#data-shape" title="Link to this heading"></a></h2>
+<p>Data streamed refered to as <code class="docutils literal notranslate"><span class="pre">object_list</span></code> from gemini is received in JSON format which may be difficult to make furthur processing, so it was better to reorder the data depending on the timestamp
+in a python dictionary with the time stamp as the key and the value will be the object it self. refere below to see what the JSON format looks like.</p>
+<section id="shape-of-received-data-from-stream">
+<h3>shape of received data from stream<a class="headerlink" href="#shape-of-received-data-from-stream" title="Link to this heading"></a></h3>
+<div class="highlight-JSON notranslate" id="object-example-ref"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;frame_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">226599</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1663175920089867</span>
+<span class="nt">&quot;objects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;classification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PERSON&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;classification_confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;creation_ts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1663175901389312</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dimensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.6693140268325806</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.44045835733413696</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.24217760562896729</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;distance_to_primary_sensor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.8241156339645386</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;frame_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">188</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;heading&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">17.792495727539062</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1094</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;initial_position&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.866864025592804</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.3293535709381104</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.1521248817443848</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;num_points&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1052</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;num_points_from_primary_sensor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">706</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orientation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;qw&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9879699945449829</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;qx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;qy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;qz&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15464559197425842</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;position&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9670451879501343</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.5673401355743408</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0692270994186401</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;position_uncertainty&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00872983346207417</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00872983346207417</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.03328978381826185</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;primary_sensor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;992251000353&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;update_ts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1663175920076580</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;74b4e42e-1989-40d0-91d6-ae498b173001&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;velocity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.03508763682949244</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01674633024355329</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.029468615562023993</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;velocity_uncertainty&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7745966692414834</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7745966692414834</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8143665760550121</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;classification&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UNKNOWN&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;classification_confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;creation_ts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1663175902884161</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;dimensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5432571172714233</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;length&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.48804545402526855</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.20569449663162231</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;distance_to_primary_sensor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.8241156339645386</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;frame_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">171</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;heading&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-89.16230010986328</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1096</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;initial_position&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9158645868301392</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.8394945859909058</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7948745489120483</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;num_points&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">539</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;num_points_from_primary_sensor&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">706</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;orientation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;qw&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7122570276260376</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;qx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;qy&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;qz&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.7019187808036804</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;position&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7764403223991394</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.7604234218597412</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9274996519088745</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;position_uncertainty&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00872983346207417</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00872983346207417</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.03328978381826185</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;primary_sensor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;992251000353&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;update_ts&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1663175920076580</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;uuid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;b3caf8eb-8e23-47fe-a839-999f354ae4a0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;velocity&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.10920844900324483</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.31853616628659553</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.10758132742665225</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;velocity_uncertainty&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7745966692414834</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7745966692414834</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8143665760550121</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">object_list description</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 11.8%" />
+<col style="width: 29.4%" />
+<col style="width: 58.8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Format</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>frame_count</p></td>
+<td><p>int</p></td>
+<td><p>Number of frames since perception started outputting data. This count should always be sequential.</p></td>
+</tr>
+<tr class="row-odd"><td><p>timestamp</p></td>
+<td><p>int</p></td>
+<td><p>Timestamp of when the last point cloud arrived which contributed to the object list. Units in microseconds since Jan. 1, 1970.</p></td>
+</tr>
+<tr class="row-even"><td><p>objects</p></td>
+<td><p>array</p></td>
+<td><p>Array of <a class="reference internal" href="#object-array-description"><span class="std std-ref">objects</span></a> visible to perception for the current frame</p></td>
+</tr>
+</tbody>
+</table>
+<span id="object-array-description"></span><table class="docutils align-default" id="id2">
+<caption><span class="caption-text">object_array description</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 11.8%" />
+<col style="width: 29.4%" />
+<col style="width: 58.8%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Format</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>int</p></td>
+<td><p>Unique number identifying object in current running instance of perception. If perception restarts, this count will reset.</p></td>
+</tr>
+<tr class="row-odd"><td><p>uuid</p></td>
+<td><p>string</p></td>
+<td><p>Unique UUID for objects over all running instances. If perception restarts, objects in the new running instance will have unique UUID’s relative to all other running instances.</p></td>
+</tr>
+<tr class="row-even"><td><p>primary_sensor</p></td>
+<td><p>string</p></td>
+<td><p>Serial number of the primary lidar sensor with the most points on object.</p></td>
+</tr>
+<tr class="row-odd"><td><p>distance_to_primary_sensor</p></td>
+<td><p>float</p></td>
+<td><p>Distance in meters from the primary lidar sensor.</p></td>
+</tr>
+<tr class="row-even"><td><p>num_points_from_primary_sensor</p></td>
+<td><p>int</p></td>
+<td><p>Number of points on object from the primary lidar sensor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>num_points</p></td>
+<td><p>int</p></td>
+<td><p>Number of points belonging to the object.</p></td>
+</tr>
+<tr class="row-even"><td><p>classification</p></td>
+<td><p>string</p></td>
+<td><p>Classification of the object (i.e., PERSON, VEHICLE).</p></td>
+</tr>
+<tr class="row-odd"><td><p>classification_confidence</p></td>
+<td><p>float</p></td>
+<td><p>Number between 0 and 1 representing the system’s confidence in the assigned classification. 0 represents no confidence. 1 represents fully confident.</p></td>
+</tr>
+<tr class="row-even"><td><p>initial_position</p></td>
+<td><p>vector</p></td>
+<td><p>Initial XYZ location of the object in the first frame it was visible in the field of view of the lidars. This position is either in respect to the world reference frame (measured in meters), or the geo-coordinates.</p></td>
+</tr>
+<tr class="row-odd"><td><p>position</p></td>
+<td><p>vector</p></td>
+<td><p>Current XYZ location of the object in the world reference frame (measured in meters), or the geo-coordinates.</p></td>
+</tr>
+<tr class="row-even"><td><p>position_uncertainty</p></td>
+<td><p>vector</p></td>
+<td><p>Estimated variance of the position measurement. Units in meters^2.</p></td>
+</tr>
+<tr class="row-odd"><td><p>velocity</p></td>
+<td><p>vector</p></td>
+<td><p>current rate of change in the XYZ position of the object. Velocity is in the world reference frame. Units are in m/s.</p></td>
+</tr>
+<tr class="row-even"><td><p>velocity_uncertainty</p></td>
+<td><p>vector</p></td>
+<td><p>Estimated variance of the velocity measurement. Units in (m/s)^2.</p></td>
+</tr>
+<tr class="row-odd"><td><p>orientation</p></td>
+<td><p>orientation</p></td>
+<td><p>Quaternion representing the orientation of the object with respect to the world reference frame.</p></td>
+</tr>
+<tr class="row-even"><td><p>heading</p></td>
+<td><p>float</p></td>
+<td><p>Positive rotation about the z-axis (right-hand rule).</p></td>
+</tr>
+<tr class="row-odd"><td><p>dimension</p></td>
+<td><p>dimension</p></td>
+<td><p>Length, width, height of the bounding box enclosing all points on the object. Length is the extents along the x-axis, width the extents along the y-axis, height along the z-axis. Axis referenced are the axis of the object with x pointing in the direction of motion, y pointing perpendicular to the left, and z pointing up (right-hand rule).</p></td>
+</tr>
+<tr class="row-even"><td><p>frame_count</p></td>
+<td><p>int</p></td>
+<td><p>Number of frames an object has been visible for. This number and the creation_ts number both represent the duration the object has been in the sytem’s field of view.</p></td>
+</tr>
+<tr class="row-odd"><td><p>creation_ts</p></td>
+<td><p>int</p></td>
+<td><p>Timestamp when the object was first visible in the system’s field of view. This point in time will be before the object was tracked and classified. This number and frame_count both represent the duration the object has been in the sytem’s field of view. Units in microseconds since Jan. 1, 1970.</p></td>
+</tr>
+<tr class="row-even"><td><p>update_ts</p></td>
+<td><p>int</p></td>
+<td><p>Timestamp the object was last updated. For objects the system has measured in the current frame, this timestamp will be the same as the timestamp at the root level. For objects the system has not measured in the current frame, this timestamp will stay at the timestamp when the object was last measured and lag behind the timestamp at the root level. An object will be considered measured when the lidars have captured a minimum number of points on the target. Units in microseconds since Jan. 1, 1970.</p></td>
+</tr>
+</tbody>
+</table>
+<p>The previous <a class="reference internal" href="#object-example-ref"><span class="std std-ref">code snippet</span></a> shows the shape of the streamed data followed by its explanation in the tables. the code refines the data streamed and puts it in
+a python dictionary form as mentioned above. the global variable <code class="docutils literal notranslate"><span class="pre">TIMESTAMP</span></code> defined in <code class="docutils literal notranslate"><span class="pre">processing.data_processing</span></code> <a class="reference internal" href="processing.html#processing-data-ref"><span class="std std-ref">module</span></a> is the variable that will hold the refined data.
+it consists of <em>key</em> as the <em>timestamp</em> and <em>dictionary values</em> where their <em>key</em> are the <em>name of the attribute</em> and the value <em>are lists of the data</em>. refere below for explanation</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="mi">1701174658528965</span><span class="p">:</span> <span class="p">{</span>
+<span class="s1">&#39;obj_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">11111</span><span class="p">,</span> <span class="mi">22222</span><span class="p">,</span> <span class="mi">33333</span><span class="p">,</span> <span class="mi">44444</span><span class="p">],</span>
+<span class="s1">&#39;creation_time&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1701174621516041</span><span class="p">,</span> <span class="mi">1701174621516041</span><span class="p">,</span> <span class="mi">1701174621516041</span><span class="p">,</span> <span class="mi">1701174621516041</span><span class="p">],</span>
+<span class="s1">&#39;frame_count&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">343</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">343</span><span class="p">,</span> <span class="mi">343</span><span class="p">],</span>
+<span class="s1">&#39;classification&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;PERSON&#39;</span><span class="p">,</span> <span class="s1">&#39;PERSON&#39;</span><span class="p">,</span> <span class="s1">&#39;PERSON&#39;</span><span class="p">,</span> <span class="s1">&#39;PERSON&#39;</span><span class="p">],</span>
+<span class="s1">&#39;velocity&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">}],</span>
+<span class="s1">&#39;position&#39;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">228</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">44</span><span class="p">}],</span>
+<span class="s1">&#39;heading&#39;</span><span class="p">:</span>  <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mf">37.560306549072266</span><span class="p">,</span> <span class="o">-</span><span class="mf">37.560306549072266</span><span class="p">,</span> <span class="o">-</span><span class="mf">37.44</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>every object is known by its obj_id and to get the related information of that specific obj_id use indexing.
+for example in the above data shape. <code class="docutils literal notranslate"><span class="pre">obj_id</span></code> 11111 will have index 0 then to locate its velocity for example index <code class="docutils literal notranslate"><span class="pre">velocity</span></code> with index 0.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">timestamp</span><span class="p">[</span><span class="mi">1701174658528965</span><span class="p">][</span><span class="s1">&#39;velocity&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>this made the data more refined and every time stamp is known what objects are captured within it with each information related to that object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>for calculations this data is converted to pandas DataFrame for the ease of its calculations. refere to the helper methods at <a class="reference internal" href="processing.html#processing-utils-ref"><span class="std std-ref">processing.utils module</span></a></p>
+</div>
+</section>
+</section>
+<section id="data-integrity">
+<h2>Data integrity<a class="headerlink" href="#data-integrity" title="Link to this heading"></a></h2>
+<p>To make sure that each object has a unique ID we have to make sure that the sensors installed are all in the same perception.
+The ouster detect software stack gives each object a unique ID <code class="docutils literal notranslate"><span class="pre">uuid</span></code> once it is detected in the perception if the object lost from the perception and enters again
+the ouster detect will give it a new <code class="docutils literal notranslate"><span class="pre">uuid</span></code> so its our responsibility to make sure that our interested area is fully covered and the sensors area of coverage are well
+installed to make sure that if an object never leaves our area of interest. another consideration while receiveing through the stream to make sure that we don’t loose any
+data or we get an interrupted message ouster software stack sends a 32-bit unsigned integer with big endian byte order which represents the total length of the message
+by checking on these 4-bytes we know the size of the expected data to receive. see <code class="docutils literal notranslate"><span class="pre">put_object_to_queue</span></code> method at <a class="reference internal" href="processing.html#processing-data-ref"><span class="std std-ref">processing.data_processing module</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Ouster Project’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="codedoc.html" class="btn btn-neutral float-right" title="Code documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ayman Magdy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

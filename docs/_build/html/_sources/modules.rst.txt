@@ -1,10 +1,19 @@
-src
-===
+Code documentation
+==================
 
+sorce code
+----------
 .. toctree::
    :maxdepth: 4
-
-   connection
+   
    main
-   processing
+   connection
    utilities
+   processing
+
+APIs
+----
+.. toctree::
+   :maxdepth: 4
+   
+   API

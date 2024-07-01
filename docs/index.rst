@@ -9,9 +9,9 @@ Welcome to Ouster Project's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-   modules
-
+   
+   projectdoc
+   codedoc
 
 
 Indices and tables

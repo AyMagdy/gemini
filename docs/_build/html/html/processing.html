@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>processing package &mdash; Ouster Project 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="utilities package" href="utilities.html" />
+    <link rel="prev" title="main module" href="main.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ouster Project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="connection.html">connection package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">processing package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-processing.data_processing">processing.data_processing module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#processing.data_processing.get_from_queue"><code class="docutils literal notranslate"><span class="pre">get_from_queue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing.data_processing.processing_from_queue"><code class="docutils literal notranslate"><span class="pre">processing_from_queue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing.data_processing.put_object_to_queue"><code class="docutils literal notranslate"><span class="pre">put_object_to_queue()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-processing.utils">processing.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#processing.utils.calc_pos_mag_diff"><code class="docutils literal notranslate"><span class="pre">calc_pos_mag_diff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing.utils.calc_vel_mag_diff"><code class="docutils literal notranslate"><span class="pre">calc_vel_mag_diff()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing.utils.get_dis_from_sensor"><code class="docutils literal notranslate"><span class="pre">get_dis_from_sensor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing.utils.get_hed_df"><code class="docutils literal notranslate"><span class="pre">get_hed_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing.utils.get_nearest_from_sensor"><code class="docutils literal notranslate"><span class="pre">get_nearest_from_sensor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing.utils.get_pos_df"><code class="docutils literal notranslate"><span class="pre">get_pos_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing.utils.get_vel_df"><code class="docutils literal notranslate"><span class="pre">get_vel_df()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processing.utils.time_to_col"><code class="docutils literal notranslate"><span class="pre">time_to_col()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">utilities package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ouster Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">processing package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/processing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="processing-package">
+<h1>processing package<a class="headerlink" href="#processing-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-processing.data_processing">
+<span id="processing-data-processing-module"></span><h2>processing.data_processing module<a class="headerlink" href="#module-processing.data_processing" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.data_processing.get_from_queue">
+<span class="sig-prename descclassname"><span class="pre">processing.data_processing.</span></span><span class="sig-name descname"><span class="pre">get_from_queue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_queue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lock</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">allocate_lock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_ready_event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_ready_event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Event</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/processing/data_processing.html#get_from_queue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.data_processing.get_from_queue" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">this function checks if the queue is not empty then
+reads the time stamp of the received frame from queue
+time stamp is saved in TIMESTAMP global dictionary as the key
+the values are dictionaries of parameter name as key and values of
+the data values.</p>
+</dd>
+<dt>Example:</dt><dd><p class="linemarker linemarker-9">{1701174658528965: { ‘obj_id’: [11111, 22222, 33333, 44444]},’position’: [111, 222, 333, 4444]}.</p>
+</dd>
+<dt>Args:</dt><dd><p class="linemarker linemarker-12">queue to get timestamp and other data from</p>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-15">None</p>
+</dd>
+</dl>
+<p class="linemarker linemarker-17">Descritpion: //#//</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.data_processing.processing_from_queue">
+<span class="sig-prename descclassname"><span class="pre">processing.data_processing.</span></span><span class="sig-name descname"><span class="pre">processing_from_queue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lock</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">allocate_lock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_ready_event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Event</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/processing/data_processing.html#processing_from_queue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.data_processing.processing_from_queue" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">This function is meant to calculate furthur processes after refining the data from stream.</p>
+</dd>
+<dt>Args:</dt><dd><p class="linemarker linemarker-5">lock to protect shared resources
+d_read_event waits for the signal when data is ready to be processed then thread starts.</p>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-9">None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.data_processing.put_object_to_queue">
+<span class="sig-prename descclassname"><span class="pre">processing.data_processing.</span></span><span class="sig-name descname"><span class="pre">put_object_to_queue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_queue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Queue</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssl_socket_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SSLSocket</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_ready_event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Event</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/processing/data_processing.html#put_object_to_queue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.data_processing.put_object_to_queue" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">read data from stream and put in queue this function doesn’t end until queue is full
+or there is not data recieved from the stream (byte array is empty).</p>
+</dd>
+<dt>Args:</dt><dd><p class="linemarker linemarker-6">socket connection with ssl wrap.
+data_queue to put received data in.</p>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-9">None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-processing.utils">
+<span id="processing-utils-module"></span><h2>processing.utils module<a class="headerlink" href="#module-processing.utils" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.utils.calc_pos_mag_diff">
+<span class="sig-prename descclassname"><span class="pre">processing.utils.</span></span><span class="sig-name descname"><span class="pre">calc_pos_mag_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">floating</span></span></span><a class="reference internal" href="_modules/processing/utils.html#calc_pos_mag_diff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.utils.calc_pos_mag_diff" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">a helper function to be called to calculate the position difference between two rows from the passed dataframe.</p>
+</dd>
+<dt>Args:</dt><dd><p class="linemarker linemarker-4">dataframe: positon dataframe to get the difference.
+stamp:     the required time stamp. 
+index1:    the first index/row in the dataframe required.
+index2:    the second index/row in the dataframe required.</p>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-10">pandas series of the calculated position norm between index1 and index2.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.utils.calc_vel_mag_diff">
+<span class="sig-prename descclassname"><span class="pre">processing.utils.</span></span><span class="sig-name descname"><span class="pre">calc_vel_mag_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">floating</span></span></span><a class="reference internal" href="_modules/processing/utils.html#calc_vel_mag_diff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.utils.calc_vel_mag_diff" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">a helper function to be called to calculate the velocity norm between two objects at a specific time stamp.</p>
+</dd>
+<dt>Args:</dt><dd><p class="linemarker linemarker-4">dataframe: velocity dataframe to get the difference.
+stamp:     the required time stamp.
+index1:    the first index/row in the dataframe required.
+index2:    the second index/row in the dataframe required.</p>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-10">pandas series of the calculated velocity norm between index1 and index2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.utils.get_dis_from_sensor">
+<span class="sig-prename descclassname"><span class="pre">processing.utils.</span></span><span class="sig-name descname"><span class="pre">get_dis_from_sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/processing/utils.html#get_dis_from_sensor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.utils.get_dis_from_sensor" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">a helper funtion to iterate over the the time stamps being recieved from stream
+and converts the specified element (distance from sensor) to a dataframe</p>
+</dd>
+<dt>Args:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">data_dict<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="linemarker linemarker-5">the recieved object list after time stamped</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-7">pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.utils.get_hed_df">
+<span class="sig-prename descclassname"><span class="pre">processing.utils.</span></span><span class="sig-name descname"><span class="pre">get_hed_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/processing/utils.html#get_hed_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.utils.get_hed_df" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">a helper funtion to iterate over the the time stamps being recieved from stream
+and converts the specified element (heading) to a dataframe</p>
+</dd>
+<dt>Args:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">data_dict<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="linemarker linemarker-5">the recieved object list after time stamped</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-7">pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.utils.get_nearest_from_sensor">
+<span class="sig-prename descclassname"><span class="pre">processing.utils.</span></span><span class="sig-name descname"><span class="pre">get_nearest_from_sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataframe</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stamp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="reference internal" href="_modules/processing/utils.html#get_nearest_from_sensor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.utils.get_nearest_from_sensor" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">this function find the nearest two objects from the senosr.</p>
+</dd>
+<dt>Args:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">dataframe<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="linemarker linemarker-4">the dataframe related to the distance from the sensor.</p>
+</dd>
+<dt class="field-even">stamp<span class="colon">:</span></dt>
+<dd class="field-even"><p class="linemarker linemarker-5">the time stamp or the column in the data frame to search in it.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-7">series with the values of the distances</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.utils.get_pos_df">
+<span class="sig-prename descclassname"><span class="pre">processing.utils.</span></span><span class="sig-name descname"><span class="pre">get_pos_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/processing/utils.html#get_pos_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.utils.get_pos_df" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">a helper funtion to iterate over the the time stamps being recieved from stream
+and converts the specified element (position) to a dataframe</p>
+</dd>
+<dt>Args:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">data_dict<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="linemarker linemarker-5">the recieved object list after time stamped</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-7">pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.utils.get_vel_df">
+<span class="sig-prename descclassname"><span class="pre">processing.utils.</span></span><span class="sig-name descname"><span class="pre">get_vel_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/processing/utils.html#get_vel_df"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.utils.get_vel_df" title="Link to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Description:</dt><dd><p class="linemarker linemarker-2">a helper funtion to iterate over the the time stamps being recieved from stream
+and converts the specified element (velocity) to a dataframe</p>
+</dd>
+<dt>Args:</dt><dd><dl class="field-list simple">
+<dt class="field-odd">data_dict<span class="colon">:</span></dt>
+<dd class="field-odd"><p class="linemarker linemarker-5">the recieved object list after time stamped</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p class="linemarker linemarker-7">pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="processing.utils.time_to_col">
+<span class="sig-prename descclassname"><span class="pre">processing.utils.</span></span><span class="sig-name descname"><span class="pre">time_to_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">floating</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">floating</span></span></span><a class="reference internal" href="_modules/processing/utils.html#time_to_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#processing.utils.time_to_col" title="Link to this definition"></a></dt>
+<dd><p class="linemarker linemarker-1">Description: 
+calculates the time expected for two objects to collide.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="main.html" class="btn btn-neutral float-left" title="main module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utilities.html" class="btn btn-neutral float-right" title="utilities package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ayman Magdy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

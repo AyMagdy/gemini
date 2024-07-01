@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lidar Hub &mdash; Ouster Project 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="perception" href="gemini_perception_API.html" />
+    <link rel="prev" title="data receive" href="gemini_data.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ouster Project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="projectdoc.html">project documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="codedoc.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="codedoc.html#sorce-code">sorce code</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="codedoc.html#apis">APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gemini_login.html">Login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gemini_data.html">data receive</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Lidar Hub</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gemini_perception_API.html">perception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gemini_event_zone_API.html">Event Zones</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ouster Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="codedoc.html">Code documentation</a></li>
+      <li class="breadcrumb-item active">Lidar Hub</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/gemini_lidar_hub_API.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lidar-hub">
+<h1>Lidar Hub<a class="headerlink" href="#lidar-hub" title="Link to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The module is used to set/get the setting of the Lidar Hub .
+Lidar Hub works as the interface between the ouster detect software and the user. it integrates other features as well.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>On-device Aggregation of occupations and object lists</p></li>
+<li><p>The gathering and reporting of Diagnostics and Alerts to the Ouster Connect</p></li>
+<li><p>Down-sampling, Batching and Filtering of Perception JSON Streams used by: - TCP Relay</p></li>
+<li><p>Server(s) - MQTT Publishers</p></li>
+<li><p>On-device Data Recording of JSON Streams and Point Cloud data</p></li>
+</ol>
+</div></blockquote>
+<p>The module uses <code class="docutils literal notranslate"><span class="pre">URL</span></code> located at <a class="reference internal" href="gemini_login.html"><span class="doc">Login</span></a> as the base url.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>for more information on the module and for the information about the fields that can be altered in the
+JSON files being sent as request body please refere to the <a class="reference external" href="https://static.ouster.dev/ouster-detect/lidar_hub/lidar_hub.html#">user manual</a>.</p>
+</div>
+<dl class="py class enum" id="module-gemini_lidar_hub_API">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint">
+<em class="property"><span class="pre">enum</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">LidarHubEndPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#LidarHubEndPoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>defines the endpoints of the url for more information refer to <a class="reference external" href="https://127.0.0.1/lidar-hub/api/v1/swagger/ui#/">ouster swagger api documentation</a></p>
+<p>Valid values are as follows:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.STATIC_INFO">
+<span class="sig-name descname"><span class="pre">STATIC_INFO</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.STATIC_INFO:</span> <span class="pre">'lidar-hub/api/v1/about'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.STATIC_INFO" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.SYSTEM_DIAGNOSTICS">
+<span class="sig-name descname"><span class="pre">SYSTEM_DIAGNOSTICS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.SYSTEM_DIAGNOSTICS:</span> <span class="pre">'lidar-hub/api/v1/diagnostics'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.SYSTEM_DIAGNOSTICS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.SYSTEM_HEALTH">
+<span class="sig-name descname"><span class="pre">SYSTEM_HEALTH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.SYSTEM_HEALTH:</span> <span class="pre">'lidar-hub/api/v1/system_health'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.SYSTEM_HEALTH" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_TELEMETRY">
+<span class="sig-name descname"><span class="pre">LIDAR_TELEMETRY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_TELEMETRY:</span> <span class="pre">'lidar-hub/api/v1/telemetry'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_TELEMETRY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_DEFAULTS">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_DEFAULTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_DEFAULTS:</span> <span class="pre">'lidar-hub/api/v1/default_settings'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_DEFAULTS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_SETTINGS">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_SETTINGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_SETTINGS:</span> <span class="pre">'lidar-hub/api/v1/settings'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_SETTINGS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_WORLD">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_WORLD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_WORLD:</span> <span class="pre">'lidar-hub/api/v1/world'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_WORLD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_EVENT_ZONES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES:</span> <span class="pre">'lidar-hub/api/v1/event_zones'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_ACTIVE">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_EVENT_ZONES_ACTIVE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_ACTIVE:</span> <span class="pre">'lidar-hub/api/v1/event_zones/active'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_ACTIVE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_ALERTS">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_EVENT_ZONES_ALERTS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_ALERTS:</span> <span class="pre">'lidar-hub/api/v1/event_zones/alerts'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_ALERTS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_REALTME">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_EVENT_ZONES_REALTME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_REALTME:</span> <span class="pre">'lidar-hub/api/v1/event_zones/realtime'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_REALTME" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_TIMESERIES">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_EVENT_ZONES_TIMESERIES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_TIMESERIES:</span> <span class="pre">'lidar-hub/api/v1/event_zones/timeseries'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_EVENT_ZONES_TIMESERIES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_RESET">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_RESET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_RESET:</span> <span class="pre">'lidar-hub/api/v1/reset'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_RESET" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_ACTIVE_REC">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_ACTIVE_REC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_ACTIVE_REC:</span> <span class="pre">'lidar-hub/api/v1/user_recording/active'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_ACTIVE_REC" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_START_REC">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_START_REC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_START_REC:</span> <span class="pre">'lidar-hub/api/v1/user_recording/start'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_START_REC" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_STOP_REC">
+<span class="sig-name descname"><span class="pre">LIDAR_HUB_STOP_REC</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;LidarHubEndPoint.LIDAR_HUB_STOP_REC:</span> <span class="pre">'lidar-hub/api/v1/user_recording/stop'&gt;</span></em><a class="headerlink" href="#gemini_lidar_hub_API.LidarHubEndPoint.LIDAR_HUB_STOP_REC" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_active_rec">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_active_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_active_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_active_rec" title="Link to this definition"></a></dt>
+<dd><section id="id1">
+<h3>Description<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Get active user recordings.</p>
+</section>
+<section id="args">
+<h3>Args<a class="headerlink" href="#args" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_all_settings">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_all_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_all_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_all_settings" title="Link to this definition"></a></dt>
+<dd><section id="id2">
+<h3>Description<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>Get all application settings.</p>
+</section>
+<section id="id3">
+<h3>Args<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h3>Returns<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_default_settings">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_default_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_default_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_default_settings" title="Link to this definition"></a></dt>
+<dd><section id="id5">
+<h3>Description<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>Get the application default values</p>
+</section>
+<section id="id6">
+<h3>Args<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id7">
+<h3>Returns<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_diagnostics">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_diagnostics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_diagnostics"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_diagnostics" title="Link to this definition"></a></dt>
+<dd><section id="id8">
+<h3>Description<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>gets the diagnostics hub.</p>
+</section>
+<section id="id9">
+<h3>Args<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h3>Returns<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_event_active">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_event_active</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classification</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_dwell_secs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_event_active"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_event_active" title="Link to this definition"></a></dt>
+<dd><section id="id11">
+<h3>Description<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<p>Query Active Occupancy by ID, Classification and Dwell</p>
+</section>
+<section id="id12">
+<h3>Args<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>ids: str</dt><dd><p>even zode ID (default = 0: ALL)</p>
+</dd>
+<dt>classification: str</dt><dd><p>classification class required (default = 0: ALL)</p>
+</dd>
+<dt>min_dwell_secs: float</dt><dd><p>minimum dwell in seconds (default = 0.0)</p>
+</dd>
+</dl>
+</section>
+<section id="id13">
+<h3>Returns<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_event_alerts">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_event_alerts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_event_alerts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_event_alerts" title="Link to this definition"></a></dt>
+<dd><section id="id14">
+<h3>Description<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<p>Get the alerts for all evnet zones.</p>
+</section>
+<section id="id15">
+<h3>Args<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id16">
+<h3>Returns<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_event_realtime">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_event_realtime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_event_realtime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_event_realtime" title="Link to this definition"></a></dt>
+<dd><section id="id17">
+<h3>Description<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<p>Get real time occupancy of all event zones.</p>
+</section>
+<section id="id18">
+<h3>Args<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id19">
+<h3>Returns<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_event_timeseries">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_event_timeseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_event_timeseries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_event_timeseries" title="Link to this definition"></a></dt>
+<dd><section id="id20">
+<h3>Description<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<p>Get time series for all event zones.</p>
+</section>
+<section id="id21">
+<h3>Args<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id22">
+<h3>Returns<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_event_zones">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_event_zones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_event_zones"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_event_zones" title="Link to this definition"></a></dt>
+<dd><section id="id23">
+<h3>Description<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<p>Get the evnet zones in the perception.</p>
+</section>
+<section id="id24">
+<h3>Args<a class="headerlink" href="#id24" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id25">
+<h3>Returns<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_health">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_health</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_health"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_health" title="Link to this definition"></a></dt>
+<dd><section id="id26">
+<h3>Description<a class="headerlink" href="#id26" title="Link to this heading"></a></h3>
+<p>gets the system health.</p>
+</section>
+<section id="id27">
+<h3>Args<a class="headerlink" href="#id27" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id28">
+<h3>Returns<a class="headerlink" href="#id28" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_info">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_info" title="Link to this definition"></a></dt>
+<dd><section id="id29">
+<h3>Description<a class="headerlink" href="#id29" title="Link to this heading"></a></h3>
+<p>gets the static information about the lidar hub.</p>
+</section>
+<section id="id30">
+<h3>Args<a class="headerlink" href="#id30" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id31">
+<h3>Returns<a class="headerlink" href="#id31" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_telemetry">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_telemetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_telemetry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_telemetry" title="Link to this definition"></a></dt>
+<dd><section id="id32">
+<h3>Description<a class="headerlink" href="#id32" title="Link to this heading"></a></h3>
+<p>Get Lidar Hub ‘telemetry’ information.</p>
+</section>
+<section id="id33">
+<h3>Args<a class="headerlink" href="#id33" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id34">
+<h3>Returns<a class="headerlink" href="#id34" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.get_lidar_hub_world_coordinates">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">get_lidar_hub_world_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#get_lidar_hub_world_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.get_lidar_hub_world_coordinates" title="Link to this definition"></a></dt>
+<dd><section id="id35">
+<h3>Description<a class="headerlink" href="#id35" title="Link to this heading"></a></h3>
+<p>Get the Geo-coordinates.</p>
+</section>
+<section id="id36">
+<h3>Args<a class="headerlink" href="#id36" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id37">
+<h3>Returns<a class="headerlink" href="#id37" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.reset_lidar_hub">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">reset_lidar_hub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#reset_lidar_hub"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.reset_lidar_hub" title="Link to this definition"></a></dt>
+<dd><section id="id38">
+<h3>Description<a class="headerlink" href="#id38" title="Link to this heading"></a></h3>
+<p>restarts the lidar hub.</p>
+</section>
+<section id="id39">
+<h3>Args<a class="headerlink" href="#id39" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id40">
+<h3>Returns<a class="headerlink" href="#id40" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.reset_lidar_hub_default_settings">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">reset_lidar_hub_default_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#reset_lidar_hub_default_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.reset_lidar_hub_default_settings" title="Link to this definition"></a></dt>
+<dd><section id="id41">
+<h3>Description<a class="headerlink" href="#id41" title="Link to this heading"></a></h3>
+<p>restores the default values.</p>
+</section>
+<section id="id42">
+<h3>Args<a class="headerlink" href="#id42" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id43">
+<h3>Returns<a class="headerlink" href="#id43" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.set_lidar_hub_all_settings">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">set_lidar_hub_all_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#set_lidar_hub_all_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.set_lidar_hub_all_settings" title="Link to this definition"></a></dt>
+<dd><section id="id44">
+<h3>Description<a class="headerlink" href="#id44" title="Link to this heading"></a></h3>
+<p>setts all application to the desired settings.</p>
+</section>
+<section id="id45">
+<h3>Args<a class="headerlink" href="#id45" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>data_file: str</dt><dd><p>the path to the settings file in <strong>JSON</strong> format.</p>
+</dd>
+</dl>
+</section>
+<section id="id46">
+<h3>Returns<a class="headerlink" href="#id46" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.set_lidar_hub_world_coordinates">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">set_lidar_hub_world_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#set_lidar_hub_world_coordinates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.set_lidar_hub_world_coordinates" title="Link to this definition"></a></dt>
+<dd><section id="id47">
+<h3>Description<a class="headerlink" href="#id47" title="Link to this heading"></a></h3>
+<p>sets the world Geo-coordinate</p>
+</section>
+<section id="id48">
+<h3>Args<a class="headerlink" href="#id48" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>data_file: str</dt><dd><p>a file required to read the new settings in <strong>JSON</strong> format.</p>
+</dd>
+</dl>
+</section>
+<section id="id49">
+<h3>Returns<a class="headerlink" href="#id49" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.start_lidar_hub_rec">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">start_lidar_hub_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#start_lidar_hub_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.start_lidar_hub_rec" title="Link to this definition"></a></dt>
+<dd><section id="id50">
+<h3>Description<a class="headerlink" href="#id50" title="Link to this heading"></a></h3>
+<p>starts a user reconrding.</p>
+</section>
+<section id="id51">
+<h3>Args<a class="headerlink" href="#id51" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>body_path: str</dt><dd><p>the path to the request body file in <strong>json</strong> format.</p>
+</dd>
+</dl>
+</section>
+<section id="id52">
+<h3>Returns<a class="headerlink" href="#id52" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_lidar_hub_API.stop_lidar_hub_rec">
+<span class="sig-prename descclassname"><span class="pre">gemini_lidar_hub_API.</span></span><span class="sig-name descname"><span class="pre">stop_lidar_hub_rec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_lidar_hub_API.html#stop_lidar_hub_rec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_lidar_hub_API.stop_lidar_hub_rec" title="Link to this definition"></a></dt>
+<dd><section id="id53">
+<h3>Description<a class="headerlink" href="#id53" title="Link to this heading"></a></h3>
+<p>stops a user recording.</p>
+</section>
+<section id="id54">
+<h3>Args<a class="headerlink" href="#id54" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>id: str</dt><dd><p>query for the id for the required recording to be stopped.</p>
+</dd>
+</dl>
+</section>
+<section id="id55">
+<h3>Returns<a class="headerlink" href="#id55" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gemini_data.html" class="btn btn-neutral float-left" title="data receive" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gemini_perception_API.html" class="btn btn-neutral float-right" title="perception" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ayman Magdy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

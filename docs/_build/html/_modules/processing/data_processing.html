@@ -43,7 +43,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">src</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../projectdoc.html">project documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../codedoc.html">Code documentation</a></li>
 </ul>
 
         </div>
@@ -71,9 +72,10 @@
            <div itemprop="articleBody">
              
   <h1>Source code for processing.data_processing</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">connection.socket_connection</span> <span class="k">as</span> <span class="nn">sockcon</span>
+<span></span><span class="kn">from</span> <span class="nn">connection</span> <span class="kn">import</span> <span class="n">socket_connection</span> <span class="k">as</span> <span class="n">connect</span>
 <span class="kn">import</span> <span class="nn">utilities.utilities</span> <span class="k">as</span> <span class="nn">utilities</span>
 <span class="kn">from</span> <span class="nn">processing</span> <span class="kn">import</span> <span class="n">utils</span>
+
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">ssl</span>
 <span class="kn">import</span> <span class="nn">queue</span>
@@ -90,6 +92,10 @@
 <span class="n">FRAME_SIZE_B</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="n">QUEUE_MAX_SIZE</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">TIMESTAMP</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">global dictionary variable used to hold the data after being refined from the queue</span>
+<span class="sd">key is the *timestamp* values are </span>
+<span class="sd">&quot;&quot;&quot;</span>
 
 
 <span class="c1"># Writes the received data from the stream to a queue</span>
@@ -111,10 +117,12 @@
         <span class="k">if</span> <span class="p">(</span><span class="n">data_queue</span><span class="o">.</span><span class="n">qsize</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">data_queue</span><span class="o">.</span><span class="n">maxsize</span> <span class="p">):</span>
             <span class="c1"># logger.info(&quot;reading from tcp putting in queue queue size is %d&quot;,queue.qsize())</span>
             <span class="n">frame_size_b</span> <span class="o">=</span> <span class="n">utilities</span><span class="o">.</span><span class="n">recv_stream</span><span class="p">(</span><span class="n">ssl_socket_client</span><span class="p">,</span> <span class="n">FRAME_SIZE_B</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;the frame size is </span><span class="si">{</span><span class="n">frame_size_b</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">frame_size_b</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;error recieved frame size bytearray </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">frame_size_b</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
                 <span class="k">break</span>
             <span class="n">frame_size</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">frame_size_b</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="n">ENDIAN_TYPE</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;the frame size is </span><span class="si">{</span><span class="n">frame_size</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
             <span class="n">data</span> <span class="o">=</span> <span class="n">utilities</span><span class="o">.</span><span class="n">recv_stream</span><span class="p">(</span><span class="n">ssl_socket_client</span><span class="p">,</span> <span class="n">frame_size</span><span class="p">)</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;error recieved data length </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -153,8 +161,6 @@
 <span class="sd">                              </span>
 <span class="sd">        Returns:</span>
 <span class="sd">            None</span>
-
-<span class="sd">        Descritpion: //#//</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">global</span> <span class="n">TIMESTAMP</span>
@@ -166,9 +172,9 @@
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;after waittting for queue&#39;</span><span class="p">)</span>
         <span class="k">try</span><span class="p">:</span>   <span class="c1"># if queue is not empty pop to temp</span>
             <span class="n">temp</span> <span class="o">=</span> <span class="n">data_queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;temp is --------------------------------------------</span><span class="si">{</span><span class="n">temp</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;temp is --------------------------------------------</span><span class="si">{</span><span class="n">temp</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
             <span class="n">timestamp_list</span>      <span class="o">=</span> <span class="n">utilities</span><span class="o">.</span><span class="n">get_root_info</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="s1">&#39;timestamp&#39;</span><span class="p">)</span>    <span class="c1"># list of all time stamps received </span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;time stamplist from </span><span class="si">{</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">timestamp_list</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;time stamplist from </span><span class="si">{</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> is </span><span class="si">{</span><span class="n">timestamp_list</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
             <span class="n">data_queue</span><span class="o">.</span><span class="n">task_done</span><span class="p">()</span>
         <span class="k">except</span> <span class="n">data_queue</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;queue is empty no data to read &#39;</span><span class="p">)</span>
@@ -190,7 +196,7 @@
             <span class="n">obj</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;obj_id&#39;</span><span class="p">,</span><span class="n">obj_id</span><span class="p">),(</span><span class="s1">&#39;creation_time&#39;</span><span class="p">,</span><span class="n">creation_time</span><span class="p">),</span>
                         <span class="p">(</span><span class="s1">&#39;frame_count&#39;</span><span class="p">,</span><span class="n">frame_count</span><span class="p">),(</span><span class="s1">&#39;classification&#39;</span><span class="p">,</span><span class="n">classification</span><span class="p">),</span>
                         <span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span><span class="n">velocity</span><span class="p">),(</span><span class="s1">&#39;position&#39;</span><span class="p">,</span><span class="n">position</span><span class="p">),(</span><span class="s1">&#39;heading&#39;</span><span class="p">,</span><span class="n">heading</span><span class="p">),(</span><span class="s1">&#39;distance_to_primary_sensor&#39;</span><span class="p">,</span><span class="n">distance_from_sensor</span><span class="p">)])</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;get from queue has taken the LOCK&#39;</span><span class="p">)</span>
+            <span class="c1"># logger.info(&#39;get from queue has taken the LOCK&#39;)</span>
             
             <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
                 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;inside lock block&#39;</span><span class="p">)</span>
@@ -209,6 +215,10 @@
 <span class="k">def</span> <span class="nf">processing_from_queue</span><span class="p">(</span><span class="n">lock</span><span class="p">:</span><span class="n">Lock</span><span class="p">,</span><span class="n">d_ready_event</span><span class="p">:</span><span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">)</span><span class="o">-&gt;</span><span class="kc">None</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Description:</span>
 <span class="sd">            This function is meant to calculate furthur processes after refining the data from stream.</span>
+<span class="sd">            first convert the TIMESTAMP to ``pd.DataFrame`` of the related attribute </span>
+<span class="sd">            ex: posdf, veldf</span>
+<span class="sd">            position data frame and velcoity data frame respectevily.</span>
+<span class="sd">            then call helper functions for calculations.</span>
 <span class="sd">        </span>
 <span class="sd">        Args:</span>
 <span class="sd">            lock to protect shared resources</span>
@@ -225,16 +235,17 @@
         <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
             <span class="n">posdf</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_pos_df</span><span class="p">(</span><span class="n">TIMESTAMP</span><span class="p">)</span>
             <span class="n">veldf</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_vel_df</span><span class="p">(</span><span class="n">TIMESTAMP</span><span class="p">)</span>
+            <span class="c1"># print(posdf)</span>
             <span class="c1"># heddf = utils.get_hed_df(TIMESTAMP) </span>
-            <span class="n">disdf</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_dis_from_sensor</span><span class="p">(</span><span class="n">TIMESTAMP</span><span class="p">)</span>
+            <span class="n">dis_from_sensor_df</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">get_dis_from_sensor</span><span class="p">(</span><span class="n">TIMESTAMP</span><span class="p">)</span>
  
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">indicies</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">get_nearest_from_sensor</span><span class="p">(</span><span class="n">disdf</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-            <span class="c1"># print(utilities.get_velocity_diff(veldf,index1=indicies[0],index2=indicies[1]))</span>
-            <span class="n">vel_mag</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">calc_vel_mag_diff</span><span class="p">(</span><span class="n">veldf</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">index1</span><span class="o">=</span><span class="n">indicies</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">index2</span><span class="o">=</span><span class="n">indicies</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-            <span class="n">pos_mag</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">calc_pos_mag_diff</span><span class="p">(</span><span class="n">posdf</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">index1</span><span class="o">=</span><span class="n">indicies</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">index2</span><span class="o">=</span><span class="n">indicies</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">indicies</span>    <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">utils</span><span class="o">.</span><span class="n">get_nearest_from_sensor</span><span class="p">(</span><span class="n">dis_from_sensor_df</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+            <span class="n">vel_mag</span>     <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">calc_vel_mag_diff</span><span class="p">(</span><span class="n">veldf</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">index1</span><span class="o">=</span><span class="n">indicies</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">index2</span><span class="o">=</span><span class="n">indicies</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">pos_mag</span>     <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">calc_pos_mag_diff</span><span class="p">(</span><span class="n">posdf</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">index1</span><span class="o">=</span><span class="n">indicies</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">index2</span><span class="o">=</span><span class="n">indicies</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
             <span class="n">time_to_col</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">time_to_col</span><span class="p">(</span><span class="n">vel</span><span class="o">=</span><span class="n">vel_mag</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="n">pos_mag</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Expected Time To Collision is </span><span class="si">{</span><span class="n">time_to_col</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+        
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;EXCEPTION OCCURED RESTARTING THE THREAD WILL TAKE PLACE CONSIDER THE ERROR FIRST!!!&#39;</span><span class="p">)</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -251,24 +262,25 @@
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;mylogfile.log&#39;</span><span class="p">,</span><span class="n">filemode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="nb">format</span><span class="o">=</span><span class="n">logging_format</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span><span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%H:%M:%S&quot;</span><span class="p">)</span>
     
     <span class="n">lock</span> <span class="o">=</span> <span class="n">Lock</span><span class="p">()</span>
-
+    <span class="n">QUEUE_READY_EVENT</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
+    <span class="n">DATA_READY_EVENT</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Event</span><span class="p">()</span>
     <span class="c1"># creat a queue to recieve in it the data from the stream</span>
     <span class="n">my_queue</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">(</span><span class="n">QUEUE_MAX_SIZE</span><span class="p">)</span>
-    <span class="n">my_ssl</span> <span class="o">=</span> <span class="n">sockcon</span><span class="o">.</span><span class="n">connect_to_ssl_socket</span><span class="p">()</span>
+    <span class="n">my_ssl</span> <span class="o">=</span> <span class="n">connect</span><span class="o">.</span><span class="n">connect_to_ssl_socket</span><span class="p">()</span>
     
     <span class="k">with</span> <span class="n">my_ssl</span><span class="p">:</span>
          
-        <span class="n">thread1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">put_object_to_queue</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">my_queue</span><span class="p">,</span><span class="n">my_ssl</span><span class="p">))</span>
-        <span class="n">thread2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">get_from_queue</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">my_queue</span><span class="p">,</span><span class="n">lock</span><span class="p">,))</span>
-        <span class="n">thread3</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">processing_from_queue</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">lock</span><span class="p">,))</span>
+        <span class="n">thread1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">put_object_to_queue</span><span class="p">,</span><span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">my_queue</span><span class="p">,</span><span class="n">my_ssl</span><span class="p">,</span><span class="n">QUEUE_READY_EVENT</span><span class="p">))</span>
+        <span class="c1"># thread2 = threading.Thread(target=get_from_queue,args=(my_queue,lock,))</span>
+        <span class="c1"># thread3 = threading.Thread(target=processing_from_queue,args=(lock,))</span>
 
         <span class="n">thread1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-        <span class="n">thread2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-        <span class="n">thread3</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="c1"># thread2.start()</span>
+        <span class="c1"># thread3.start()</span>
 
-        <span class="n">thread2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+        <span class="c1"># thread2.join()</span>
         <span class="n">thread1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-        <span class="n">thread3</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+        <span class="c1"># thread3.join()</span>
 </pre></div>
 
            </div>

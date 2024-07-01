@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login &mdash; Ouster Project 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="data receive" href="gemini_data.html" />
+    <link rel="prev" title="processing package" href="processing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ouster Project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="projectdoc.html">project documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="codedoc.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="codedoc.html#sorce-code">sorce code</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="codedoc.html#apis">APIs</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Login</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gemini_data.html">data receive</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gemini_lidar_hub_API.html">Lidar Hub</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ouster Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="codedoc.html">Code documentation</a></li>
+      <li class="breadcrumb-item active">Login</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/gemini_login.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="login">
+<h1>Login<a class="headerlink" href="#login" title="Link to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The module is used to set up an authorized session for HTTPS request.
+The module uses <code class="docutils literal notranslate"><span class="pre">HOST</span></code> located at <a class="reference internal" href="connection.html"><span class="doc">connection package</span></a> which is by <strong>default</strong> the <em>local host</em> as the base <code class="docutils literal notranslate"><span class="pre">URL</span></code> for the connection.
+The module as well defines <strong>the AUTHENTICATION credentials</strong> which may be required to be changed if the user changes them after his/her first login.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>the default values for user name and password are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">USERNAME</span></code> : ouster</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PASSWORD</span></code> : stone-pass-fill</p></li>
+</ul>
+</div>
+<dl class="py data" id="module-gemini_login">
+<dt class="sig sig-object py" id="gemini_login.URL">
+<span class="sig-prename descclassname"><span class="pre">gemini_login.</span></span><span class="sig-name descname"><span class="pre">URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://127.0.1.1/'</span></em><a class="headerlink" href="#gemini_login.URL" title="Link to this definition"></a></dt>
+<dd><p>It is the base url used through all the application.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_login.login_ouster">
+<span class="sig-prename descclassname"><span class="pre">gemini_login.</span></span><span class="sig-name descname"><span class="pre">login_ouster</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Session</span></span></span><a class="reference internal" href="_modules/gemini_login.html#login_ouster"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_login.login_ouster" title="Link to this definition"></a></dt>
+<dd><section id="id1">
+<h3>Description<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>creates a session between host and server through HTTPS.</p>
+</section>
+<section id="args">
+<h3>ARGs<a class="headerlink" href="#args" title="Link to this heading"></a></h3>
+<p>None.</p>
+</section>
+<section id="return">
+<h3>Return<a class="headerlink" href="#return" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Session</dt><dd><p>authorized session for HTTPS requests.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="processing.html" class="btn btn-neutral float-left" title="processing package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gemini_data.html" class="btn btn-neutral float-right" title="data receive" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ayman Magdy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

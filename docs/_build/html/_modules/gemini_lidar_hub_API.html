@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gemini_lidar_hub_API &mdash; Ouster Project 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ouster Project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../projectdoc.html">project documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codedoc.html">Code documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ouster Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">gemini_lidar_hub_API</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for gemini_lidar_hub_API</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">gemini_login</span> <span class="k">as</span> <span class="nn">login</span>
+<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+
+<div class="viewcode-block" id="LidarHubEndPoint">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.LidarHubEndPoint">[docs]</a>
+<span class="k">class</span> <span class="nc">LidarHubEndPoint</span> <span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    defines the endpoints of the url for more information refer to `ouster swagger api documentation &lt;https://127.0.0.1/lidar-hub/api/v1/swagger/ui#/&gt;`_</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">STATIC_INFO</span>                      <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/about&#39;</span>     
+    <span class="n">SYSTEM_DIAGNOSTICS</span>               <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/diagnostics&#39;</span>
+    <span class="n">SYSTEM_HEALTH</span>                    <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/system_health&#39;</span>
+    <span class="n">LIDAR_TELEMETRY</span>                  <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/telemetry&#39;</span>
+    <span class="n">LIDAR_HUB_DEFAULTS</span>               <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/default_settings&#39;</span>
+    <span class="n">LIDAR_HUB_SETTINGS</span>               <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/settings&#39;</span> 
+    <span class="n">LIDAR_HUB_WORLD</span>                  <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/world&#39;</span>
+    <span class="n">LIDAR_HUB_EVENT_ZONES</span>            <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/event_zones&#39;</span>
+    <span class="n">LIDAR_HUB_EVENT_ZONES_ACTIVE</span>     <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/event_zones/active&#39;</span>
+    <span class="n">LIDAR_HUB_EVENT_ZONES_ALERTS</span>     <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/event_zones/alerts&#39;</span>
+    <span class="n">LIDAR_HUB_EVENT_ZONES_REALTME</span>    <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/event_zones/realtime&#39;</span>
+    <span class="n">LIDAR_HUB_EVENT_ZONES_TIMESERIES</span> <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/event_zones/timeseries&#39;</span>
+    <span class="n">LIDAR_HUB_RESET</span>                  <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/reset&#39;</span>
+    <span class="n">LIDAR_HUB_ACTIVE_REC</span>             <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/user_recording/active&#39;</span>
+    <span class="n">LIDAR_HUB_START_REC</span>              <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/user_recording/start&#39;</span>
+    <span class="n">LIDAR_HUB_STOP_REC</span>               <span class="o">=</span> <span class="s1">&#39;lidar-hub/api/v1/user_recording/stop&#39;</span></div>
+
+
+
+
+<div class="viewcode-block" id="get_lidar_hub_info">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_info">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_info</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    gets the static information about the lidar hub.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">STATIC_INFO</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_diagnostics">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_diagnostics">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_diagnostics</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    gets the diagnostics hub.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">SYSTEM_DIAGNOSTICS</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_health">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_health">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_health</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    gets the system health.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">SYSTEM_HEALTH</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_telemetry">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_telemetry">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_telemetry</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Get Lidar Hub ‘telemetry’ information.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_TELEMETRY</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_default_settings">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_default_settings">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_default_settings</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Get the application default values</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_DEFAULTS</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="reset_lidar_hub_default_settings">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.reset_lidar_hub_default_settings">[docs]</a>
+<span class="k">def</span> <span class="nf">reset_lidar_hub_default_settings</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    restores the default values.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_DEFAULTS</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_all_settings">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_all_settings">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_all_settings</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Get all application settings.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_SETTINGS</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_lidar_hub_all_settings">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.set_lidar_hub_all_settings">[docs]</a>
+<span class="k">def</span> <span class="nf">set_lidar_hub_all_settings</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span><span class="n">data_file</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    setts all application to the desired settings.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    data_file: str</span>
+<span class="sd">        the path to the settings file in **JSON** format.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span><span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">request_body</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_SETTINGS</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="n">json</span><span class="o">=</span><span class="n">request_body</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_world_coordinates">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_world_coordinates">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_world_coordinates</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Get the Geo-coordinates.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_WORLD</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="set_lidar_hub_world_coordinates">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.set_lidar_hub_world_coordinates">[docs]</a>
+<span class="k">def</span> <span class="nf">set_lidar_hub_world_coordinates</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span><span class="n">data_file</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    sets the world Geo-coordinate</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    data_file: str</span>
+<span class="sd">        a file required to read the new settings in **JSON** format.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">data_file</span><span class="p">,</span><span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">request_body</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_WORLD</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">request_body</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_event_zones">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_event_zones">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_event_zones</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Get the evnet zones in the perception.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_EVENT_ZONES</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_event_active">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_event_active">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_event_active</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span><span class="n">ids</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">classification</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">min_dwell_secs</span> <span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Query Active Occupancy by ID, Classification and Dwell</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    ids: str</span>
+<span class="sd">        even zode ID (default = 0: ALL)</span>
+<span class="sd">    classification: str</span>
+<span class="sd">        classification class required (default = 0: ALL)</span>
+<span class="sd">    min_dwell_secs: float</span>
+<span class="sd">        minimum dwell in seconds (default = 0.0)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_EVENT_ZONES_ACTIVE</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> 
+                            <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ids&#39;</span><span class="p">:</span><span class="n">ids</span><span class="p">,</span><span class="s1">&#39;classification&#39;</span><span class="p">:</span><span class="n">classification</span><span class="p">,</span><span class="s1">&#39;min_dwell_secs&#39;</span><span class="p">:</span><span class="n">min_dwell_secs</span><span class="p">})</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_event_alerts">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_event_alerts">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_event_alerts</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span>  <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Get the alerts for all evnet zones.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_EVENT_ZONES_ALERTS</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_event_realtime">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_event_realtime">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_event_realtime</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Get real time occupancy of all event zones.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_EVENT_ZONES_REALTME</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_event_timeseries">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_event_timeseries">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_event_timeseries</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Get time series for all event zones.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_EVENT_ZONES_TIMESERIES</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="reset_lidar_hub">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.reset_lidar_hub">[docs]</a>
+<span class="k">def</span> <span class="nf">reset_lidar_hub</span> <span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    restarts the lidar hub.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_RESET</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="get_lidar_hub_active_rec">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.get_lidar_hub_active_rec">[docs]</a>
+<span class="k">def</span> <span class="nf">get_lidar_hub_active_rec</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    Get active user recordings.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_ACTIVE_REC</span><span class="o">.</span><span class="n">value</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="start_lidar_hub_rec">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.start_lidar_hub_rec">[docs]</a>
+<span class="k">def</span> <span class="nf">start_lidar_hub_rec</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span><span class="n">body_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    starts a user reconrding.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    body_path: str</span>
+<span class="sd">        the path to the request body file in **json** format.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">body_path</span><span class="p">,</span><span class="s1">&#39;rt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">request_body</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_START_REC</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="n">json</span> <span class="o">=</span> <span class="n">request_body</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="stop_lidar_hub_rec">
+<a class="viewcode-back" href="../gemini_lidar_hub_API.html#gemini_lidar_hub_API.stop_lidar_hub_rec">[docs]</a>
+<span class="k">def</span> <span class="nf">stop_lidar_hub_rec</span><span class="p">(</span><span class="n">session</span> <span class="p">:</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">,</span><span class="nb">id</span><span class="p">:</span><span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">Response</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description</span>
+<span class="sd">    ----------- </span>
+<span class="sd">    stops a user recording.</span>
+<span class="sd">    </span>
+<span class="sd">    Args</span>
+<span class="sd">    ----</span>
+<span class="sd">    session: requests.Session </span>
+<span class="sd">        a request session for HTTP requests.</span>
+<span class="sd">    id: str</span>
+<span class="sd">        query for the id for the required recording to be stopped.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    requests.Response</span>
+<span class="sd">        Response object, which contains a server&#39;s response to an HTTP request.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">URL</span> <span class="o">+</span> <span class="n">LidarHubEndPoint</span><span class="o">.</span><span class="n">LIDAR_HUB_STOP_REC</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="nb">id</span><span class="p">})</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">session</span> <span class="o">=</span> <span class="n">login</span><span class="o">.</span><span class="n">login_ouster</span><span class="p">()</span>
+
+    <span class="c1"># sensor = LidarHubEventZones(login.URL,session).get_lidar_hub_event_timeseries().text</span>
+    <span class="c1"># print(sensor)</span>
+    <span class="c1"># print(160*&#39;-&#39;)</span>
+    <span class="c1"># print(LidarHubEventZones(login.URL,session).get_lidar_hub_event_realtime().text)</span>
+    <span class="c1"># print(160*&#39;-&#39;)</span>
+    <span class="c1"># print(LidarHubEventZones(login.URL,session).get_lidar_hub_event_zones().text)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">set_lidar_hub_all_settings</span><span class="p">(</span><span class="n">session</span><span class="o">=</span> <span class="n">session</span><span class="p">,</span><span class="n">data_file</span><span class="o">=</span><span class="s1">&#39;/home/aymanlinux/ouster/ousterenv/ousterrepo/lidar_hub_config.json&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ayman Magdy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

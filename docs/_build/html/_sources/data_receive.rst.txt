@@ -1,0 +1,7 @@
+data receive
+============
+
+.. automodule:: gemini_data
+   :members:
+   :undoc-members:
+   :show-inheritance:

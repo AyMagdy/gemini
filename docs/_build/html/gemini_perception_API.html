@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>perception &mdash; Ouster Project 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Event Zones" href="gemini_event_zone_API.html" />
+    <link rel="prev" title="Lidar Hub" href="gemini_lidar_hub_API.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Ouster Project
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="projectdoc.html">project documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="codedoc.html">Code documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="codedoc.html#sorce-code">sorce code</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="codedoc.html#apis">APIs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gemini_login.html">Login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gemini_lidar_hub_API.html">Lidar Hub</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">perception</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#description">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gemini_event_zone_API.html">Event Zones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gemini_data_recording.html">Data Recording</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ouster Project</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="codedoc.html">Code documentation</a></li>
+      <li class="breadcrumb-item active">perception</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/gemini_perception_API.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="perception">
+<h1>perception<a class="headerlink" href="#perception" title="Link to this heading"></a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The module is used to set/get the setting of the perception.
+The module uses <code class="docutils literal notranslate"><span class="pre">URL</span></code> located at <a class="reference internal" href="gemini_login.html"><span class="doc">Login</span></a> as the base url.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>for more information on the module and for the information about the fields that can be altered in the
+JSON files being sent as request body please refere to the <a class="reference external" href="https://static.ouster.dev/ouster-detect/lidar_hub/lidar_hub.html#perception-software-stack">user manual</a>.</p>
+</div>
+<dl class="py class enum" id="module-gemini_perception_API">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint">
+<em class="property"><span class="pre">enum</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">PerceptionEndPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gemini_perception_API.html#PerceptionEndPoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>defines the endpoints of the url for more information refer to <a class="reference external" href="https://127.0.0.1/perception/api/v1/swagger/ui">ouster swagger api documentation</a></p>
+<p>Valid values are as follows:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.LIST_OF_ALL_SENSORS">
+<span class="sig-name descname"><span class="pre">LIST_OF_ALL_SENSORS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.LIST_OF_ALL_SENSORS:</span> <span class="pre">'perception/api/v1/sensor/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.LIST_OF_ALL_SENSORS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.LOAD_BACKGROUND">
+<span class="sig-name descname"><span class="pre">LOAD_BACKGROUND</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.LOAD_BACKGROUND:</span> <span class="pre">'perception/api/v1/background'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.LOAD_BACKGROUND" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.SETTINGS">
+<span class="sig-name descname"><span class="pre">SETTINGS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.SETTINGS:</span> <span class="pre">'perception/api/v1/settings/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.SETTINGS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.UNDERLAY_MAP">
+<span class="sig-name descname"><span class="pre">UNDERLAY_MAP</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.UNDERLAY_MAP:</span> <span class="pre">'perception/api/v1/underlay/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.UNDERLAY_MAP" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.UNDERLAY_CONFIG">
+<span class="sig-name descname"><span class="pre">UNDERLAY_CONFIG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.UNDERLAY_CONFIG:</span> <span class="pre">'perception/api/v1/underlay_config/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.UNDERLAY_CONFIG" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.SET_PROFILE">
+<span class="sig-name descname"><span class="pre">SET_PROFILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.SET_PROFILE:</span> <span class="pre">'perception/api/v1/set_profile/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.SET_PROFILE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.GET_PROFILE">
+<span class="sig-name descname"><span class="pre">GET_PROFILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.GET_PROFILE:</span> <span class="pre">'perception/api/v1/profile/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.GET_PROFILE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.DEFAULT_PROFILE">
+<span class="sig-name descname"><span class="pre">DEFAULT_PROFILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.DEFAULT_PROFILE:</span> <span class="pre">'perception/api/v1/profile_defaults/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.DEFAULT_PROFILE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.LIST_PROFILES">
+<span class="sig-name descname"><span class="pre">LIST_PROFILES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.LIST_PROFILES:</span> <span class="pre">'perception/api/v1/profiles/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.LIST_PROFILES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.RESTORE_PROFILE">
+<span class="sig-name descname"><span class="pre">RESTORE_PROFILE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.RESTORE_PROFILE:</span> <span class="pre">'perception/api/v1/restore_profile/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.RESTORE_PROFILE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.IMU_POSE">
+<span class="sig-name descname"><span class="pre">IMU_POSE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.IMU_POSE:</span> <span class="pre">'Perception/api/v1/imu_pose/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.IMU_POSE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.ALL_EXTRINSICS">
+<span class="sig-name descname"><span class="pre">ALL_EXTRINSICS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.ALL_EXTRINSICS:</span> <span class="pre">'perception/api/v1/extrinsics/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.ALL_EXTRINSICS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gemini_perception_API.PerceptionEndPoint.ICP_ALGORITHM">
+<span class="sig-name descname"><span class="pre">ICP_ALGORITHM</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PerceptionEndPoint.ICP_ALGORITHM:</span> <span class="pre">'perception/api/v1/extrinsics/icp/'&gt;</span></em><a class="headerlink" href="#gemini_perception_API.PerceptionEndPoint.ICP_ALGORITHM" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.add_perception_profile">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">add_perception_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#add_perception_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.add_perception_profile" title="Link to this definition"></a></dt>
+<dd><section id="id1">
+<h3>Description<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>add/update settings profile.</p>
+</section>
+<section id="args">
+<h3>Args<a class="headerlink" href="#args" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>body_path: str</dt><dd><p>the path for the file with the requited settings.</p>
+</dd>
+<dt>profile_name: str</dt><dd><p>the name of the added profile.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns<a class="headerlink" href="#returns" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.add_senor">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">add_senor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#add_senor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.add_senor" title="Link to this definition"></a></dt>
+<dd><section id="id2">
+<h3>Description<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>adds a new sensor to perception.</p>
+</section>
+<section id="id3">
+<h3>Args<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>host_name: str</dt><dd><p>the address of the sensor to be added.</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h3>Returns<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.clear_all_lidars">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">clear_all_lidars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#clear_all_lidars"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.clear_all_lidars" title="Link to this definition"></a></dt>
+<dd><section id="id5">
+<h3>Description<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>removes all lice sensors from perception.</p>
+</section>
+<section id="id6">
+<h3>Args<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id7">
+<h3>Returns<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.get_all_sensors">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">get_all_sensors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#get_all_sensors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.get_all_sensors" title="Link to this definition"></a></dt>
+<dd><section id="id8">
+<h3>Description<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<p>gets full list of sensors connected to perception pipeline.</p>
+</section>
+<section id="id9">
+<h3>Args<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id10">
+<h3>Returns<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.get_perception_profile_by_name">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">get_perception_profile_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#get_perception_profile_by_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.get_perception_profile_by_name" title="Link to this definition"></a></dt>
+<dd><section id="id11">
+<h3>Description<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
+<p>get the settings for the profile_name.</p>
+</section>
+<section id="id12">
+<h3>Args<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>profile_name: str</dt><dd><p>profile name.</p>
+</dd>
+</dl>
+</section>
+<section id="id13">
+<h3>Returns<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.get_perception_profile_defaults">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">get_perception_profile_defaults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gemini_perception_API.html#get_perception_profile_defaults"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.get_perception_profile_defaults" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.get_perception_profile_list">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">get_perception_profile_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#get_perception_profile_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.get_perception_profile_list" title="Link to this definition"></a></dt>
+<dd><section id="id14">
+<h3>Description<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<p>get all list of profiles.</p>
+</section>
+<section id="id15">
+<h3>Args<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id16">
+<h3>Returns<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.get_perception_settings">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">get_perception_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#get_perception_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.get_perception_settings" title="Link to this definition"></a></dt>
+<dd><section id="id17">
+<h3>Description<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<p>get all current settings.</p>
+</section>
+<section id="id18">
+<h3>Args<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id19">
+<h3>Returns<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.get_sensor_by_status">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">get_sensor_by_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#get_sensor_by_status"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.get_sensor_by_status" title="Link to this definition"></a></dt>
+<dd><section id="id20">
+<h3>Description<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<p>gets list of sensors with the passed status query.</p>
+</section>
+<section id="id21">
+<h3>Args<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>status: str</dt><dd><p>active or inactive</p>
+</dd>
+</dl>
+</section>
+<section id="id22">
+<h3>Returns<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.get_underlay_config">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">get_underlay_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#get_underlay_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.get_underlay_config" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.get_underlay_map">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">get_underlay_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#get_underlay_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.get_underlay_map" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.load_backgrounds">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">load_backgrounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#load_backgrounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.load_backgrounds" title="Link to this definition"></a></dt>
+<dd><section id="id23">
+<h3>Description<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<p>Load all current background available for all sensors.</p>
+</section>
+<section id="id24">
+<h3>Args<a class="headerlink" href="#id24" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id25">
+<h3>Returns<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.remove_perception_profile">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">remove_perception_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#remove_perception_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.remove_perception_profile" title="Link to this definition"></a></dt>
+<dd><section id="id26">
+<h3>Description<a class="headerlink" href="#id26" title="Link to this heading"></a></h3>
+<p>delete settings profile.</p>
+</section>
+<section id="id27">
+<h3>Args<a class="headerlink" href="#id27" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>profile_name: str</dt><dd><p>the name of the needed profile.</p>
+</dd>
+</dl>
+</section>
+<section id="id28">
+<h3>Returns<a class="headerlink" href="#id28" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.remove_sensor">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">remove_sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensor_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#remove_sensor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.remove_sensor" title="Link to this definition"></a></dt>
+<dd><section id="id29">
+<h3>Description<a class="headerlink" href="#id29" title="Link to this heading"></a></h3>
+<p>removes the sensor with the passed query sensor_id.</p>
+</section>
+<section id="id30">
+<h3>Args<a class="headerlink" href="#id30" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>sensor_id: str</dt><dd><p>required senosr serial number to be removed.</p>
+</dd>
+</dl>
+</section>
+<section id="id31">
+<h3>Returns<a class="headerlink" href="#id31" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.restore_to_defaults">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">restore_to_defaults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gemini_perception_API.html#restore_to_defaults"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.restore_to_defaults" title="Link to this definition"></a></dt>
+<dd><section id="id32">
+<h3>Description<a class="headerlink" href="#id32" title="Link to this heading"></a></h3>
+<p>restores the profile to default values.</p>
+</section>
+<section id="id33">
+<h3>Args<a class="headerlink" href="#id33" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>profile_name: str</dt><dd><p>the name of the added profile.</p>
+</dd>
+</dl>
+</section>
+<section id="id34">
+<h3>Returns<a class="headerlink" href="#id34" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.save_backgrounds">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">save_backgrounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#save_backgrounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.save_backgrounds" title="Link to this definition"></a></dt>
+<dd><section id="id35">
+<h3>Description<a class="headerlink" href="#id35" title="Link to this heading"></a></h3>
+<p>Save background for all sensors.</p>
+</section>
+<section id="id36">
+<h3>Args<a class="headerlink" href="#id36" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+</dl>
+</section>
+<section id="id37">
+<h3>Returns<a class="headerlink" href="#id37" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.set_perception_current_profile">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">set_perception_current_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#set_perception_current_profile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.set_perception_current_profile" title="Link to this definition"></a></dt>
+<dd><section id="id38">
+<h3>Description<a class="headerlink" href="#id38" title="Link to this heading"></a></h3>
+<p>sets the current prfile by name</p>
+</section>
+<section id="id39">
+<h3>Args<a class="headerlink" href="#id39" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>profile_name: str</dt><dd><p>the required profile name to be set.</p>
+</dd>
+</dl>
+</section>
+<section id="id40">
+<h3>Returns<a class="headerlink" href="#id40" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.set_perception_setting">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">set_perception_setting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#set_perception_setting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.set_perception_setting" title="Link to this definition"></a></dt>
+<dd><section id="id41">
+<h3>Description<a class="headerlink" href="#id41" title="Link to this heading"></a></h3>
+<p>sets all perception settings.</p>
+</section>
+<section id="id42">
+<h3>Args<a class="headerlink" href="#id42" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>session: requests.Session </dt><dd><p>a request session for HTTP requests.</p>
+</dd>
+<dt>body_path: str</dt><dd><p>path to the file with the required settings in <strong>JSON</strong> format.</p>
+</dd>
+</dl>
+</section>
+<section id="id43">
+<h3>Returns<a class="headerlink" href="#id43" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>requests.Response</dt><dd><p>Response object, which contains a server’s response to an HTTP request.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.set_underlay_config">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">set_underlay_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#set_underlay_config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.set_underlay_config" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gemini_perception_API.set_underlay_map">
+<span class="sig-prename descclassname"><span class="pre">gemini_perception_API.</span></span><span class="sig-name descname"><span class="pre">set_underlay_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">body_path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Response</span></span></span><a class="reference internal" href="_modules/gemini_perception_API.html#set_underlay_map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gemini_perception_API.set_underlay_map" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gemini_lidar_hub_API.html" class="btn btn-neutral float-left" title="Lidar Hub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gemini_event_zone_API.html" class="btn btn-neutral float-right" title="Event Zones" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Ayman Magdy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
