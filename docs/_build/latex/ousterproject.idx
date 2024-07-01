@@ -1,124 +1,124 @@
-\indexentry{module@\spxentry{module}!main@\spxentry{main}|hyperpage}{9}
-\indexentry{main@\spxentry{main}!module@\spxentry{module}|hyperpage}{9}
-\indexentry{main() (in module main)@\spxentry{main()}\spxextra{in module main}|hyperpage}{9}
-\indexentry{module@\spxentry{module}!connection.socket\_connection@\spxentry{connection.socket\_connection}|hyperpage}{9}
-\indexentry{connection.socket\_connection@\spxentry{connection.socket\_connection}!module@\spxentry{module}|hyperpage}{9}
-\indexentry{ADDRESS (in module connection.socket\_connection)@\spxentry{ADDRESS}\spxextra{in module connection.socket\_connection}|hyperpage}{9}
-\indexentry{HOST (in module connection.socket\_connection)@\spxentry{HOST}\spxextra{in module connection.socket\_connection}|hyperpage}{9}
-\indexentry{PORT\_OBJECT\_LIST (in module connection.socket\_connection)@\spxentry{PORT\_OBJECT\_LIST}\spxextra{in module connection.socket\_connection}|hyperpage}{9}
-\indexentry{connect\_to\_ssl\_socket() (in module connection.socket\_connection)@\spxentry{connect\_to\_ssl\_socket()}\spxextra{in module connection.socket\_connection}|hyperpage}{9}
-\indexentry{module@\spxentry{module}!utilities.utilities@\spxentry{utilities.utilities}|hyperpage}{10}
-\indexentry{utilities.utilities@\spxentry{utilities.utilities}!module@\spxentry{module}|hyperpage}{10}
-\indexentry{get\_object\_list\_arr() (in module utilities.utilities)@\spxentry{get\_object\_list\_arr()}\spxextra{in module utilities.utilities}|hyperpage}{10}
-\indexentry{get\_root\_info() (in module utilities.utilities)@\spxentry{get\_root\_info()}\spxextra{in module utilities.utilities}|hyperpage}{10}
-\indexentry{object\_key (in module utilities.utilities)@\spxentry{object\_key}\spxextra{in module utilities.utilities}|hyperpage}{10}
-\indexentry{recv\_stream() (in module utilities.utilities)@\spxentry{recv\_stream()}\spxextra{in module utilities.utilities}|hyperpage}{11}
-\indexentry{rootinfo\_key (in module utilities.utilities)@\spxentry{rootinfo\_key}\spxextra{in module utilities.utilities}|hyperpage}{11}
-\indexentry{module@\spxentry{module}!processing.data\_processing@\spxentry{processing.data\_processing}|hyperpage}{11}
-\indexentry{processing.data\_processing@\spxentry{processing.data\_processing}!module@\spxentry{module}|hyperpage}{11}
-\indexentry{TIMESTAMP (in module processing.data\_processing)@\spxentry{TIMESTAMP}\spxextra{in module processing.data\_processing}|hyperpage}{11}
-\indexentry{get\_from\_queue() (in module processing.data\_processing)@\spxentry{get\_from\_queue()}\spxextra{in module processing.data\_processing}|hyperpage}{11}
-\indexentry{processing\_from\_queue() (in module processing.data\_processing)@\spxentry{processing\_from\_queue()}\spxextra{in module processing.data\_processing}|hyperpage}{12}
-\indexentry{put\_object\_to\_queue() (in module processing.data\_processing)@\spxentry{put\_object\_to\_queue()}\spxextra{in module processing.data\_processing}|hyperpage}{12}
-\indexentry{module@\spxentry{module}!processing.utils@\spxentry{processing.utils}|hyperpage}{12}
-\indexentry{processing.utils@\spxentry{processing.utils}!module@\spxentry{module}|hyperpage}{12}
-\indexentry{calc\_pos\_mag\_diff() (in module processing.utils)@\spxentry{calc\_pos\_mag\_diff()}\spxextra{in module processing.utils}|hyperpage}{12}
-\indexentry{calc\_vel\_mag\_diff() (in module processing.utils)@\spxentry{calc\_vel\_mag\_diff()}\spxextra{in module processing.utils}|hyperpage}{12}
-\indexentry{get\_dis\_from\_sensor() (in module processing.utils)@\spxentry{get\_dis\_from\_sensor()}\spxextra{in module processing.utils}|hyperpage}{13}
-\indexentry{get\_hed\_df() (in module processing.utils)@\spxentry{get\_hed\_df()}\spxextra{in module processing.utils}|hyperpage}{13}
-\indexentry{get\_nearest\_from\_sensor() (in module processing.utils)@\spxentry{get\_nearest\_from\_sensor()}\spxextra{in module processing.utils}|hyperpage}{13}
-\indexentry{get\_pos\_df() (in module processing.utils)@\spxentry{get\_pos\_df()}\spxextra{in module processing.utils}|hyperpage}{13}
-\indexentry{get\_vel\_df() (in module processing.utils)@\spxentry{get\_vel\_df()}\spxextra{in module processing.utils}|hyperpage}{14}
-\indexentry{time\_to\_col() (in module processing.utils)@\spxentry{time\_to\_col()}\spxextra{in module processing.utils}|hyperpage}{14}
-\indexentry{module@\spxentry{module}!gemini\_login@\spxentry{gemini\_login}|hyperpage}{14}
-\indexentry{gemini\_login@\spxentry{gemini\_login}!module@\spxentry{module}|hyperpage}{14}
-\indexentry{URL (in module gemini\_login)@\spxentry{URL}\spxextra{in module gemini\_login}|hyperpage}{14}
-\indexentry{login\_ouster() (in module gemini\_login)@\spxentry{login\_ouster()}\spxextra{in module gemini\_login}|hyperpage}{14}
-\indexentry{module@\spxentry{module}!gemini\_lidar\_hub\_API@\spxentry{gemini\_lidar\_hub\_API}|hyperpage}{15}
-\indexentry{gemini\_lidar\_hub\_API@\spxentry{gemini\_lidar\_hub\_API}!module@\spxentry{module}|hyperpage}{15}
-\indexentry{STATIC\_INFO (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{STATIC\_INFO}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{15}
-\indexentry{SYSTEM\_DIAGNOSTICS (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{SYSTEM\_DIAGNOSTICS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{15}
-\indexentry{SYSTEM\_HEALTH (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{SYSTEM\_HEALTH}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{15}
-\indexentry{LIDAR\_TELEMETRY (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_TELEMETRY}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{15}
-\indexentry{LIDAR\_HUB\_DEFAULTS (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_DEFAULTS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{15}
-\indexentry{LIDAR\_HUB\_SETTINGS (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_SETTINGS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{15}
-\indexentry{LIDAR\_HUB\_WORLD (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_WORLD}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{15}
-\indexentry{LIDAR\_HUB\_EVENT\_ZONES (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{15}
-\indexentry{LIDAR\_HUB\_EVENT\_ZONES\_ACTIVE (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES\_ACTIVE}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{16}
-\indexentry{LIDAR\_HUB\_EVENT\_ZONES\_ALERTS (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES\_ALERTS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{16}
-\indexentry{LIDAR\_HUB\_EVENT\_ZONES\_REALTME (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES\_REALTME}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{16}
-\indexentry{LIDAR\_HUB\_EVENT\_ZONES\_TIMESERIES (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES\_TIMESERIES}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{16}
-\indexentry{LIDAR\_HUB\_RESET (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_RESET}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{16}
-\indexentry{LIDAR\_HUB\_ACTIVE\_REC (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_ACTIVE\_REC}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{16}
-\indexentry{LIDAR\_HUB\_START\_REC (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_START\_REC}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{16}
-\indexentry{LIDAR\_HUB\_STOP\_REC (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_STOP\_REC}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{16}
-\indexentry{get\_lidar\_hub\_active\_rec() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_active\_rec()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{16}
-\indexentry{get\_lidar\_hub\_all\_settings() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_all\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{16}
-\indexentry{get\_lidar\_hub\_default\_settings() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_default\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{17}
-\indexentry{get\_lidar\_hub\_diagnostics() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_diagnostics()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{17}
-\indexentry{get\_lidar\_hub\_event\_active() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_active()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{18}
-\indexentry{get\_lidar\_hub\_event\_alerts() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_alerts()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{18}
-\indexentry{get\_lidar\_hub\_event\_realtime() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_realtime()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{19}
-\indexentry{get\_lidar\_hub\_event\_timeseries() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_timeseries()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{19}
-\indexentry{get\_lidar\_hub\_event\_zones() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_zones()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{19}
-\indexentry{get\_lidar\_hub\_health() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_health()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{20}
-\indexentry{get\_lidar\_hub\_info() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_info()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{20}
-\indexentry{get\_lidar\_hub\_telemetry() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_telemetry()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{21}
-\indexentry{get\_lidar\_hub\_world\_coordinates() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_world\_coordinates()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{21}
-\indexentry{reset\_lidar\_hub() (in module gemini\_lidar\_hub\_API)@\spxentry{reset\_lidar\_hub()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{21}
-\indexentry{reset\_lidar\_hub\_default\_settings() (in module gemini\_lidar\_hub\_API)@\spxentry{reset\_lidar\_hub\_default\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{22}
-\indexentry{set\_lidar\_hub\_all\_settings() (in module gemini\_lidar\_hub\_API)@\spxentry{set\_lidar\_hub\_all\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{22}
-\indexentry{set\_lidar\_hub\_world\_coordinates() (in module gemini\_lidar\_hub\_API)@\spxentry{set\_lidar\_hub\_world\_coordinates()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{23}
-\indexentry{start\_lidar\_hub\_rec() (in module gemini\_lidar\_hub\_API)@\spxentry{start\_lidar\_hub\_rec()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{23}
-\indexentry{stop\_lidar\_hub\_rec() (in module gemini\_lidar\_hub\_API)@\spxentry{stop\_lidar\_hub\_rec()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{23}
-\indexentry{module@\spxentry{module}!gemini\_perception\_API@\spxentry{gemini\_perception\_API}|hyperpage}{24}
-\indexentry{gemini\_perception\_API@\spxentry{gemini\_perception\_API}!module@\spxentry{module}|hyperpage}{24}
-\indexentry{LIST\_OF\_ALL\_SENSORS (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{LIST\_OF\_ALL\_SENSORS}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{24}
-\indexentry{LOAD\_BACKGROUND (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{LOAD\_BACKGROUND}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{24}
-\indexentry{SETTINGS (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{SETTINGS}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{24}
-\indexentry{UNDERLAY\_MAP (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{UNDERLAY\_MAP}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{24}
-\indexentry{UNDERLAY\_CONFIG (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{UNDERLAY\_CONFIG}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{24}
-\indexentry{SET\_PROFILE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{SET\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{24}
-\indexentry{GET\_PROFILE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{GET\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{24}
-\indexentry{DEFAULT\_PROFILE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{DEFAULT\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{24}
-\indexentry{LIST\_PROFILES (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{LIST\_PROFILES}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{24}
-\indexentry{RESTORE\_PROFILE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{RESTORE\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{25}
-\indexentry{IMU\_POSE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{IMU\_POSE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{25}
-\indexentry{ALL\_EXTRINSICS (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{ALL\_EXTRINSICS}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{25}
-\indexentry{ICP\_ALGORITHM (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{ICP\_ALGORITHM}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{25}
-\indexentry{add\_perception\_profile() (in module gemini\_perception\_API)@\spxentry{add\_perception\_profile()}\spxextra{in module gemini\_perception\_API}|hyperpage}{25}
-\indexentry{add\_senor() (in module gemini\_perception\_API)@\spxentry{add\_senor()}\spxextra{in module gemini\_perception\_API}|hyperpage}{25}
-\indexentry{clear\_all\_lidars() (in module gemini\_perception\_API)@\spxentry{clear\_all\_lidars()}\spxextra{in module gemini\_perception\_API}|hyperpage}{26}
-\indexentry{get\_all\_sensors() (in module gemini\_perception\_API)@\spxentry{get\_all\_sensors()}\spxextra{in module gemini\_perception\_API}|hyperpage}{26}
-\indexentry{get\_perception\_profile\_by\_name() (in module gemini\_perception\_API)@\spxentry{get\_perception\_profile\_by\_name()}\spxextra{in module gemini\_perception\_API}|hyperpage}{27}
-\indexentry{get\_perception\_profile\_defaults() (in module gemini\_perception\_API)@\spxentry{get\_perception\_profile\_defaults()}\spxextra{in module gemini\_perception\_API}|hyperpage}{27}
-\indexentry{get\_perception\_profile\_list() (in module gemini\_perception\_API)@\spxentry{get\_perception\_profile\_list()}\spxextra{in module gemini\_perception\_API}|hyperpage}{27}
-\indexentry{get\_perception\_settings() (in module gemini\_perception\_API)@\spxentry{get\_perception\_settings()}\spxextra{in module gemini\_perception\_API}|hyperpage}{27}
-\indexentry{get\_sensor\_by\_status() (in module gemini\_perception\_API)@\spxentry{get\_sensor\_by\_status()}\spxextra{in module gemini\_perception\_API}|hyperpage}{28}
-\indexentry{get\_underlay\_config() (in module gemini\_perception\_API)@\spxentry{get\_underlay\_config()}\spxextra{in module gemini\_perception\_API}|hyperpage}{28}
-\indexentry{get\_underlay\_map() (in module gemini\_perception\_API)@\spxentry{get\_underlay\_map()}\spxextra{in module gemini\_perception\_API}|hyperpage}{28}
-\indexentry{load\_backgrounds() (in module gemini\_perception\_API)@\spxentry{load\_backgrounds()}\spxextra{in module gemini\_perception\_API}|hyperpage}{28}
-\indexentry{remove\_perception\_profile() (in module gemini\_perception\_API)@\spxentry{remove\_perception\_profile()}\spxextra{in module gemini\_perception\_API}|hyperpage}{29}
-\indexentry{remove\_sensor() (in module gemini\_perception\_API)@\spxentry{remove\_sensor()}\spxextra{in module gemini\_perception\_API}|hyperpage}{29}
-\indexentry{restore\_to\_defaults() (in module gemini\_perception\_API)@\spxentry{restore\_to\_defaults()}\spxextra{in module gemini\_perception\_API}|hyperpage}{30}
-\indexentry{save\_backgrounds() (in module gemini\_perception\_API)@\spxentry{save\_backgrounds()}\spxextra{in module gemini\_perception\_API}|hyperpage}{30}
-\indexentry{set\_perception\_current\_profile() (in module gemini\_perception\_API)@\spxentry{set\_perception\_current\_profile()}\spxextra{in module gemini\_perception\_API}|hyperpage}{31}
-\indexentry{set\_perception\_setting() (in module gemini\_perception\_API)@\spxentry{set\_perception\_setting()}\spxextra{in module gemini\_perception\_API}|hyperpage}{31}
-\indexentry{set\_underlay\_config() (in module gemini\_perception\_API)@\spxentry{set\_underlay\_config()}\spxextra{in module gemini\_perception\_API}|hyperpage}{32}
-\indexentry{set\_underlay\_map() (in module gemini\_perception\_API)@\spxentry{set\_underlay\_map()}\spxextra{in module gemini\_perception\_API}|hyperpage}{32}
-\indexentry{module@\spxentry{module}!gemini\_event\_zone\_API@\spxentry{gemini\_event\_zone\_API}|hyperpage}{32}
-\indexentry{gemini\_event\_zone\_API@\spxentry{gemini\_event\_zone\_API}!module@\spxentry{module}|hyperpage}{32}
-\indexentry{GET\_ALL\_EVENTS (gemini\_event\_zone\_API.EventEndPoint attribute)@\spxentry{GET\_ALL\_EVENTS}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}|hyperpage}{32}
-\indexentry{REMOVE\_ZONE\_ID (gemini\_event\_zone\_API.EventEndPoint attribute)@\spxentry{REMOVE\_ZONE\_ID}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}|hyperpage}{32}
-\indexentry{DIAGNOSTICS (gemini\_event\_zone\_API.EventEndPoint attribute)@\spxentry{DIAGNOSTICS}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}|hyperpage}{32}
-\indexentry{STATIC\_INFO (gemini\_event\_zone\_API.EventEndPoint attribute)@\spxentry{STATIC\_INFO}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}|hyperpage}{32}
-\indexentry{add\_event\_zone\_zones() (in module gemini\_event\_zone\_API)@\spxentry{add\_event\_zone\_zones()}\spxextra{in module gemini\_event\_zone\_API}|hyperpage}{32}
-\indexentry{add\_zone\_id() (in module gemini\_event\_zone\_API)@\spxentry{add\_zone\_id()}\spxextra{in module gemini\_event\_zone\_API}|hyperpage}{33}
-\indexentry{get\_event\_zone\_all\_zones() (in module gemini\_event\_zone\_API)@\spxentry{get\_event\_zone\_all\_zones()}\spxextra{in module gemini\_event\_zone\_API}|hyperpage}{33}
-\indexentry{get\_event\_zone\_telemetry() (in module gemini\_event\_zone\_API)@\spxentry{get\_event\_zone\_telemetry()}\spxextra{in module gemini\_event\_zone\_API}|hyperpage}{34}
-\indexentry{module@\spxentry{module}!gemini\_data\_recording@\spxentry{gemini\_data\_recording}|hyperpage}{34}
-\indexentry{gemini\_data\_recording@\spxentry{gemini\_data\_recording}!module@\spxentry{module}|hyperpage}{34}
-\indexentry{JSON\_BINARY\_DATA\_ENDPOINT (gemini\_data\_recording.DataEndPoint attribute)@\spxentry{JSON\_BINARY\_DATA\_ENDPOINT}\spxextra{gemini\_data\_recording.DataEndPoint attribute}|hyperpage}{34}
-\indexentry{AGGREGATION\_DATA\_ENDPOINT (gemini\_data\_recording.DataEndPoint attribute)@\spxentry{AGGREGATION\_DATA\_ENDPOINT}\spxextra{gemini\_data\_recording.DataEndPoint attribute}|hyperpage}{35}
-\indexentry{aggregation\_data() (in module gemini\_data\_recording)@\spxentry{aggregation\_data()}\spxextra{in module gemini\_data\_recording}|hyperpage}{35}
-\indexentry{json\_binary\_data() (in module gemini\_data\_recording)@\spxentry{json\_binary\_data()}\spxextra{in module gemini\_data\_recording}|hyperpage}{35}
+\indexentry{module@\spxentry{module}!main@\spxentry{main}|hyperpage}{11}
+\indexentry{main@\spxentry{main}!module@\spxentry{module}|hyperpage}{11}
+\indexentry{main() (in module main)@\spxentry{main()}\spxextra{in module main}|hyperpage}{11}
+\indexentry{module@\spxentry{module}!connection.socket\_connection@\spxentry{connection.socket\_connection}|hyperpage}{11}
+\indexentry{connection.socket\_connection@\spxentry{connection.socket\_connection}!module@\spxentry{module}|hyperpage}{11}
+\indexentry{ADDRESS (in module connection.socket\_connection)@\spxentry{ADDRESS}\spxextra{in module connection.socket\_connection}|hyperpage}{11}
+\indexentry{HOST (in module connection.socket\_connection)@\spxentry{HOST}\spxextra{in module connection.socket\_connection}|hyperpage}{11}
+\indexentry{PORT\_OBJECT\_LIST (in module connection.socket\_connection)@\spxentry{PORT\_OBJECT\_LIST}\spxextra{in module connection.socket\_connection}|hyperpage}{11}
+\indexentry{connect\_to\_ssl\_socket() (in module connection.socket\_connection)@\spxentry{connect\_to\_ssl\_socket()}\spxextra{in module connection.socket\_connection}|hyperpage}{11}
+\indexentry{module@\spxentry{module}!utilities.utilities@\spxentry{utilities.utilities}|hyperpage}{12}
+\indexentry{utilities.utilities@\spxentry{utilities.utilities}!module@\spxentry{module}|hyperpage}{12}
+\indexentry{get\_object\_list\_arr() (in module utilities.utilities)@\spxentry{get\_object\_list\_arr()}\spxextra{in module utilities.utilities}|hyperpage}{12}
+\indexentry{get\_root\_info() (in module utilities.utilities)@\spxentry{get\_root\_info()}\spxextra{in module utilities.utilities}|hyperpage}{12}
+\indexentry{object\_key (in module utilities.utilities)@\spxentry{object\_key}\spxextra{in module utilities.utilities}|hyperpage}{12}
+\indexentry{recv\_stream() (in module utilities.utilities)@\spxentry{recv\_stream()}\spxextra{in module utilities.utilities}|hyperpage}{13}
+\indexentry{rootinfo\_key (in module utilities.utilities)@\spxentry{rootinfo\_key}\spxextra{in module utilities.utilities}|hyperpage}{13}
+\indexentry{module@\spxentry{module}!processing.data\_processing@\spxentry{processing.data\_processing}|hyperpage}{13}
+\indexentry{processing.data\_processing@\spxentry{processing.data\_processing}!module@\spxentry{module}|hyperpage}{13}
+\indexentry{TIMESTAMP (in module processing.data\_processing)@\spxentry{TIMESTAMP}\spxextra{in module processing.data\_processing}|hyperpage}{13}
+\indexentry{get\_from\_queue() (in module processing.data\_processing)@\spxentry{get\_from\_queue()}\spxextra{in module processing.data\_processing}|hyperpage}{13}
+\indexentry{processing\_from\_queue() (in module processing.data\_processing)@\spxentry{processing\_from\_queue()}\spxextra{in module processing.data\_processing}|hyperpage}{14}
+\indexentry{put\_object\_to\_queue() (in module processing.data\_processing)@\spxentry{put\_object\_to\_queue()}\spxextra{in module processing.data\_processing}|hyperpage}{14}
+\indexentry{module@\spxentry{module}!processing.utils@\spxentry{processing.utils}|hyperpage}{14}
+\indexentry{processing.utils@\spxentry{processing.utils}!module@\spxentry{module}|hyperpage}{14}
+\indexentry{calc\_pos\_mag\_diff() (in module processing.utils)@\spxentry{calc\_pos\_mag\_diff()}\spxextra{in module processing.utils}|hyperpage}{14}
+\indexentry{calc\_vel\_mag\_diff() (in module processing.utils)@\spxentry{calc\_vel\_mag\_diff()}\spxextra{in module processing.utils}|hyperpage}{14}
+\indexentry{get\_dis\_from\_sensor() (in module processing.utils)@\spxentry{get\_dis\_from\_sensor()}\spxextra{in module processing.utils}|hyperpage}{15}
+\indexentry{get\_hed\_df() (in module processing.utils)@\spxentry{get\_hed\_df()}\spxextra{in module processing.utils}|hyperpage}{15}
+\indexentry{get\_nearest\_from\_sensor() (in module processing.utils)@\spxentry{get\_nearest\_from\_sensor()}\spxextra{in module processing.utils}|hyperpage}{15}
+\indexentry{get\_pos\_df() (in module processing.utils)@\spxentry{get\_pos\_df()}\spxextra{in module processing.utils}|hyperpage}{15}
+\indexentry{get\_vel\_df() (in module processing.utils)@\spxentry{get\_vel\_df()}\spxextra{in module processing.utils}|hyperpage}{16}
+\indexentry{time\_to\_col() (in module processing.utils)@\spxentry{time\_to\_col()}\spxextra{in module processing.utils}|hyperpage}{16}
+\indexentry{module@\spxentry{module}!gemini\_login@\spxentry{gemini\_login}|hyperpage}{16}
+\indexentry{gemini\_login@\spxentry{gemini\_login}!module@\spxentry{module}|hyperpage}{16}
+\indexentry{URL (in module gemini\_login)@\spxentry{URL}\spxextra{in module gemini\_login}|hyperpage}{16}
+\indexentry{login\_ouster() (in module gemini\_login)@\spxentry{login\_ouster()}\spxextra{in module gemini\_login}|hyperpage}{16}
+\indexentry{module@\spxentry{module}!gemini\_lidar\_hub\_API@\spxentry{gemini\_lidar\_hub\_API}|hyperpage}{17}
+\indexentry{gemini\_lidar\_hub\_API@\spxentry{gemini\_lidar\_hub\_API}!module@\spxentry{module}|hyperpage}{17}
+\indexentry{STATIC\_INFO (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{STATIC\_INFO}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{17}
+\indexentry{SYSTEM\_DIAGNOSTICS (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{SYSTEM\_DIAGNOSTICS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{17}
+\indexentry{SYSTEM\_HEALTH (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{SYSTEM\_HEALTH}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{17}
+\indexentry{LIDAR\_TELEMETRY (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_TELEMETRY}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{17}
+\indexentry{LIDAR\_HUB\_DEFAULTS (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_DEFAULTS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{17}
+\indexentry{LIDAR\_HUB\_SETTINGS (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_SETTINGS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{17}
+\indexentry{LIDAR\_HUB\_WORLD (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_WORLD}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{17}
+\indexentry{LIDAR\_HUB\_EVENT\_ZONES (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{17}
+\indexentry{LIDAR\_HUB\_EVENT\_ZONES\_ACTIVE (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES\_ACTIVE}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{18}
+\indexentry{LIDAR\_HUB\_EVENT\_ZONES\_ALERTS (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES\_ALERTS}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{18}
+\indexentry{LIDAR\_HUB\_EVENT\_ZONES\_REALTME (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES\_REALTME}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{18}
+\indexentry{LIDAR\_HUB\_EVENT\_ZONES\_TIMESERIES (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_EVENT\_ZONES\_TIMESERIES}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{18}
+\indexentry{LIDAR\_HUB\_RESET (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_RESET}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{18}
+\indexentry{LIDAR\_HUB\_ACTIVE\_REC (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_ACTIVE\_REC}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{18}
+\indexentry{LIDAR\_HUB\_START\_REC (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_START\_REC}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{18}
+\indexentry{LIDAR\_HUB\_STOP\_REC (gemini\_lidar\_hub\_API.LidarHubEndPoint attribute)@\spxentry{LIDAR\_HUB\_STOP\_REC}\spxextra{gemini\_lidar\_hub\_API.LidarHubEndPoint attribute}|hyperpage}{18}
+\indexentry{get\_lidar\_hub\_active\_rec() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_active\_rec()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{18}
+\indexentry{get\_lidar\_hub\_all\_settings() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_all\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{18}
+\indexentry{get\_lidar\_hub\_default\_settings() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_default\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{19}
+\indexentry{get\_lidar\_hub\_diagnostics() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_diagnostics()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{19}
+\indexentry{get\_lidar\_hub\_event\_active() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_active()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{20}
+\indexentry{get\_lidar\_hub\_event\_alerts() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_alerts()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{20}
+\indexentry{get\_lidar\_hub\_event\_realtime() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_realtime()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{21}
+\indexentry{get\_lidar\_hub\_event\_timeseries() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_timeseries()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{21}
+\indexentry{get\_lidar\_hub\_event\_zones() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_event\_zones()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{21}
+\indexentry{get\_lidar\_hub\_health() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_health()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{22}
+\indexentry{get\_lidar\_hub\_info() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_info()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{22}
+\indexentry{get\_lidar\_hub\_telemetry() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_telemetry()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{23}
+\indexentry{get\_lidar\_hub\_world\_coordinates() (in module gemini\_lidar\_hub\_API)@\spxentry{get\_lidar\_hub\_world\_coordinates()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{23}
+\indexentry{reset\_lidar\_hub() (in module gemini\_lidar\_hub\_API)@\spxentry{reset\_lidar\_hub()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{23}
+\indexentry{reset\_lidar\_hub\_default\_settings() (in module gemini\_lidar\_hub\_API)@\spxentry{reset\_lidar\_hub\_default\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{24}
+\indexentry{set\_lidar\_hub\_all\_settings() (in module gemini\_lidar\_hub\_API)@\spxentry{set\_lidar\_hub\_all\_settings()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{24}
+\indexentry{set\_lidar\_hub\_world\_coordinates() (in module gemini\_lidar\_hub\_API)@\spxentry{set\_lidar\_hub\_world\_coordinates()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{25}
+\indexentry{start\_lidar\_hub\_rec() (in module gemini\_lidar\_hub\_API)@\spxentry{start\_lidar\_hub\_rec()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{25}
+\indexentry{stop\_lidar\_hub\_rec() (in module gemini\_lidar\_hub\_API)@\spxentry{stop\_lidar\_hub\_rec()}\spxextra{in module gemini\_lidar\_hub\_API}|hyperpage}{25}
+\indexentry{module@\spxentry{module}!gemini\_perception\_API@\spxentry{gemini\_perception\_API}|hyperpage}{26}
+\indexentry{gemini\_perception\_API@\spxentry{gemini\_perception\_API}!module@\spxentry{module}|hyperpage}{26}
+\indexentry{LIST\_OF\_ALL\_SENSORS (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{LIST\_OF\_ALL\_SENSORS}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{26}
+\indexentry{LOAD\_BACKGROUND (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{LOAD\_BACKGROUND}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{26}
+\indexentry{SETTINGS (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{SETTINGS}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{26}
+\indexentry{UNDERLAY\_MAP (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{UNDERLAY\_MAP}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{26}
+\indexentry{UNDERLAY\_CONFIG (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{UNDERLAY\_CONFIG}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{26}
+\indexentry{SET\_PROFILE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{SET\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{26}
+\indexentry{GET\_PROFILE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{GET\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{26}
+\indexentry{DEFAULT\_PROFILE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{DEFAULT\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{26}
+\indexentry{LIST\_PROFILES (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{LIST\_PROFILES}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{26}
+\indexentry{RESTORE\_PROFILE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{RESTORE\_PROFILE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{27}
+\indexentry{IMU\_POSE (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{IMU\_POSE}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{27}
+\indexentry{ALL\_EXTRINSICS (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{ALL\_EXTRINSICS}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{27}
+\indexentry{ICP\_ALGORITHM (gemini\_perception\_API.PerceptionEndPoint attribute)@\spxentry{ICP\_ALGORITHM}\spxextra{gemini\_perception\_API.PerceptionEndPoint attribute}|hyperpage}{27}
+\indexentry{add\_perception\_profile() (in module gemini\_perception\_API)@\spxentry{add\_perception\_profile()}\spxextra{in module gemini\_perception\_API}|hyperpage}{27}
+\indexentry{add\_senor() (in module gemini\_perception\_API)@\spxentry{add\_senor()}\spxextra{in module gemini\_perception\_API}|hyperpage}{27}
+\indexentry{clear\_all\_lidars() (in module gemini\_perception\_API)@\spxentry{clear\_all\_lidars()}\spxextra{in module gemini\_perception\_API}|hyperpage}{28}
+\indexentry{get\_all\_sensors() (in module gemini\_perception\_API)@\spxentry{get\_all\_sensors()}\spxextra{in module gemini\_perception\_API}|hyperpage}{28}
+\indexentry{get\_perception\_profile\_by\_name() (in module gemini\_perception\_API)@\spxentry{get\_perception\_profile\_by\_name()}\spxextra{in module gemini\_perception\_API}|hyperpage}{29}
+\indexentry{get\_perception\_profile\_defaults() (in module gemini\_perception\_API)@\spxentry{get\_perception\_profile\_defaults()}\spxextra{in module gemini\_perception\_API}|hyperpage}{29}
+\indexentry{get\_perception\_profile\_list() (in module gemini\_perception\_API)@\spxentry{get\_perception\_profile\_list()}\spxextra{in module gemini\_perception\_API}|hyperpage}{29}
+\indexentry{get\_perception\_settings() (in module gemini\_perception\_API)@\spxentry{get\_perception\_settings()}\spxextra{in module gemini\_perception\_API}|hyperpage}{29}
+\indexentry{get\_sensor\_by\_status() (in module gemini\_perception\_API)@\spxentry{get\_sensor\_by\_status()}\spxextra{in module gemini\_perception\_API}|hyperpage}{30}
+\indexentry{get\_underlay\_config() (in module gemini\_perception\_API)@\spxentry{get\_underlay\_config()}\spxextra{in module gemini\_perception\_API}|hyperpage}{30}
+\indexentry{get\_underlay\_map() (in module gemini\_perception\_API)@\spxentry{get\_underlay\_map()}\spxextra{in module gemini\_perception\_API}|hyperpage}{30}
+\indexentry{load\_backgrounds() (in module gemini\_perception\_API)@\spxentry{load\_backgrounds()}\spxextra{in module gemini\_perception\_API}|hyperpage}{30}
+\indexentry{remove\_perception\_profile() (in module gemini\_perception\_API)@\spxentry{remove\_perception\_profile()}\spxextra{in module gemini\_perception\_API}|hyperpage}{31}
+\indexentry{remove\_sensor() (in module gemini\_perception\_API)@\spxentry{remove\_sensor()}\spxextra{in module gemini\_perception\_API}|hyperpage}{31}
+\indexentry{restore\_to\_defaults() (in module gemini\_perception\_API)@\spxentry{restore\_to\_defaults()}\spxextra{in module gemini\_perception\_API}|hyperpage}{32}
+\indexentry{save\_backgrounds() (in module gemini\_perception\_API)@\spxentry{save\_backgrounds()}\spxextra{in module gemini\_perception\_API}|hyperpage}{32}
+\indexentry{set\_perception\_current\_profile() (in module gemini\_perception\_API)@\spxentry{set\_perception\_current\_profile()}\spxextra{in module gemini\_perception\_API}|hyperpage}{33}
+\indexentry{set\_perception\_setting() (in module gemini\_perception\_API)@\spxentry{set\_perception\_setting()}\spxextra{in module gemini\_perception\_API}|hyperpage}{33}
+\indexentry{set\_underlay\_config() (in module gemini\_perception\_API)@\spxentry{set\_underlay\_config()}\spxextra{in module gemini\_perception\_API}|hyperpage}{34}
+\indexentry{set\_underlay\_map() (in module gemini\_perception\_API)@\spxentry{set\_underlay\_map()}\spxextra{in module gemini\_perception\_API}|hyperpage}{34}
+\indexentry{module@\spxentry{module}!gemini\_event\_zone\_API@\spxentry{gemini\_event\_zone\_API}|hyperpage}{34}
+\indexentry{gemini\_event\_zone\_API@\spxentry{gemini\_event\_zone\_API}!module@\spxentry{module}|hyperpage}{34}
+\indexentry{GET\_ALL\_EVENTS (gemini\_event\_zone\_API.EventEndPoint attribute)@\spxentry{GET\_ALL\_EVENTS}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}|hyperpage}{34}
+\indexentry{REMOVE\_ZONE\_ID (gemini\_event\_zone\_API.EventEndPoint attribute)@\spxentry{REMOVE\_ZONE\_ID}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}|hyperpage}{34}
+\indexentry{DIAGNOSTICS (gemini\_event\_zone\_API.EventEndPoint attribute)@\spxentry{DIAGNOSTICS}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}|hyperpage}{34}
+\indexentry{STATIC\_INFO (gemini\_event\_zone\_API.EventEndPoint attribute)@\spxentry{STATIC\_INFO}\spxextra{gemini\_event\_zone\_API.EventEndPoint attribute}|hyperpage}{34}
+\indexentry{add\_event\_zone\_zones() (in module gemini\_event\_zone\_API)@\spxentry{add\_event\_zone\_zones()}\spxextra{in module gemini\_event\_zone\_API}|hyperpage}{34}
+\indexentry{add\_zone\_id() (in module gemini\_event\_zone\_API)@\spxentry{add\_zone\_id()}\spxextra{in module gemini\_event\_zone\_API}|hyperpage}{35}
+\indexentry{get\_event\_zone\_all\_zones() (in module gemini\_event\_zone\_API)@\spxentry{get\_event\_zone\_all\_zones()}\spxextra{in module gemini\_event\_zone\_API}|hyperpage}{35}
+\indexentry{get\_event\_zone\_telemetry() (in module gemini\_event\_zone\_API)@\spxentry{get\_event\_zone\_telemetry()}\spxextra{in module gemini\_event\_zone\_API}|hyperpage}{36}
+\indexentry{module@\spxentry{module}!gemini\_data\_recording@\spxentry{gemini\_data\_recording}|hyperpage}{36}
+\indexentry{gemini\_data\_recording@\spxentry{gemini\_data\_recording}!module@\spxentry{module}|hyperpage}{36}
+\indexentry{JSON\_BINARY\_DATA\_ENDPOINT (gemini\_data\_recording.DataEndPoint attribute)@\spxentry{JSON\_BINARY\_DATA\_ENDPOINT}\spxextra{gemini\_data\_recording.DataEndPoint attribute}|hyperpage}{36}
+\indexentry{AGGREGATION\_DATA\_ENDPOINT (gemini\_data\_recording.DataEndPoint attribute)@\spxentry{AGGREGATION\_DATA\_ENDPOINT}\spxextra{gemini\_data\_recording.DataEndPoint attribute}|hyperpage}{37}
+\indexentry{aggregation\_data() (in module gemini\_data\_recording)@\spxentry{aggregation\_data()}\spxextra{in module gemini\_data\_recording}|hyperpage}{37}
+\indexentry{json\_binary\_data() (in module gemini\_data\_recording)@\spxentry{json\_binary\_data()}\spxextra{in module gemini\_data\_recording}|hyperpage}{37}
