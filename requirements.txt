@@ -1,0 +1,4 @@
+sphinx-rtd-theme
+pandas
+numpy
+enum_tools[sphinx] 
