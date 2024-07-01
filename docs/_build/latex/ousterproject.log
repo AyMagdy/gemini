@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.1)  1 JUL 2024 05:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.1)  1 JUL 2024 05:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1585,12 +1585,12 @@ on_API.PerceptionEndPoint
 
 [43]) (./ousterproject.aux)
 Package rerunfilecheck Info: File `ousterproject.out' has not changed.
-(rerunfilecheck)             Checksum: 6B020BD91A6865308DA15E6A60657B60;18266.
+(rerunfilecheck)             Checksum: 6B990300ABB3767A1CF4011802B8ACE5;18271.
  ) 
 Here is how much of TeX's memory you used:
  16801 strings out of 480247
- 286270 string characters out of 5896152
- 656184 words of memory out of 5000000
+ 286271 string characters out of 5896152
+ 656185 words of memory out of 5000000
  34001 multiletter control sequences out of 15000+600000
  526868 words of font info for 73 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
@@ -1608,7 +1608,7 @@ ublic/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb
 re/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/txfonts/tcxbtt.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/txfonts/tcxtt.pfb>
-Output written on ousterproject.pdf (47 pages, 307653 bytes).
+Output written on ousterproject.pdf (47 pages, 307654 bytes).
 PDF statistics:
  1337 PDF objects out of 1440 (max. 8388607)
  1252 compressed objects within 13 object streams

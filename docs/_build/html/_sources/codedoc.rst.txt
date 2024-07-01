@@ -1,8 +1,8 @@
 Code Documentation
 ==================
 
-sorce code
-----------
+source code
+-----------
 .. toctree::
    :maxdepth: 4
    
