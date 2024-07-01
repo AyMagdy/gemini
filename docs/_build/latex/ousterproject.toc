@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {1.5}Data shape}{3}{section.1.5}%
 \contentsline {subsection}{\numberline {1.5.1}shape of received data from stream}{3}{subsection.1.5.1}%
 \contentsline {section}{\numberline {1.6}Data integrity}{7}{section.1.6}%
-\contentsline {chapter}{\numberline {2}Code documentation}{9}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Code Documentation}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}sorce code}{9}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}main}{9}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}connection package}{9}{subsection.2.1.2}%
