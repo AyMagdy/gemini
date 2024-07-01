@@ -1,6 +1,7 @@
-import connection.socket_connection as sockcon
+from connection import socket_connection as connect
 import utilities.utilities as utilities
 from processing import utils
+
 import json
 import ssl
 import queue
@@ -17,6 +18,10 @@ ENDIAN_TYPE = "big"
 FRAME_SIZE_B = 4
 QUEUE_MAX_SIZE = 10
 TIMESTAMP = {}
+"""
+global dictionary variable used to hold the data after being refined from the queue
+key is the *timestamp* values are 
+"""
 
 
 # Writes the received data from the stream to a queue
@@ -36,10 +41,12 @@ def put_object_to_queue(data_queue: queue.Queue, ssl_socket_client: ssl.SSLSocke
         if (data_queue.qsize() < data_queue.maxsize ):
             # logger.info("reading from tcp putting in queue queue size is %d",queue.qsize())
             frame_size_b = utilities.recv_stream(ssl_socket_client, FRAME_SIZE_B)
+            logger.info(f'the frame size is {frame_size_b}')
             if len(frame_size_b) == 0:
                 logger.info(f'error recieved frame size bytearray {len(frame_size_b)}')
                 break
             frame_size = int.from_bytes(frame_size_b, byteorder=ENDIAN_TYPE)
+            logger.info(f'the frame size is {frame_size}')
             data = utilities.recv_stream(ssl_socket_client, frame_size)
             if len(data) == 0:
                 logger.info(f'error recieved data length {len(data)}')
@@ -75,8 +82,6 @@ def get_from_queue(data_queue: queue.Queue,lock:Lock,q_ready_event:threading.Eve
                               
         Returns:
             None
-
-        Descritpion: //#//
     """
 
     global TIMESTAMP
@@ -88,9 +93,9 @@ def get_from_queue(data_queue: queue.Queue,lock:Lock,q_ready_event:threading.Eve
         logger.info('after waittting for queue')
         try:   # if queue is not empty pop to temp
             temp = data_queue.get()
-            logger.debug(f'temp is --------------------------------------------{temp}')
+            logger.info(f'temp is --------------------------------------------{temp}')
             timestamp_list      = utilities.get_root_info(temp,'timestamp')    # list of all time stamps received 
-            logger.debug(f'time stamplist from {__name__} is {timestamp_list}')
+            logger.info(f'time stamplist from {__name__} is {timestamp_list}')
             data_queue.task_done()
         except data_queue.empty:
             logger.info('queue is empty no data to read ')
@@ -112,7 +117,7 @@ def get_from_queue(data_queue: queue.Queue,lock:Lock,q_ready_event:threading.Eve
             obj = dict([('obj_id',obj_id),('creation_time',creation_time),
                         ('frame_count',frame_count),('classification',classification),
                         ('velocity',velocity),('position',position),('heading',heading),('distance_to_primary_sensor',distance_from_sensor)])
-            logger.info('get from queue has taken the LOCK')
+            # logger.info('get from queue has taken the LOCK')
             
             with lock:
                 logger.info('inside lock block')
@@ -128,6 +133,10 @@ def get_from_queue(data_queue: queue.Queue,lock:Lock,q_ready_event:threading.Eve
 def processing_from_queue(lock:Lock,d_ready_event:threading.Event)->None:
     """ Description:
             This function is meant to calculate furthur processes after refining the data from stream.
+            first convert the TIMESTAMP to ``pd.DataFrame`` of the related attribute 
+            ex: posdf, veldf
+            position data frame and velcoity data frame respectevily.
+            then call helper functions for calculations.
         
         Args:
             lock to protect shared resources
@@ -144,16 +153,17 @@ def processing_from_queue(lock:Lock,d_ready_event:threading.Event)->None:
         with lock:
             posdf = utils.get_pos_df(TIMESTAMP)
             veldf = utils.get_vel_df(TIMESTAMP)
+            # print(posdf)
             # heddf = utils.get_hed_df(TIMESTAMP) 
-            disdf = utils.get_dis_from_sensor(TIMESTAMP)
+            dis_from_sensor_df = utils.get_dis_from_sensor(TIMESTAMP)
  
         try:
-            indicies = list(utils.get_nearest_from_sensor(disdf,str(1)).index)
-            # print(utilities.get_velocity_diff(veldf,index1=indicies[0],index2=indicies[1]))
-            vel_mag = utils.calc_vel_mag_diff(veldf,0,index1=indicies[0],index2=indicies[1])
-            pos_mag = utils.calc_pos_mag_diff(posdf,0,index1=indicies[0],index2=indicies[1])
+            indicies    = list(utils.get_nearest_from_sensor(dis_from_sensor_df,str(1)).index)
+            vel_mag     = utils.calc_vel_mag_diff(veldf,0,index1=indicies[0],index2=indicies[1])
+            pos_mag     = utils.calc_pos_mag_diff(posdf,0,index1=indicies[0],index2=indicies[1])
             time_to_col = utils.time_to_col(vel=vel_mag,pos=pos_mag)
             print(f'Expected Time To Collision is {time_to_col}.')
+        
         except Exception as e:
             logger.info('EXCEPTION OCCURED RESTARTING THE THREAD WILL TAKE PLACE CONSIDER THE ERROR FIRST!!!')
             logger.info(f'{e}')
@@ -169,21 +179,22 @@ if __name__ == '__main__':
     logging.basicConfig(filename='mylogfile.log',filemode='w',format=logging_format, level=logging.INFO,datefmt="%H:%M:%S")
     
     lock = Lock()
-
+    QUEUE_READY_EVENT = threading.Event()
+    DATA_READY_EVENT = threading.Event()
     # creat a queue to recieve in it the data from the stream
     my_queue = queue.Queue(QUEUE_MAX_SIZE)
-    my_ssl = sockcon.connect_to_ssl_socket()
+    my_ssl = connect.connect_to_ssl_socket()
     
     with my_ssl:
          
-        thread1 = threading.Thread(target=put_object_to_queue,args=(my_queue,my_ssl))
-        thread2 = threading.Thread(target=get_from_queue,args=(my_queue,lock,))
-        thread3 = threading.Thread(target=processing_from_queue,args=(lock,))
+        thread1 = threading.Thread(target=put_object_to_queue,args=(my_queue,my_ssl,QUEUE_READY_EVENT))
+        # thread2 = threading.Thread(target=get_from_queue,args=(my_queue,lock,))
+        # thread3 = threading.Thread(target=processing_from_queue,args=(lock,))
 
         thread1.start()
-        thread2.start()
-        thread3.start()
+        # thread2.start()
+        # thread3.start()
 
-        thread2.join()
+        # thread2.join()
         thread1.join()
-        thread3.join()
+        # thread3.join()

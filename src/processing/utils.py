@@ -22,9 +22,9 @@ def get_pos_df(data_dict:dict)->pd.DataFrame:
             a helper funtion to iterate over the the time stamps being recieved from stream
             and converts the specified element (position) to a dataframe
         Args:
-            :data_dict: the recieved object list after time stamped
+            data_dict: the recieved object list after time stamped
         Returns:
-            pandas DataFrame
+            pd.DataFrame
     """
     pos = {}
     for key in data_dict.keys():
@@ -59,7 +59,7 @@ def get_dis_from_sensor(data_dict:dict)->pd.DataFrame:
         dis.update({key:data_dict[str(key)]['distance_to_primary_sensor']})
     return pd.DataFrame(dis)
 
-def get_nearest_from_sensor(dataframe:pd.DataFrame,stamp:str)->pd.Series:
+def get_nearest_from_sensor(dataframe:pd.DataFrame,col_stamp:str)->pd.Series:
     """ Description:
             this function find the nearest two objects from the senosr.
         Args:
@@ -68,7 +68,7 @@ def get_nearest_from_sensor(dataframe:pd.DataFrame,stamp:str)->pd.Series:
         Returns:
             series with the values of the distances
     """
-    return dataframe[stamp].nsmallest(2)
+    return dataframe[col_stamp].nsmallest(2)
 
 def calc_vel_mag_diff(dataframe:pd.DataFrame,stamp:int,index1:int,index2:int)-> np.floating:
     """ Description:

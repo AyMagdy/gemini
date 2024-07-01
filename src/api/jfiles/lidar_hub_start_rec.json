@@ -1,0 +1,8 @@
+{
+    "allow_concurrent": false,
+    "event_buffer_seconds": 30,
+    "id": "500500",
+    "max_recording_length_secs": 90,
+    "name": "asdflkj",
+    "severity": "INDETERMINATE"
+  }

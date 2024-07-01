@@ -1,0 +1,19 @@
+00:15:25: trying to connect
+00:15:25: connection established
+00:15:28: the frame size is bytearray(b'\x00\x00\x19\x90')
+00:15:28: the frame size is 6544
+00:15:28: queue size is 1
+00:15:28: [<_MainThread(MainThread, started 140076871045120)>, <Thread(Thread-1 (put_object_to_queue), started 140076301514304)>]
+00:15:28: queue is ready
+00:15:31: the frame size is bytearray(b'\x00\x00\x19\x90')
+00:15:31: the frame size is 6544
+00:15:31: queue size is 2
+00:15:31: [<_MainThread(MainThread, started 140076871045120)>, <Thread(Thread-1 (put_object_to_queue), started 140076301514304)>]
+00:15:34: the frame size is bytearray(b'\x00\x00\x19\x90')
+00:15:34: the frame size is 6544
+00:15:34: queue size is 3
+00:15:34: [<_MainThread(MainThread, started 140076871045120)>, <Thread(Thread-1 (put_object_to_queue), started 140076301514304)>]
+00:15:37: the frame size is bytearray(b'\x00\x00\x19\x90')
+00:15:37: the frame size is 6544
+00:15:37: queue size is 4
+00:15:37: [<_MainThread(MainThread, started 140076871045120)>, <Thread(Thread-1 (put_object_to_queue), started 140076301514304)>]

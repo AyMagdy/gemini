@@ -1,0 +1,122 @@
+{
+    "application": {
+        "id": "02:42:AC:64:00:07",
+        "logging": {
+            "console_log_level": 20
+        },
+        "ouster_connect": {
+            "host": "geminiconnect.ouster.com",
+            "customer_id": "",
+            "state": "provisioned",
+            "diagnostics_publishing_enabled": true,
+            "aggregation_publishing_enabled": false
+        },
+        "world": {
+            "latitude": 0.0,
+            "longitude": 0.0,
+            "azimuth": 0.0
+        }
+    },
+    "perception": {
+        "perception_websocket": {
+            "host": "perception",
+            "port": 3001
+        },
+        "event_zone_websocket": {
+            "host": "event-zones",
+            "port": 3004
+        },
+        "object_list": {
+            "host": "perception",
+            "port": 3002
+        },
+        "occupations": {
+            "host": "event-zones",
+            "port": 3003
+        },
+        "aggregation": {
+            "timeseries_secs": 60.0,
+            "realtime_hertz": 1.0,
+            "storage_path": "/opt/ouster/conf/data/storage"
+        },
+        "diagnostics": {
+            "interval_secs": 60.0
+        }
+    },
+    "mqtt_publishers": [
+        {
+            "source": "object_list|clusters|occupations|aggregation_realtime|aggregation_timeseries|diagnostics",
+            "host": "mqttbroker.mycompany.com",
+            "port": 1883,
+            "user_name": "",
+            "password": "",
+            "topic": "/ouster/${device_name}/data",
+            "qos": 1,
+            "data_hertz": 1,
+            "transmit_hertz": 1
+        }
+    ],
+    "tcp_servers": [
+        {
+            "source": "object_list",
+            "port": 3302,
+            "data_hertz": 1,
+            "transmit_hertz": 1
+        },
+        {
+            "source": "occupations",
+            "port": 3303,
+            "data_hertz": 1,
+            "transmit_hertz": 1
+        }
+    ],
+    "event_recorder": {
+        "json_data": {
+            "object_list_enabled": true,
+            "occupations_enabled": true,
+            "aggregation_timeseries_enabled": true,
+            "aggregation_realtime_enabled": true,
+            "diagnostics_enabled": true
+        },
+        "binary_data": {
+            "pointclouds_enabled": true,
+            "clusters_enabled": true,
+            "trackedobjects_enabled": true,
+            "images_enabled": true,
+            "zone_events_enabled": true
+        },
+        "max_rolling_buffer_secs": 60.0,
+        "reset_on_timeout": true,
+        "post_processor_enabled": true,
+        "retention_count": 9999,
+        "min_available_disk": 0.35,
+        "purge_strategy": "oldest",
+        "use_compression": true
+    },
+    "json_data_recorder": {
+        "object_list_enabled": true,
+        "occupations_enabled": true,
+        "aggregation_timeseries_enabled": true,
+        "aggregation_realtime_enabled": true,
+        "diagnostics_enabled": true,
+        "rotation_minutes": 5.0,
+        "retention_count": 288,
+        "min_available_disk": 0.35,
+        "purge_strategy": "oldest",
+        "use_compression": true
+    },
+    "binary_data_recorder": {
+        "pointclouds_enabled": true,
+        "clusters_enabled": true,
+        "trackedobjects_enabled": true,
+        "images_enabled": true,
+        "zone_events_enabled": true,
+        "rotation_minutes": 5.0,
+        "retention_count": 288,
+        "min_available_disk": 0.35,
+        "purge_strategy": "oldest",
+        "use_compression": true
+    },
+    "VERSION": "1.3.2",
+    "TIMESTAMP": "2023-11-15 00:53:36.697"
+}

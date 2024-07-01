@@ -1,0 +1,2329 @@
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "latitude": 30.0130557,
+    "longitude": 31.2088526,
+    "compute": {
+        "mac_address": "02:42:AC:64:00:05",
+        "os_version": "",
+        "last_upgrade": "",
+        "last_upgrade_timestamp": 0,
+        "total_cpu_cores": 12,
+        "total_memory": 8205262848,
+        "total_disk_space": 1081101176832,
+        "boot_timestamp": 1700329184.0,
+        "health": "ONLINE"
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "software_version": "1.3.0.0",
+        "settings_version": 3,
+        "is_aggregator": false,
+        "is_running": true,
+        "is_paused": false,
+        "license": "none",
+        "num_inclusion_zones": 0,
+        "num_exclusion_zones": 0,
+        "configuration": {
+            "VERSION": 3,
+            "current_profile": "default_settings",
+            "default_settings": {
+                "alignment": {
+                    "icp": {
+                        "knn_normals": 20,
+                        "max_correspondence_dist": 0.25,
+                        "max_iterations": 250,
+                        "min_diff_rotation_error": 0.003,
+                        "min_diff_translation_error": 0.03,
+                        "min_distance": 0.75,
+                        "random_sampling_filter": 0.95,
+                        "trimmed_dist_outlier_filter": 0.75
+                    },
+                    "object_identifier": {
+                        "num_frames_per_sensor": 200,
+                        "num_threads": 8,
+                        "ransac": {
+                            "fit_threshold": 0.1,
+                            "max_iterations": 100,
+                            "num_inliers": 300
+                        }
+                    }
+                },
+                "benchmark_timer": {
+                    "enabled": true,
+                    "num_measurements": 100
+                },
+                "diagnostics": {
+                    "cluster_delta_over_threshold": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "dropping_cluster": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "dropping_lidar_data": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "duplicate_node_hostname": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_lidar_connection": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_node_authentication": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_perception_client_connection": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_raw_client_connection": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "frame_rate_inconsistent": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "invalid_packet_source": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "lidar_frame_construction": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "lidar_packet_mismatch": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "lidar_timeout": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "max_num_logged_alerts": 1000,
+                    "near_sensor_blockage": {
+                        "active_duration": 3,
+                        "reset_duration": 5
+                    },
+                    "object_pipeline_slow": {
+                        "active_duration": 1,
+                        "reset_duration": 5
+                    },
+                    "perception_client_closed": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "perception_client_no_data": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "raw_client_closed": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "raw_client_no_data": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "tcp_client_behind": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "unresponsive_rest_server": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "websocket_client_behind": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    }
+                },
+                "execution": {
+                    "frame_rate": 10
+                },
+                "image": {
+                    "colorize_failed_points": true,
+                    "colorize_foreground": true,
+                    "foreground_hue": 140,
+                    "image_channel": "reflectivity",
+                    "image_publish_period": 2,
+                    "image_quality": 80,
+                    "supported_image_channels": "reflectivity, near_ir"
+                },
+                "license_manager": {
+                    "host": "host.docker.internal",
+                    "port": 5093
+                },
+                "lidar_manager": {
+                    "discover_host": "host.docker.internal",
+                    "discover_path": "discover",
+                    "discover_port": 8002,
+                    "filter_invalid_packets": false,
+                    "host_ip_addresses_path": "host_ip_addresses",
+                    "hostname_lookup_path": "host_address/",
+                    "low_bandwidth": true,
+                    "max_num_sensors": 8,
+                    "num_connection_retries": 10,
+                    "request_timeout_ms": 1000
+                },
+                "lidar_pipeline": {
+                    "background_filter": {
+                        "check_diagonal_neighbours": false,
+                        "dynamic_background_model": true,
+                        "fade_time": 200,
+                        "fade_to_free_ratio": 3,
+                        "free_space_acceleration_enabled": true,
+                        "free_space_rate_doubling_frames": 4,
+                        "max_range": 200,
+                        "neighbour_check_range": 1,
+                        "num_background_threads": 4,
+                        "num_clouds_for_init": 200,
+                        "occupied_angular_bin_ratio": 0.3,
+                        "period": 2,
+                        "range_resolution": 0.25,
+                        "reduce_last_occupancy_factor": 0
+                    },
+                    "blockage_detection": {
+                        "max_range": 3,
+                        "max_range_ratio_threshold": 1.1,
+                        "max_return_ratio_threshold": 1.2,
+                        "memory_factor": 0.995,
+                        "min_unblocked_range": 1,
+                        "min_unblocked_return_point_percentage": 0.1,
+                        "num_init_frames": 200,
+                        "num_stdev_outlier": 1.3
+                    },
+                    "cluster": {
+                        "area_cost_factor": 1,
+                        "bbox_algorithm": "brute_force",
+                        "bin_length": 0.2,
+                        "cost_method": "outlier",
+                        "degree_increment": 2,
+                        "min_size_pca": 1,
+                        "outlier_distance_threshold": 0.3,
+                        "point_type": "binned",
+                        "supported_bbox_algorithms": "rotating_calipers, pca, least_squares, brute_force, line_density",
+                        "supported_cost_methods": "distance, outlier",
+                        "supported_point_types": "convex_hull, all_points, binned"
+                    },
+                    "cluster_algorithm": "range_image",
+                    "cluster_downsample": {
+                        "enabled": false,
+                        "goal_density": 400,
+                        "max_points": 1000,
+                        "proportion_filled": 0.04
+                    },
+                    "cluster_filter": {
+                        "min_num_points": 7,
+                        "min_side_length": 0.15,
+                        "min_vertical_size": 0.3
+                    },
+                    "dbscan_clustering": {
+                        "min_points": 3,
+                        "tolerance": 0.5,
+                        "voxel_grid_resolution": 0.1
+                    },
+                    "enable_background_filter": true,
+                    "foreground_filter": {
+                        "filter_failed_points": false,
+                        "max_range_difference": 0.05,
+                        "min_num_neighbours": 3
+                    },
+                    "frame_delay_threshold": 1,
+                    "ground_filter": {
+                        "algorithm": "none",
+                        "height_threshold": 0.1,
+                        "maxima": {
+                            "distance_threshold": 0.01,
+                            "filter_size": 7,
+                            "grid_size": 200,
+                            "num_outliers": 1,
+                            "period": 10,
+                            "resolution": 0.25
+                        },
+                        "supported_algorithms": "none, level, maxima"
+                    },
+                    "ml_clustering": {
+                        "center_position.x": 0,
+                        "center_position.y": 0,
+                        "config_name": "ouster.config",
+                        "edge_buffer": 0.02,
+                        "ground_height": 0,
+                        "inference_timeout_ms": 1000,
+                        "init_timeout_ms": 20000,
+                        "max_height": 4,
+                        "max_range": 50,
+                        "ml_hostname": "ml-detection",
+                        "ml_port": 5000,
+                        "model_name": "ouster.model",
+                        "point_extraction_method": "zone",
+                        "subsampling_factor": 2,
+                        "supported_point_extraction_methods": "zone, zone_kdtree, point_kdtree"
+                    },
+                    "range_image_clustering": {
+                        "distance_threshold": 0.35,
+                        "max_dynamic_distance_threshold": 2.5,
+                        "propagate_using_failed_return": true
+                    },
+                    "supported_cluster_algorithms": "dbscan, range_image",
+                    "vertical_cluster_merge": {
+                        "enabled": true,
+                        "horizontal_distance_threshold": 0.1,
+                        "max_merge_dimension": 10,
+                        "vertical_distance_threshold": 0.2
+                    },
+                    "zone_filter": {
+                        "num_threads": 4
+                    }
+                },
+                "node_client": {
+                    "connection_max_idle_timeout_s": 30,
+                    "connection_no_data_threshold": 5,
+                    "connection_ping_interval_s": 5,
+                    "connection_query_interval_ms": 1000,
+                    "connection_timeout_ms": 1000,
+                    "message_aggregator": {
+                        "buffer_duration": 0,
+                        "cutoff_threshold_ms": 30000,
+                        "timeout_ms": 30000
+                    }
+                },
+                "object_pipeline": {
+                    "arrival_delta_threshold": 100,
+                    "classifier": {
+                        "algorithm": "naive_bayes",
+                        "bayes": {
+                            "classification_history_length": 3,
+                            "classification_min_distance_travelled": 0,
+                            "classification_min_duration": 0,
+                            "gaussian_bayes": {
+                                "bicycle_covariance_00": 0.0113495,
+                                "bicycle_covariance_01": 0.00051115,
+                                "bicycle_covariance_02": 0.00705464,
+                                "bicycle_covariance_03": 0.0252558,
+                                "bicycle_covariance_11": 0.00627105,
+                                "bicycle_covariance_12": 0.00795458,
+                                "bicycle_covariance_13": -0.046012,
+                                "bicycle_covariance_22": 0.0232398,
+                                "bicycle_covariance_23": -0.128223,
+                                "bicycle_covariance_33": 3.39542,
+                                "bicycle_height_mean": 1.45655,
+                                "bicycle_length_mean": 0.909452,
+                                "bicycle_prior": 0.25,
+                                "bicycle_speed_mean": 5.01956,
+                                "bicycle_width_mean": 0.493773,
+                                "large_vehicle_covariance_00": 22.4829,
+                                "large_vehicle_covariance_01": 1.311,
+                                "large_vehicle_covariance_02": 2.03149,
+                                "large_vehicle_covariance_03": 0.222239,
+                                "large_vehicle_covariance_11": 0.590513,
+                                "large_vehicle_covariance_12": 0.101144,
+                                "large_vehicle_covariance_13": -0.0748767,
+                                "large_vehicle_covariance_22": 0.783604,
+                                "large_vehicle_covariance_23": -0.177956,
+                                "large_vehicle_covariance_33": 4.95281,
+                                "large_vehicle_height_mean": 3.07935,
+                                "large_vehicle_length_mean": 9.27776,
+                                "large_vehicle_prior": 0.25,
+                                "large_vehicle_speed_mean": 7.40931,
+                                "large_vehicle_width_mean": 2.62311,
+                                "person_covariance_00": 0.0315029,
+                                "person_covariance_01": 0.0108767,
+                                "person_covariance_02": 0.0232198,
+                                "person_covariance_03": 0.00317313,
+                                "person_covariance_11": 0.0161911,
+                                "person_covariance_12": 0.0260381,
+                                "person_covariance_13": -0.00145304,
+                                "person_covariance_22": 0.107841,
+                                "person_covariance_23": 0.00296731,
+                                "person_covariance_33": 0.273765,
+                                "person_height_mean": 1.06823,
+                                "person_length_mean": 0.474202,
+                                "person_prior": 0.25,
+                                "person_speed_mean": 1.3024,
+                                "person_width_mean": 0.229742,
+                                "vehicle_covariance_00": 4.5942,
+                                "vehicle_covariance_01": 0.868025,
+                                "vehicle_covariance_02": 0.603113,
+                                "vehicle_covariance_03": 1.20541,
+                                "vehicle_covariance_11": 0.699897,
+                                "vehicle_covariance_12": 0.261618,
+                                "vehicle_covariance_13": -0.221759,
+                                "vehicle_covariance_22": 0.344327,
+                                "vehicle_covariance_23": -0.075143,
+                                "vehicle_covariance_33": 12.7922,
+                                "vehicle_height_mean": 1.41929,
+                                "vehicle_length_mean": 3.95565,
+                                "vehicle_prior": 0.25,
+                                "vehicle_speed_mean": 5.84423,
+                                "vehicle_width_mean": 1.81667
+                            },
+                            "naive_bayes": {
+                                "distribution_height": "triangular",
+                                "distribution_length": "triangular",
+                                "distribution_speed": "triangular",
+                                "distribution_width": "triangular",
+                                "height_bicycle_max": 1.75,
+                                "height_bicycle_min": 0,
+                                "height_large_vehicle_max": 4.5,
+                                "height_large_vehicle_min": 0,
+                                "height_person_max": 2,
+                                "height_person_min": 0,
+                                "height_vehicle_max": 3,
+                                "height_vehicle_min": 0,
+                                "length_bicycle_max": 2.25,
+                                "length_bicycle_min": 0,
+                                "length_large_vehicle_max": 30,
+                                "length_large_vehicle_min": 0,
+                                "length_person_max": 1.75,
+                                "length_person_min": 0,
+                                "length_vehicle_max": 9,
+                                "length_vehicle_min": 0,
+                                "prior_bicycle": 0.25,
+                                "prior_large_vehicle": 0.25,
+                                "prior_person": 0.25,
+                                "prior_vehicle": 0.25,
+                                "speed_bicycle_max": 15,
+                                "speed_bicycle_min": 0,
+                                "speed_large_vehicle_max": 25,
+                                "speed_large_vehicle_min": 0,
+                                "speed_person_max": 4.1,
+                                "speed_person_min": 0,
+                                "speed_vehicle_max": 25,
+                                "speed_vehicle_min": 0,
+                                "supported_distributions": [
+                                    "triangular",
+                                    "uniform"
+                                ],
+                                "width_bicycle_max": 1,
+                                "width_bicycle_min": 0,
+                                "width_large_vehicle_max": 4,
+                                "width_large_vehicle_min": 0,
+                                "width_person_max": 1,
+                                "width_person_min": 0,
+                                "width_vehicle_max": 4,
+                                "width_vehicle_min": 0
+                            }
+                        },
+                        "confidence_decay_percent": 0.5,
+                        "heuristic": {
+                            "max_person_failed_returns": 4,
+                            "max_person_ratio_failed_returns": 0.15,
+                            "max_vehicle_length": 6,
+                            "max_vehicle_width": 3,
+                            "min_vehicle_assessment_points": 20,
+                            "min_vehicle_edge_evaluation_distance": 0.15,
+                            "min_vehicle_length": 3,
+                            "min_vehicle_outside_point_ratio": 0.8,
+                            "min_vehicle_width": 1.7,
+                            "person_max_speed": 4.1,
+                            "person_max_width": 1.5,
+                            "person_max_z_length": 2.5,
+                            "person_min_distance_travelled": 1,
+                            "person_min_duration": 2,
+                            "person_min_width": 0.1,
+                            "person_min_z_length": 0.5,
+                            "vehicle_min_distance_travelled": 0,
+                            "vehicle_min_duration": 2
+                        },
+                        "max_distance_classification": 100,
+                        "min_classification_prob": 0.6,
+                        "min_new_vehicle_speed": 2,
+                        "ml_classifier": {
+                            "person_max_speed": 4.1,
+                            "person_min_distance_travelled": 0,
+                            "person_min_duration": 0,
+                            "vehicle_min_distance_travelled": 0,
+                            "vehicle_min_duration": 0
+                        },
+                        "random_forest": {
+                            "classification_history_length": 3
+                        },
+                        "supported_algorithms": "gaussian_bayes, naive_bayes, heuristic, random_forest, ml",
+                        "unknown_min_distance_travelled": 0,
+                        "unknown_min_duration": 0.3
+                    },
+                    "cloud_queue_max_size": 3,
+                    "cluster_merge": {
+                        "distance_threshold": 1
+                    },
+                    "cluster_queue_buffer_margin": 10,
+                    "data_association": {
+                        "allow_splitting": true,
+                        "cluster_merging": true,
+                        "distance_threshold": 10,
+                        "kmeans_iterations": 10,
+                        "min_cluster_merge_overlap": 0.5,
+                        "min_split_points": 7,
+                        "non_overlap_distance_threshold": 0.5
+                    },
+                    "drop_time": 0.5,
+                    "message_aggregator": {
+                        "buffer_duration": 0,
+                        "cutoff_threshold_ms": 120,
+                        "timeout_ms": 200
+                    },
+                    "object_merge": {
+                        "cluster_distance_threshold": 3,
+                        "enabled": true,
+                        "into_vehicle_distance_threshold": 0.3,
+                        "resulting_max_width": 3,
+                        "vehicle_distance_threshold": 0.1,
+                        "vehicle_min_angular_difference_degrees": 10,
+                        "vehicle_min_overlap": 0.1,
+                        "vehicle_min_speed": 3
+                    },
+                    "object_sanitizer": {
+                        "enabled": true,
+                        "max_angle_between_heading_and_cluster_degrees": 10,
+                        "max_vehicle_area_overlap_m2": 2,
+                        "max_vehicle_iou": 0.2,
+                        "sanitize_check_distance": 10
+                    },
+                    "refind": {
+                        "distance_threshold": 10,
+                        "enabled": true,
+                        "lost_object_expire_duration": 10,
+                        "lost_object_max_velocity": 22.22,
+                        "lost_object_min_dist_travelled": 1,
+                        "lost_object_min_frame_count": 5,
+                        "max_speed_while_lost": 22.22,
+                        "max_z_difference": 1,
+                        "new_object_max_frame_count": 5,
+                        "new_object_max_speed": 22.22,
+                        "new_object_min_frame_count": 4
+                    },
+                    "tracked_object": {
+                        "automated_covariances": true,
+                        "average_classification_history_length": 10,
+                        "cluster_object_length_ratio": 0.75,
+                        "error_variance_global_p_xx_yy": 2,
+                        "error_variance_heading": 0.25,
+                        "error_variance_p_zz": 2,
+                        "error_variance_steering_angle": 0.25,
+                        "error_variance_steering_angle_rate": 0,
+                        "error_variance_v_ff": 1,
+                        "error_variance_v_xx_yy": 10,
+                        "error_variance_v_zz": 10,
+                        "height_settling_time": 10,
+                        "length_settling_time": 50,
+                        "max_backwards_vehicle_speed": 1.5,
+                        "max_vehicle_width": 3,
+                        "measurement_noise_scale_factor": 10,
+                        "measurement_noise_variance_global_p_xx_yy": 0.01,
+                        "measurement_noise_variance_heading": 0.05,
+                        "measurement_noise_variance_local_p_xx": 0.05,
+                        "measurement_noise_variance_local_p_yy": 0.15,
+                        "measurement_noise_variance_p_zz": 0.05,
+                        "min_cluster_area_edge_matching": 0.25,
+                        "previous_positions_length": 30,
+                        "process_noise_variance_global_p_xx_yy": 0.05,
+                        "process_noise_variance_heading": 0.001,
+                        "process_noise_variance_p_zz": 0.05,
+                        "process_noise_variance_steering_angle": 0.001,
+                        "process_noise_variance_steering_angle_rate": 0,
+                        "process_noise_variance_v_ff": 0.2,
+                        "process_noise_variance_v_xx_yy": 0.1,
+                        "process_noise_variance_v_zz": 0.1,
+                        "small_object_area": 1,
+                        "width_settling_time": 4
+                    },
+                    "vertical_cluster_merge": {
+                        "enabled": true,
+                        "horizontal_distance_threshold": 0.1,
+                        "max_merge_dimension": 10,
+                        "vertical_distance_threshold": 0.2
+                    }
+                },
+                "publishing": {
+                    "background_downsample_factor": 5,
+                    "background_publish_period": 2,
+                    "include_above_reflectivity": 40,
+                    "max_backpressure_background_MB": 0,
+                    "max_backpressure_objects_MB": 1,
+                    "max_backpressure_raw_MB": 10,
+                    "publish_cluster_points": true,
+                    "publish_foreground": false,
+                    "raw_publish_period": 2
+                },
+                "raw_cloud_publisher": {
+                    "downsample_factor": 3,
+                    "include_point_near_ir": true,
+                    "include_point_reflectivity": true,
+                    "include_point_signal": true,
+                    "max_backpressure_MB": 10,
+                    "max_serialized_range": 400,
+                    "publish_period": 5,
+                    "raw_port": 3006
+                },
+                "server": {
+                    "log_level": "info",
+                    "point_count_tcp_server": {
+                        "port": 3006
+                    },
+                    "rest_server": {
+                        "port": 8000
+                    },
+                    "tcp_server": {
+                        "port": 3002
+                    },
+                    "websocket": {
+                        "include_point_near_ir": true,
+                        "include_point_reflectivity": true,
+                        "include_point_signal": true,
+                        "max_serialized_range": 400,
+                        "port": 3001,
+                        "raw_cloud_downsample_factor": 1,
+                        "raw_port": 3005
+                    }
+                }
+            },
+            "pedestrian_no_background_filter_settings": {
+                "alignment": {
+                    "icp": {
+                        "knn_normals": 20,
+                        "max_correspondence_dist": 0.25,
+                        "max_iterations": 250,
+                        "min_diff_rotation_error": 0.003,
+                        "min_diff_translation_error": 0.03,
+                        "min_distance": 0.75,
+                        "random_sampling_filter": 0.95,
+                        "trimmed_dist_outlier_filter": 0.75
+                    },
+                    "object_identifier": {
+                        "num_frames_per_sensor": 200,
+                        "num_threads": 8,
+                        "ransac": {
+                            "fit_threshold": 0.1,
+                            "max_iterations": 100,
+                            "num_inliers": 300
+                        }
+                    }
+                },
+                "benchmark_timer": {
+                    "enabled": true,
+                    "num_measurements": 100
+                },
+                "diagnostics": {
+                    "cluster_delta_over_threshold": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "dropping_cluster": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "dropping_lidar_data": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "duplicate_node_hostname": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_lidar_connection": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_node_authentication": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_perception_client_connection": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_raw_client_connection": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "frame_rate_inconsistent": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "invalid_packet_source": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "lidar_frame_construction": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "lidar_packet_mismatch": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "lidar_timeout": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "max_num_logged_alerts": 1000,
+                    "near_sensor_blockage": {
+                        "active_duration": 3,
+                        "reset_duration": 5
+                    },
+                    "object_pipeline_slow": {
+                        "active_duration": 1,
+                        "reset_duration": 5
+                    },
+                    "perception_client_closed": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "perception_client_no_data": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "raw_client_closed": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "raw_client_no_data": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "tcp_client_behind": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "unresponsive_rest_server": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "websocket_client_behind": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    }
+                },
+                "execution": {
+                    "frame_rate": 10
+                },
+                "image": {
+                    "colorize_failed_points": false,
+                    "colorize_foreground": true,
+                    "foreground_hue": 140,
+                    "image_channel": "reflectivity",
+                    "image_publish_period": 2,
+                    "image_quality": 80,
+                    "supported_image_channels": "reflectivity, near_ir"
+                },
+                "license_manager": {
+                    "host": "host.docker.internal",
+                    "port": 5093
+                },
+                "lidar_manager": {
+                    "discover_host": "host.docker.internal",
+                    "discover_path": "discover",
+                    "discover_port": 8002,
+                    "filter_invalid_packets": false,
+                    "host_ip_addresses_path": "host_ip_addresses",
+                    "hostname_lookup_path": "host_address/",
+                    "low_bandwidth": true,
+                    "max_num_sensors": 8,
+                    "num_connection_retries": 10,
+                    "request_timeout_ms": 1000
+                },
+                "lidar_pipeline": {
+                    "background_filter": {
+                        "check_diagonal_neighbours": false,
+                        "dynamic_background_model": true,
+                        "fade_time": 200,
+                        "fade_to_free_ratio": 3.0,
+                        "free_space_acceleration_enabled": true,
+                        "free_space_rate_doubling_frames": 4,
+                        "max_range": 200,
+                        "neighbour_check_range": 1,
+                        "num_background_threads": 4,
+                        "num_clouds_for_init": 200,
+                        "occupied_angular_bin_ratio": 0.3,
+                        "period": 2,
+                        "range_resolution": 0.25,
+                        "reduce_last_occupancy_factor": 0
+                    },
+                    "blockage_detection": {
+                        "max_range": 3,
+                        "max_range_ratio_threshold": 1.1,
+                        "max_return_ratio_threshold": 1.2,
+                        "memory_factor": 0.995,
+                        "min_unblocked_range": 1.0,
+                        "min_unblocked_return_point_percentage": 0.1,
+                        "num_init_frames": 200,
+                        "num_stdev_outlier": 1.3
+                    },
+                    "cluster": {
+                        "area_cost_factor": 1,
+                        "bbox_algorithm": "pca",
+                        "bin_length": 0.2,
+                        "cost_method": "outlier",
+                        "degree_increment": 2.0,
+                        "min_size_pca": 1.0,
+                        "outlier_distance_threshold": 0.3,
+                        "point_type": "binned",
+                        "supported_bbox_algorithms": "rotating_calipers, pca, least_squares, brute_force, line_density",
+                        "supported_cost_methods": "distance, outlier",
+                        "supported_point_types": "convex_hull, all_points, binned"
+                    },
+                    "cluster_algorithm": "range_image",
+                    "cluster_downsample": {
+                        "enabled": false,
+                        "goal_density": 400,
+                        "max_points": 1000,
+                        "proportion_filled": 0.04
+                    },
+                    "cluster_filter": {
+                        "min_num_points": 7,
+                        "min_side_length": 0.15,
+                        "min_vertical_size": 0.3
+                    },
+                    "dbscan_clustering": {
+                        "min_points": 3,
+                        "tolerance": 0.5,
+                        "voxel_grid_resolution": 0.1
+                    },
+                    "enable_background_filter": false,
+                    "foreground_filter": {
+                        "filter_failed_points": false,
+                        "max_range_difference": 0.05,
+                        "min_num_neighbours": 3
+                    },
+                    "frame_delay_threshold": 1,
+                    "ground_filter": {
+                        "algorithm": "none",
+                        "height_threshold": 0.1,
+                        "maxima": {
+                            "distance_threshold": 0.01,
+                            "filter_size": 7,
+                            "grid_size": 200,
+                            "num_outliers": 1,
+                            "period": 10,
+                            "resolution": 0.25
+                        },
+                        "supported_algorithms": "none, level, maxima"
+                    },
+                    "ml_clustering": {
+                        "center_position.x": 0.0,
+                        "center_position.y": 0.0,
+                        "config_name": "ouster.config",
+                        "edge_buffer": 0.02,
+                        "ground_height": 0.0,
+                        "inference_timeout_ms": 1000,
+                        "init_timeout_ms": 20000,
+                        "max_height": 4.0,
+                        "max_range": 50.0,
+                        "ml_hostname": "ml-detection",
+                        "ml_port": 5000,
+                        "model_name": "ouster.model",
+                        "point_extraction_method": "zone",
+                        "subsampling_factor": 2,
+                        "supported_point_extraction_methods": "zone, zone_kdtree, point_kdtree"
+                    },
+                    "range_image_clustering": {
+                        "distance_threshold": 0.25,
+                        "max_dynamic_distance_threshold": 2.5,
+                        "propagate_using_failed_return": false
+                    },
+                    "supported_cluster_algorithms": "dbscan, range_image",
+                    "vertical_cluster_merge": {
+                        "enabled": true,
+                        "horizontal_distance_threshold": 0.1,
+                        "max_merge_dimension": 1.0,
+                        "vertical_distance_threshold": 0.2
+                    },
+                    "zone_filter": {
+                        "num_threads": 4
+                    }
+                },
+                "node_client": {
+                    "connection_max_idle_timeout_s": 30,
+                    "connection_no_data_threshold": 5,
+                    "connection_ping_interval_s": 5,
+                    "connection_query_interval_ms": 1000,
+                    "connection_timeout_ms": 1000,
+                    "message_aggregator": {
+                        "buffer_duration": 0,
+                        "cutoff_threshold_ms": 30000,
+                        "timeout_ms": 30000
+                    }
+                },
+                "object_pipeline": {
+                    "arrival_delta_threshold": 100.0,
+                    "classifier": {
+                        "algorithm": "heuristic",
+                        "bayes": {
+                            "classification_history_length": 3,
+                            "classification_min_distance_travelled": 0.0,
+                            "classification_min_duration": 0.0,
+                            "gaussian_bayes": {
+                                "bicycle_covariance_00": 0.0113495,
+                                "bicycle_covariance_01": 0.00051115,
+                                "bicycle_covariance_02": 0.00705464,
+                                "bicycle_covariance_03": 0.0252558,
+                                "bicycle_covariance_11": 0.00627105,
+                                "bicycle_covariance_12": 0.00795458,
+                                "bicycle_covariance_13": -0.046012,
+                                "bicycle_covariance_22": 0.0232398,
+                                "bicycle_covariance_23": -0.128223,
+                                "bicycle_covariance_33": 3.39542,
+                                "bicycle_height_mean": 1.45655,
+                                "bicycle_length_mean": 0.909452,
+                                "bicycle_prior": 0.0,
+                                "bicycle_speed_mean": 5.01956,
+                                "bicycle_width_mean": 0.493773,
+                                "large_vehicle_covariance_00": 22.4829,
+                                "large_vehicle_covariance_01": 1.311,
+                                "large_vehicle_covariance_02": 2.03149,
+                                "large_vehicle_covariance_03": 0.222239,
+                                "large_vehicle_covariance_11": 0.590513,
+                                "large_vehicle_covariance_12": 0.101144,
+                                "large_vehicle_covariance_13": -0.0748767,
+                                "large_vehicle_covariance_22": 0.783604,
+                                "large_vehicle_covariance_23": -0.177956,
+                                "large_vehicle_covariance_33": 4.95281,
+                                "large_vehicle_height_mean": 3.07935,
+                                "large_vehicle_length_mean": 9.27776,
+                                "large_vehicle_prior": 0.0,
+                                "large_vehicle_speed_mean": 7.40931,
+                                "large_vehicle_width_mean": 2.62311,
+                                "person_covariance_00": 0.0315029,
+                                "person_covariance_01": 0.0108767,
+                                "person_covariance_02": 0.0232198,
+                                "person_covariance_03": 0.00317313,
+                                "person_covariance_11": 0.0161911,
+                                "person_covariance_12": 0.0260381,
+                                "person_covariance_13": -0.00145304,
+                                "person_covariance_22": 0.107841,
+                                "person_covariance_23": 0.00296731,
+                                "person_covariance_33": 0.273765,
+                                "person_height_mean": 1.06823,
+                                "person_length_mean": 0.474202,
+                                "person_prior": 1.0,
+                                "person_speed_mean": 1.3024,
+                                "person_width_mean": 0.229742,
+                                "vehicle_covariance_00": 4.5942,
+                                "vehicle_covariance_01": 0.868025,
+                                "vehicle_covariance_02": 0.603113,
+                                "vehicle_covariance_03": 1.20541,
+                                "vehicle_covariance_11": 0.699897,
+                                "vehicle_covariance_12": 0.261618,
+                                "vehicle_covariance_13": -0.221759,
+                                "vehicle_covariance_22": 0.344327,
+                                "vehicle_covariance_23": -0.075143,
+                                "vehicle_covariance_33": 12.7922,
+                                "vehicle_height_mean": 1.41929,
+                                "vehicle_length_mean": 3.95565,
+                                "vehicle_prior": 0.0,
+                                "vehicle_speed_mean": 5.84423,
+                                "vehicle_width_mean": 1.81667
+                            },
+                            "naive_bayes": {
+                                "distribution_height": "triangular",
+                                "distribution_length": "triangular",
+                                "distribution_speed": "triangular",
+                                "distribution_width": "triangular",
+                                "height_bicycle_max": 1.75,
+                                "height_bicycle_min": 0.0,
+                                "height_large_vehicle_max": 4.5,
+                                "height_large_vehicle_min": 0.0,
+                                "height_person_max": 2.0,
+                                "height_person_min": 0.0,
+                                "height_vehicle_max": 3.0,
+                                "height_vehicle_min": 0.0,
+                                "length_bicycle_max": 2.25,
+                                "length_bicycle_min": 0.0,
+                                "length_large_vehicle_max": 30.0,
+                                "length_large_vehicle_min": 0.0,
+                                "length_person_max": 1.75,
+                                "length_person_min": 0.0,
+                                "length_vehicle_max": 9.0,
+                                "length_vehicle_min": 0.0,
+                                "prior_bicycle": 0.0,
+                                "prior_large_vehicle": 0.0,
+                                "prior_person": 1.0,
+                                "prior_vehicle": 0.0,
+                                "speed_bicycle_max": 15.0,
+                                "speed_bicycle_min": 0.0,
+                                "speed_large_vehicle_max": 25.0,
+                                "speed_large_vehicle_min": 0.0,
+                                "speed_person_max": 4.1,
+                                "speed_person_min": 0.0,
+                                "speed_vehicle_max": 25.0,
+                                "speed_vehicle_min": 0.0,
+                                "supported_distributions": [
+                                    "triangular",
+                                    "uniform"
+                                ],
+                                "width_bicycle_max": 1.0,
+                                "width_bicycle_min": 0.0,
+                                "width_large_vehicle_max": 4.0,
+                                "width_large_vehicle_min": 0.0,
+                                "width_person_max": 1.0,
+                                "width_person_min": 0.0,
+                                "width_vehicle_max": 4.0,
+                                "width_vehicle_min": 0.0
+                            }
+                        },
+                        "confidence_decay_percent": 0.5,
+                        "heuristic": {
+                            "max_person_failed_returns": 4,
+                            "max_person_ratio_failed_returns": 0.15,
+                            "max_vehicle_length": 6.0,
+                            "max_vehicle_width": 0.0,
+                            "min_vehicle_assessment_points": 20,
+                            "min_vehicle_edge_evaluation_distance": 0.15,
+                            "min_vehicle_length": 3.0,
+                            "min_vehicle_outside_point_ratio": 0.8,
+                            "min_vehicle_width": 1.7,
+                            "person_max_speed": 100.0,
+                            "person_max_width": 1.5,
+                            "person_max_z_length": 2.5,
+                            "person_min_distance_travelled": 1.0,
+                            "person_min_duration": 2.0,
+                            "person_min_width": 0.1,
+                            "person_min_z_length": 0.5,
+                            "vehicle_min_distance_travelled": 0.0,
+                            "vehicle_min_duration": 2.0
+                        },
+                        "max_distance_classification": 100.0,
+                        "min_classification_prob": 0.6,
+                        "min_new_vehicle_speed": 2.0,
+                        "ml_classifier": {
+                            "person_max_speed": 4.1,
+                            "person_min_distance_travelled": 0,
+                            "person_min_duration": 0,
+                            "vehicle_min_distance_travelled": 0.0,
+                            "vehicle_min_duration": 0.0
+                        },
+                        "random_forest": {
+                            "classification_history_length": 3
+                        },
+                        "supported_algorithms": "gaussian_bayes, naive_bayes, heuristic, random_forest, ml",
+                        "unknown_min_distance_travelled": 0,
+                        "unknown_min_duration": 0.3
+                    },
+                    "cloud_queue_max_size": 3,
+                    "cluster_merge": {
+                        "distance_threshold": 1.0
+                    },
+                    "cluster_queue_buffer_margin": 10,
+                    "data_association": {
+                        "allow_splitting": true,
+                        "cluster_merging": true,
+                        "distance_threshold": 1.5,
+                        "kmeans_iterations": 10,
+                        "min_cluster_merge_overlap": 0.5,
+                        "min_split_points": 7,
+                        "non_overlap_distance_threshold": 0.5
+                    },
+                    "drop_time": 0.5,
+                    "message_aggregator": {
+                        "buffer_duration": 0,
+                        "cutoff_threshold_ms": 120,
+                        "timeout_ms": 200
+                    },
+                    "object_merge": {
+                        "cluster_distance_threshold": 3.0,
+                        "enabled": true,
+                        "into_vehicle_distance_threshold": 0.3,
+                        "resulting_max_width": 3.0,
+                        "vehicle_distance_threshold": 0.1,
+                        "vehicle_min_angular_difference_degrees": 10,
+                        "vehicle_min_overlap": 0.1,
+                        "vehicle_min_speed": 3
+                    },
+                    "object_sanitizer": {
+                        "enabled": true,
+                        "max_angle_between_heading_and_cluster_degrees": 10,
+                        "max_vehicle_area_overlap_m2": 2.0,
+                        "max_vehicle_iou": 0.2,
+                        "sanitize_check_distance": 10.0
+                    },
+                    "refind": {
+                        "distance_threshold": 10,
+                        "enabled": true,
+                        "lost_object_expire_duration": 10,
+                        "lost_object_max_velocity": 22.22,
+                        "lost_object_min_dist_travelled": 1,
+                        "lost_object_min_frame_count": 5,
+                        "max_speed_while_lost": 22.22,
+                        "max_z_difference": 1,
+                        "new_object_max_frame_count": 5,
+                        "new_object_max_speed": 22.22,
+                        "new_object_min_frame_count": 4
+                    },
+                    "tracked_object": {
+                        "automated_covariances": true,
+                        "average_classification_history_length": 10,
+                        "cluster_object_length_ratio": 0.75,
+                        "error_variance_global_p_xx_yy": 2.0,
+                        "error_variance_heading": 0.25,
+                        "error_variance_p_zz": 2.0,
+                        "error_variance_steering_angle": 0.25,
+                        "error_variance_steering_angle_rate": 0,
+                        "error_variance_v_ff": 1.0,
+                        "error_variance_v_xx_yy": 10.0,
+                        "error_variance_v_zz": 10.0,
+                        "height_settling_time": 10,
+                        "length_settling_time": 50,
+                        "max_backwards_vehicle_speed": 1.5,
+                        "max_vehicle_width": 3.0,
+                        "measurement_noise_scale_factor": 10,
+                        "measurement_noise_variance_global_p_xx_yy": 0.01,
+                        "measurement_noise_variance_heading": 0.05,
+                        "measurement_noise_variance_local_p_xx": 0.05,
+                        "measurement_noise_variance_local_p_yy": 0.15,
+                        "measurement_noise_variance_p_zz": 0.05,
+                        "min_cluster_area_edge_matching": 0.25,
+                        "previous_positions_length": 30,
+                        "process_noise_variance_global_p_xx_yy": 0.05,
+                        "process_noise_variance_heading": 0.001,
+                        "process_noise_variance_p_zz": 0.05,
+                        "process_noise_variance_steering_angle": 0.001,
+                        "process_noise_variance_steering_angle_rate": 0,
+                        "process_noise_variance_v_ff": 0.2,
+                        "process_noise_variance_v_xx_yy": 0.1,
+                        "process_noise_variance_v_zz": 0.1,
+                        "small_object_area": 1.0,
+                        "width_settling_time": 4
+                    },
+                    "vertical_cluster_merge": {
+                        "enabled": true,
+                        "horizontal_distance_threshold": 0.0,
+                        "max_merge_dimension": 1.0,
+                        "vertical_distance_threshold": 0.2
+                    }
+                },
+                "publishing": {
+                    "background_downsample_factor": 5,
+                    "background_publish_period": 2,
+                    "include_above_reflectivity": 40,
+                    "max_backpressure_background_MB": 0.0,
+                    "max_backpressure_objects_MB": 1.0,
+                    "max_backpressure_raw_MB": 10.0,
+                    "publish_cluster_points": true,
+                    "publish_foreground": false,
+                    "raw_publish_period": 2
+                },
+                "raw_cloud_publisher": {
+                    "downsample_factor": 3,
+                    "include_point_near_ir": true,
+                    "include_point_reflectivity": true,
+                    "include_point_signal": true,
+                    "max_backpressure_MB": 10.0,
+                    "max_serialized_range": 400,
+                    "publish_period": 5.0,
+                    "raw_port": 3006
+                },
+                "server": {
+                    "log_level": "info",
+                    "point_count_tcp_server": {
+                        "port": 3006
+                    },
+                    "rest_server": {
+                        "port": 8000
+                    },
+                    "tcp_server": {
+                        "port": 3002
+                    },
+                    "websocket": {
+                        "include_point_near_ir": true,
+                        "include_point_reflectivity": true,
+                        "include_point_signal": true,
+                        "max_serialized_range": 400,
+                        "port": 3001,
+                        "raw_cloud_downsample_factor": 1,
+                        "raw_port": 3005
+                    }
+                }
+            },
+            "pedestrian_settings": {
+                "alignment": {
+                    "icp": {
+                        "knn_normals": 20,
+                        "max_correspondence_dist": 0.25,
+                        "max_iterations": 250,
+                        "min_diff_rotation_error": 0.003,
+                        "min_diff_translation_error": 0.03,
+                        "min_distance": 0.75,
+                        "random_sampling_filter": 0.95,
+                        "trimmed_dist_outlier_filter": 0.75
+                    },
+                    "object_identifier": {
+                        "num_frames_per_sensor": 200,
+                        "num_threads": 8,
+                        "ransac": {
+                            "fit_threshold": 0.1,
+                            "max_iterations": 100,
+                            "num_inliers": 300
+                        }
+                    }
+                },
+                "benchmark_timer": {
+                    "enabled": true,
+                    "num_measurements": 100
+                },
+                "diagnostics": {
+                    "cluster_delta_over_threshold": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "dropping_cluster": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "dropping_lidar_data": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "duplicate_node_hostname": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_lidar_connection": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_node_authentication": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_perception_client_connection": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "failed_raw_client_connection": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "frame_rate_inconsistent": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "invalid_packet_source": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "lidar_frame_construction": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "lidar_packet_mismatch": {
+                        "active_duration": 0,
+                        "reset_duration": 5
+                    },
+                    "lidar_timeout": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "max_num_logged_alerts": 1000,
+                    "near_sensor_blockage": {
+                        "active_duration": 3,
+                        "reset_duration": 5
+                    },
+                    "object_pipeline_slow": {
+                        "active_duration": 1,
+                        "reset_duration": 5
+                    },
+                    "perception_client_closed": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "perception_client_no_data": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "raw_client_closed": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "raw_client_no_data": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "tcp_client_behind": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    },
+                    "unresponsive_rest_server": {
+                        "active_duration": 0,
+                        "reset_duration": 0
+                    },
+                    "websocket_client_behind": {
+                        "active_duration": 2,
+                        "reset_duration": 5
+                    }
+                },
+                "execution": {
+                    "frame_rate": 10
+                },
+                "image": {
+                    "colorize_failed_points": false,
+                    "colorize_foreground": true,
+                    "foreground_hue": 140,
+                    "image_channel": "reflectivity",
+                    "image_publish_period": 2,
+                    "image_quality": 80,
+                    "supported_image_channels": "reflectivity, near_ir"
+                },
+                "license_manager": {
+                    "host": "host.docker.internal",
+                    "port": 5093
+                },
+                "lidar_manager": {
+                    "discover_host": "host.docker.internal",
+                    "discover_path": "discover",
+                    "discover_port": 8002,
+                    "filter_invalid_packets": false,
+                    "host_ip_addresses_path": "host_ip_addresses",
+                    "hostname_lookup_path": "host_address/",
+                    "low_bandwidth": true,
+                    "max_num_sensors": 8,
+                    "num_connection_retries": 10,
+                    "request_timeout_ms": 1000
+                },
+                "lidar_pipeline": {
+                    "background_filter": {
+                        "check_diagonal_neighbours": false,
+                        "dynamic_background_model": true,
+                        "fade_time": 200,
+                        "fade_to_free_ratio": 3.0,
+                        "free_space_acceleration_enabled": true,
+                        "free_space_rate_doubling_frames": 4,
+                        "max_range": 200,
+                        "neighbour_check_range": 1,
+                        "num_background_threads": 4,
+                        "num_clouds_for_init": 200,
+                        "occupied_angular_bin_ratio": 0.3,
+                        "period": 2,
+                        "range_resolution": 0.25,
+                        "reduce_last_occupancy_factor": 0
+                    },
+                    "blockage_detection": {
+                        "max_range": 3,
+                        "max_range_ratio_threshold": 1.1,
+                        "max_return_ratio_threshold": 1.2,
+                        "memory_factor": 0.995,
+                        "min_unblocked_range": 1.0,
+                        "min_unblocked_return_point_percentage": 0.1,
+                        "num_init_frames": 200,
+                        "num_stdev_outlier": 1.3
+                    },
+                    "cluster": {
+                        "area_cost_factor": 1,
+                        "bbox_algorithm": "pca",
+                        "bin_length": 0.2,
+                        "cost_method": "outlier",
+                        "degree_increment": 2.0,
+                        "min_size_pca": 1.0,
+                        "outlier_distance_threshold": 0.3,
+                        "point_type": "binned",
+                        "supported_bbox_algorithms": "rotating_calipers, pca, least_squares, brute_force, line_density",
+                        "supported_cost_methods": "distance, outlier",
+                        "supported_point_types": "convex_hull, all_points, binned"
+                    },
+                    "cluster_algorithm": "range_image",
+                    "cluster_downsample": {
+                        "enabled": false,
+                        "goal_density": 400,
+                        "max_points": 1000,
+                        "proportion_filled": 0.04
+                    },
+                    "cluster_filter": {
+                        "min_num_points": 7,
+                        "min_side_length": 0.15,
+                        "min_vertical_size": 0.3
+                    },
+                    "dbscan_clustering": {
+                        "min_points": 3,
+                        "tolerance": 0.5,
+                        "voxel_grid_resolution": 0.1
+                    },
+                    "enable_background_filter": true,
+                    "foreground_filter": {
+                        "filter_failed_points": false,
+                        "max_range_difference": 0.05,
+                        "min_num_neighbours": 3
+                    },
+                    "frame_delay_threshold": 1,
+                    "ground_filter": {
+                        "algorithm": "none",
+                        "height_threshold": 0.1,
+                        "maxima": {
+                            "distance_threshold": 0.01,
+                            "filter_size": 7,
+                            "grid_size": 200,
+                            "num_outliers": 1,
+                            "period": 10,
+                            "resolution": 0.25
+                        },
+                        "supported_algorithms": "none, level, maxima"
+                    },
+                    "ml_clustering": {
+                        "center_position.x": 0.0,
+                        "center_position.y": 0.0,
+                        "config_name": "ouster.config",
+                        "edge_buffer": 0.02,
+                        "ground_height": 0.0,
+                        "inference_timeout_ms": 1000,
+                        "init_timeout_ms": 20000,
+                        "max_height": 4.0,
+                        "max_range": 50.0,
+                        "ml_hostname": "ml-detection",
+                        "ml_port": 5000,
+                        "model_name": "ouster.model",
+                        "point_extraction_method": "zone",
+                        "subsampling_factor": 2,
+                        "supported_point_extraction_methods": "zone, zone_kdtree, point_kdtree"
+                    },
+                    "range_image_clustering": {
+                        "distance_threshold": 0.25,
+                        "max_dynamic_distance_threshold": 2.5,
+                        "propagate_using_failed_return": false
+                    },
+                    "supported_cluster_algorithms": "dbscan, range_image",
+                    "vertical_cluster_merge": {
+                        "enabled": true,
+                        "horizontal_distance_threshold": 0.1,
+                        "max_merge_dimension": 1.0,
+                        "vertical_distance_threshold": 0.2
+                    },
+                    "zone_filter": {
+                        "num_threads": 4
+                    }
+                },
+                "node_client": {
+                    "connection_max_idle_timeout_s": 30,
+                    "connection_no_data_threshold": 5,
+                    "connection_ping_interval_s": 5,
+                    "connection_query_interval_ms": 1000,
+                    "connection_timeout_ms": 1000,
+                    "message_aggregator": {
+                        "buffer_duration": 0,
+                        "cutoff_threshold_ms": 30000,
+                        "timeout_ms": 30000
+                    }
+                },
+                "object_pipeline": {
+                    "arrival_delta_threshold": 100.0,
+                    "classifier": {
+                        "algorithm": "heuristic",
+                        "bayes": {
+                            "classification_history_length": 3,
+                            "classification_min_distance_travelled": 0.0,
+                            "classification_min_duration": 0.0,
+                            "gaussian_bayes": {
+                                "bicycle_covariance_00": 0.0113495,
+                                "bicycle_covariance_01": 0.00051115,
+                                "bicycle_covariance_02": 0.00705464,
+                                "bicycle_covariance_03": 0.0252558,
+                                "bicycle_covariance_11": 0.00627105,
+                                "bicycle_covariance_12": 0.00795458,
+                                "bicycle_covariance_13": -0.046012,
+                                "bicycle_covariance_22": 0.0232398,
+                                "bicycle_covariance_23": -0.128223,
+                                "bicycle_covariance_33": 3.39542,
+                                "bicycle_height_mean": 1.45655,
+                                "bicycle_length_mean": 0.909452,
+                                "bicycle_prior": 0.0,
+                                "bicycle_speed_mean": 5.01956,
+                                "bicycle_width_mean": 0.493773,
+                                "large_vehicle_covariance_00": 22.4829,
+                                "large_vehicle_covariance_01": 1.311,
+                                "large_vehicle_covariance_02": 2.03149,
+                                "large_vehicle_covariance_03": 0.222239,
+                                "large_vehicle_covariance_11": 0.590513,
+                                "large_vehicle_covariance_12": 0.101144,
+                                "large_vehicle_covariance_13": -0.0748767,
+                                "large_vehicle_covariance_22": 0.783604,
+                                "large_vehicle_covariance_23": -0.177956,
+                                "large_vehicle_covariance_33": 4.95281,
+                                "large_vehicle_height_mean": 3.07935,
+                                "large_vehicle_length_mean": 9.27776,
+                                "large_vehicle_prior": 0.0,
+                                "large_vehicle_speed_mean": 7.40931,
+                                "large_vehicle_width_mean": 2.62311,
+                                "person_covariance_00": 0.0315029,
+                                "person_covariance_01": 0.0108767,
+                                "person_covariance_02": 0.0232198,
+                                "person_covariance_03": 0.00317313,
+                                "person_covariance_11": 0.0161911,
+                                "person_covariance_12": 0.0260381,
+                                "person_covariance_13": -0.00145304,
+                                "person_covariance_22": 0.107841,
+                                "person_covariance_23": 0.00296731,
+                                "person_covariance_33": 0.273765,
+                                "person_height_mean": 1.06823,
+                                "person_length_mean": 0.474202,
+                                "person_prior": 1.0,
+                                "person_speed_mean": 1.3024,
+                                "person_width_mean": 0.229742,
+                                "vehicle_covariance_00": 4.5942,
+                                "vehicle_covariance_01": 0.868025,
+                                "vehicle_covariance_02": 0.603113,
+                                "vehicle_covariance_03": 1.20541,
+                                "vehicle_covariance_11": 0.699897,
+                                "vehicle_covariance_12": 0.261618,
+                                "vehicle_covariance_13": -0.221759,
+                                "vehicle_covariance_22": 0.344327,
+                                "vehicle_covariance_23": -0.075143,
+                                "vehicle_covariance_33": 12.7922,
+                                "vehicle_height_mean": 1.41929,
+                                "vehicle_length_mean": 3.95565,
+                                "vehicle_prior": 0.0,
+                                "vehicle_speed_mean": 5.84423,
+                                "vehicle_width_mean": 1.81667
+                            },
+                            "naive_bayes": {
+                                "distribution_height": "triangular",
+                                "distribution_length": "triangular",
+                                "distribution_speed": "triangular",
+                                "distribution_width": "triangular",
+                                "height_bicycle_max": 1.75,
+                                "height_bicycle_min": 0.0,
+                                "height_large_vehicle_max": 4.5,
+                                "height_large_vehicle_min": 0.0,
+                                "height_person_max": 2.0,
+                                "height_person_min": 0.0,
+                                "height_vehicle_max": 3.0,
+                                "height_vehicle_min": 0.0,
+                                "length_bicycle_max": 2.25,
+                                "length_bicycle_min": 0.0,
+                                "length_large_vehicle_max": 30.0,
+                                "length_large_vehicle_min": 0.0,
+                                "length_person_max": 1.75,
+                                "length_person_min": 0.0,
+                                "length_vehicle_max": 9.0,
+                                "length_vehicle_min": 0.0,
+                                "prior_bicycle": 0.0,
+                                "prior_large_vehicle": 0.0,
+                                "prior_person": 1.0,
+                                "prior_vehicle": 0.0,
+                                "speed_bicycle_max": 15.0,
+                                "speed_bicycle_min": 0.0,
+                                "speed_large_vehicle_max": 25.0,
+                                "speed_large_vehicle_min": 0.0,
+                                "speed_person_max": 4.1,
+                                "speed_person_min": 0.0,
+                                "speed_vehicle_max": 25.0,
+                                "speed_vehicle_min": 0.0,
+                                "supported_distributions": [
+                                    "triangular",
+                                    "uniform"
+                                ],
+                                "width_bicycle_max": 1.0,
+                                "width_bicycle_min": 0.0,
+                                "width_large_vehicle_max": 4.0,
+                                "width_large_vehicle_min": 0.0,
+                                "width_person_max": 1.0,
+                                "width_person_min": 0.0,
+                                "width_vehicle_max": 4.0,
+                                "width_vehicle_min": 0.0
+                            }
+                        },
+                        "confidence_decay_percent": 0.5,
+                        "heuristic": {
+                            "max_person_failed_returns": 4,
+                            "max_person_ratio_failed_returns": 0.15,
+                            "max_vehicle_length": 6.0,
+                            "max_vehicle_width": 0.0,
+                            "min_vehicle_assessment_points": 20,
+                            "min_vehicle_edge_evaluation_distance": 0.15,
+                            "min_vehicle_length": 3.0,
+                            "min_vehicle_outside_point_ratio": 0.8,
+                            "min_vehicle_width": 1.7,
+                            "person_max_speed": 100.0,
+                            "person_max_width": 1.5,
+                            "person_max_z_length": 2.5,
+                            "person_min_distance_travelled": 1.0,
+                            "person_min_duration": 2.0,
+                            "person_min_width": 0.1,
+                            "person_min_z_length": 0.5,
+                            "vehicle_min_distance_travelled": 0.0,
+                            "vehicle_min_duration": 2.0
+                        },
+                        "max_distance_classification": 100.0,
+                        "min_classification_prob": 0.6,
+                        "min_new_vehicle_speed": 2.0,
+                        "ml_classifier": {
+                            "person_max_speed": 4.1,
+                            "person_min_distance_travelled": 0,
+                            "person_min_duration": 0,
+                            "vehicle_min_distance_travelled": 0.0,
+                            "vehicle_min_duration": 0.0
+                        },
+                        "random_forest": {
+                            "classification_history_length": 3
+                        },
+                        "supported_algorithms": "gaussian_bayes, naive_bayes, heuristic, random_forest, ml",
+                        "unknown_min_distance_travelled": 0,
+                        "unknown_min_duration": 0.3
+                    },
+                    "cloud_queue_max_size": 3,
+                    "cluster_merge": {
+                        "distance_threshold": 1.0
+                    },
+                    "cluster_queue_buffer_margin": 10,
+                    "data_association": {
+                        "allow_splitting": true,
+                        "cluster_merging": true,
+                        "distance_threshold": 1.5,
+                        "kmeans_iterations": 10,
+                        "min_cluster_merge_overlap": 0.5,
+                        "min_split_points": 7,
+                        "non_overlap_distance_threshold": 0.5
+                    },
+                    "drop_time": 0.5,
+                    "message_aggregator": {
+                        "buffer_duration": 0,
+                        "cutoff_threshold_ms": 120,
+                        "timeout_ms": 200
+                    },
+                    "object_merge": {
+                        "cluster_distance_threshold": 3.0,
+                        "enabled": true,
+                        "into_vehicle_distance_threshold": 0.3,
+                        "resulting_max_width": 3.0,
+                        "vehicle_distance_threshold": 0.1,
+                        "vehicle_min_angular_difference_degrees": 10,
+                        "vehicle_min_overlap": 0.1,
+                        "vehicle_min_speed": 3
+                    },
+                    "object_sanitizer": {
+                        "enabled": true,
+                        "max_angle_between_heading_and_cluster_degrees": 10,
+                        "max_vehicle_area_overlap_m2": 2.0,
+                        "max_vehicle_iou": 0.2,
+                        "sanitize_check_distance": 10.0
+                    },
+                    "refind": {
+                        "distance_threshold": 10,
+                        "enabled": true,
+                        "lost_object_expire_duration": 10,
+                        "lost_object_max_velocity": 22.22,
+                        "lost_object_min_dist_travelled": 1,
+                        "lost_object_min_frame_count": 5,
+                        "max_speed_while_lost": 22.22,
+                        "max_z_difference": 1,
+                        "new_object_max_frame_count": 5,
+                        "new_object_max_speed": 22.22,
+                        "new_object_min_frame_count": 4
+                    },
+                    "tracked_object": {
+                        "automated_covariances": true,
+                        "average_classification_history_length": 10,
+                        "cluster_object_length_ratio": 0.75,
+                        "error_variance_global_p_xx_yy": 2.0,
+                        "error_variance_heading": 0.25,
+                        "error_variance_p_zz": 2.0,
+                        "error_variance_steering_angle": 0.25,
+                        "error_variance_steering_angle_rate": 0,
+                        "error_variance_v_ff": 1.0,
+                        "error_variance_v_xx_yy": 10.0,
+                        "error_variance_v_zz": 10.0,
+                        "height_settling_time": 10,
+                        "length_settling_time": 50,
+                        "max_backwards_vehicle_speed": 1.5,
+                        "max_vehicle_width": 3.0,
+                        "measurement_noise_scale_factor": 10,
+                        "measurement_noise_variance_global_p_xx_yy": 0.01,
+                        "measurement_noise_variance_heading": 0.05,
+                        "measurement_noise_variance_local_p_xx": 0.05,
+                        "measurement_noise_variance_local_p_yy": 0.15,
+                        "measurement_noise_variance_p_zz": 0.05,
+                        "min_cluster_area_edge_matching": 0.25,
+                        "previous_positions_length": 30,
+                        "process_noise_variance_global_p_xx_yy": 0.05,
+                        "process_noise_variance_heading": 0.001,
+                        "process_noise_variance_p_zz": 0.05,
+                        "process_noise_variance_steering_angle": 0.001,
+                        "process_noise_variance_steering_angle_rate": 0,
+                        "process_noise_variance_v_ff": 0.2,
+                        "process_noise_variance_v_xx_yy": 0.1,
+                        "process_noise_variance_v_zz": 0.1,
+                        "small_object_area": 1.0,
+                        "width_settling_time": 4
+                    },
+                    "vertical_cluster_merge": {
+                        "enabled": true,
+                        "horizontal_distance_threshold": 0.0,
+                        "max_merge_dimension": 1.0,
+                        "vertical_distance_threshold": 0.2
+                    }
+                },
+                "publishing": {
+                    "background_downsample_factor": 5,
+                    "background_publish_period": 2,
+                    "include_above_reflectivity": 40,
+                    "max_backpressure_background_MB": 0.0,
+                    "max_backpressure_objects_MB": 1.0,
+                    "max_backpressure_raw_MB": 10.0,
+                    "publish_cluster_points": true,
+                    "publish_foreground": false,
+                    "raw_publish_period": 2
+                },
+                "raw_cloud_publisher": {
+                    "downsample_factor": 3,
+                    "include_point_near_ir": true,
+                    "include_point_reflectivity": true,
+                    "include_point_signal": true,
+                    "max_backpressure_MB": 10.0,
+                    "max_serialized_range": 400,
+                    "publish_period": 5.0,
+                    "raw_port": 3006
+                },
+                "server": {
+                    "log_level": "info",
+                    "point_count_tcp_server": {
+                        "port": 3006
+                    },
+                    "rest_server": {
+                        "port": 8000
+                    },
+                    "tcp_server": {
+                        "port": 3002
+                    },
+                    "websocket": {
+                        "include_point_near_ir": true,
+                        "include_point_reflectivity": true,
+                        "include_point_signal": true,
+                        "max_serialized_range": 400,
+                        "port": 3001,
+                        "raw_cloud_downsample_factor": 1,
+                        "raw_port": 3005
+                    }
+                }
+            }
+        }
+    },
+    "event_zone_server": {
+        "software_version": "1.3.0.0",
+        "settings_version": "1.0.0",
+        "is_running": true,
+        "license": "none",
+        "num_event_zones": 0,
+        "configuration": {
+            "VERSION": "1.0.0",
+            "server": {
+                "perception_rest_server": {
+                    "port": 8000
+                },
+                "perception_tcp_client": {
+                    "hostname": "perception",
+                    "port": 3006
+                },
+                "rest_server": {
+                    "port": 8001
+                },
+                "tcp_server": {
+                    "port": 3003
+                },
+                "websocket_server": {
+                    "port": 3004
+                }
+            }
+        }
+    },
+    "lidar_hub": {
+        "software_version": "1.3.0",
+        "settings_version": "1.3.1",
+        "license": "none",
+        "is_running": true,
+        "diagnostics_enabled": true,
+        "aggregation_enabled": true,
+        "mqtt_publishers": 0,
+        "tcp_relay_servers": 2,
+        "datarecorders": [
+            "EventDataRecorder: JSON(object_list)+Flatbuf(pointclouds)",
+            "DataRecorderJSON: object_list+diagnostics",
+            "DataRecorderBinary: pointclouds+clusters"
+        ],
+        "configuration": {
+            "application": {
+                "id": "02:42:AC:64:00:07",
+                "logging": {
+                    "console_log_level": 20
+                },
+                "ouster_connect": {
+                    "host": "geminiconnect.ouster.com",
+                    "customer_id": "",
+                    "diagnostics_publishing_enabled": true,
+                    "aggregation_publishing_enabled": false,
+                    "state": "provisioned"
+                },
+                "world": {
+                    "latitude": 0,
+                    "longitude": 0,
+                    "azimuth": 0
+                }
+            },
+            "perception": {
+                "perception_websocket": {
+                    "host": "perception",
+                    "port": 3001
+                },
+                "event_zone_websocket": {
+                    "host": "event-zones",
+                    "port": 3004
+                },
+                "object_list": {
+                    "host": "perception",
+                    "port": 3002
+                },
+                "occupations": {
+                    "host": "event-zones",
+                    "port": 3003
+                },
+                "aggregation": {
+                    "timeseries_secs": 60,
+                    "realtime_hertz": 1,
+                    "storage_path": "/opt/ouster/conf/data/storage"
+                },
+                "diagnostics": {
+                    "interval_secs": 60
+                }
+            },
+            "mqtt_publishers": [
+                {
+                    "source": "object_list|clusters|occupations|aggregation_realtime|aggregation_timeseries|diagnostics",
+                    "host": "mqttbroker.mycompany.com",
+                    "port": 1883,
+                    "user_name": "",
+                    "password": "",
+                    "topic": "/ouster/${device_name}/data",
+                    "qos": 1,
+                    "data_hertz": 1,
+                    "transmit_hertz": 1
+                }
+            ],
+            "tcp_servers": [
+                {
+                    "source": "object_list",
+                    "port": 3302,
+                    "data_hertz": 1,
+                    "transmit_hertz": 1
+                },
+                {
+                    "source": "occupations",
+                    "port": 3303,
+                    "data_hertz": 1,
+                    "transmit_hertz": 1
+                }
+            ],
+            "event_recorder": {
+                "json_data": {
+                    "object_list_enabled": true,
+                    "occupations_enabled": false,
+                    "aggregation_timeseries_enabled": false,
+                    "aggregation_realtime_enabled": false,
+                    "diagnostics_enabled": false
+                },
+                "binary_data": {
+                    "pointclouds_enabled": true,
+                    "clusters_enabled": false,
+                    "trackedobjects_enabled": false,
+                    "images_enabled": false,
+                    "zone_events_enabled": false
+                },
+                "max_rolling_buffer_secs": 60,
+                "reset_on_timeout": true,
+                "post_processor_enabled": true,
+                "retention_count": 9999,
+                "min_available_disk": 0.35,
+                "purge_strategy": "oldest",
+                "use_compression": true
+            },
+            "json_data_recorder": {
+                "object_list_enabled": true,
+                "occupations_enabled": false,
+                "aggregation_timeseries_enabled": false,
+                "aggregation_realtime_enabled": false,
+                "diagnostics_enabled": true,
+                "rotation_minutes": 5,
+                "retention_count": 288,
+                "min_available_disk": 0.35,
+                "purge_strategy": "oldest",
+                "use_compression": true
+            },
+            "binary_data_recorder": {
+                "pointclouds_enabled": true,
+                "clusters_enabled": true,
+                "trackedobjects_enabled": false,
+                "images_enabled": false,
+                "zone_events_enabled": false,
+                "rotation_minutes": 5,
+                "retention_count": 288,
+                "min_available_disk": 0.35,
+                "purge_strategy": "oldest",
+                "use_compression": true
+            },
+            "VERSION": "1.3.1",
+            "TIMESTAMP": "2023-11-19 01:35:00.592"
+        }
+    },
+    "health": "OFFLINE",
+    "diagnostics_version": "1.2.0"
+}
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "compute": {
+        "cpu_utilization": 2.4,
+        "cpu_core_utilization": [
+            4.0,
+            2.7,
+            2.6,
+            2.4,
+            2.6,
+            1.3,
+            3.1,
+            1.1,
+            2.2,
+            1.6,
+            2.4,
+            2.2
+        ],
+        "cpu_temperature_deg_c": 0,
+        "cpu_core_temperature_deg_c": [],
+        "available_memory": 4922343424,
+        "available_disk_space": 1018535579648
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "up_time": 32534,
+        "num_objects": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "benchmarks": [],
+        "timestamp": 1700357760311242
+    },
+    "event_zone_server": {
+        "up_time": 32536,
+        "num_occupations": 0,
+        "num_websocket_clients": 2,
+        "num_tcp_clients": 1,
+        "timestamp": 1700357760564926
+    },
+    "lidar_hub": {
+        "up_time": 56.7511,
+        "mqtt_publishers_connected": 0,
+        "mqtt_publishers_mbps": 0.0,
+        "tcp_relay_server_connections": 0,
+        "tcp_relay_server_mbps": 0.0,
+        "timestamp": 1700357760051219
+    },
+    "timestamp": 1700357760000000.0,
+    "diagnostics_version": "1.2.0"
+}
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "compute": {
+        "cpu_utilization": 1.9,
+        "cpu_core_utilization": [
+            3.5,
+            1.9,
+            2.7,
+            1.3,
+            2.8,
+            1.2,
+            2.1,
+            1.1,
+            2.1,
+            0.9,
+            1.9,
+            1.6
+        ],
+        "cpu_temperature_deg_c": 0,
+        "cpu_core_temperature_deg_c": [],
+        "available_memory": 4920225792,
+        "available_disk_space": 1018535530496
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "up_time": 32594,
+        "num_objects": 0,
+        "num_websocket_clients": 0,
+        "num_tcp_clients": 1,
+        "benchmarks": [],
+        "timestamp": 1700357820289911
+    },
+    "event_zone_server": {
+        "up_time": 32596,
+        "num_occupations": 0,
+        "num_websocket_clients": 2,
+        "num_tcp_clients": 1,
+        "timestamp": 1700357820555030
+    },
+    "lidar_hub": {
+        "up_time": 116.722672,
+        "mqtt_publishers_connected": 0,
+        "mqtt_publishers_mbps": 0.0,
+        "tcp_relay_server_connections": 0,
+        "tcp_relay_server_mbps": 0.0,
+        "timestamp": 1700357820022792
+    },
+    "timestamp": 1700357820000000.0,
+    "diagnostics_version": "1.2.0"
+}
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "compute": {
+        "cpu_utilization": 2.1,
+        "cpu_core_utilization": [
+            3.7,
+            1.7,
+            2.2,
+            1.0,
+            2.5,
+            1.2,
+            2.4,
+            1.4,
+            2.0,
+            2.1,
+            2.8,
+            1.8
+        ],
+        "cpu_temperature_deg_c": 0,
+        "cpu_core_temperature_deg_c": [],
+        "available_memory": 4914360320,
+        "available_disk_space": 1018535526400
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "up_time": 32654,
+        "num_objects": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "benchmarks": [],
+        "timestamp": 1700357880279788
+    },
+    "event_zone_server": {
+        "up_time": 32656,
+        "num_occupations": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "timestamp": 1700357880544491
+    },
+    "lidar_hub": {
+        "up_time": 176.706867,
+        "mqtt_publishers_connected": 0,
+        "mqtt_publishers_mbps": 0.0,
+        "tcp_relay_server_connections": 0,
+        "tcp_relay_server_mbps": 0.0,
+        "timestamp": 1700357880006990
+    },
+    "timestamp": 1700357880000000.0,
+    "diagnostics_version": "1.2.0"
+}
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "compute": {
+        "cpu_utilization": 2.1,
+        "cpu_core_utilization": [
+            3.3,
+            1.9,
+            3.0,
+            1.0,
+            3.0,
+            1.6,
+            2.7,
+            0.8,
+            2.3,
+            1.4,
+            2.6,
+            1.0
+        ],
+        "cpu_temperature_deg_c": 0,
+        "cpu_core_temperature_deg_c": [],
+        "available_memory": 4920164352,
+        "available_disk_space": 1018535526400
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "up_time": 32714,
+        "num_objects": 0,
+        "num_websocket_clients": 0,
+        "num_tcp_clients": 1,
+        "benchmarks": [],
+        "timestamp": 1700357940381239
+    },
+    "event_zone_server": {
+        "up_time": 32716,
+        "num_occupations": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "timestamp": 1700357940652716
+    },
+    "lidar_hub": {
+        "up_time": 236.785101,
+        "mqtt_publishers_connected": 0,
+        "mqtt_publishers_mbps": 0.0,
+        "tcp_relay_server_connections": 0,
+        "tcp_relay_server_mbps": 0.0,
+        "timestamp": 1700357940085219
+    },
+    "timestamp": 1700357940000000.0,
+    "diagnostics_version": "1.2.0"
+}
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "compute": {
+        "cpu_utilization": 2.2,
+        "cpu_core_utilization": [
+            3.6,
+            1.8,
+            2.7,
+            1.4,
+            3.0,
+            1.3,
+            2.7,
+            1.8,
+            2.8,
+            1.5,
+            2.7,
+            0.9
+        ],
+        "cpu_temperature_deg_c": 0,
+        "cpu_core_temperature_deg_c": [],
+        "available_memory": 4902002688,
+        "available_disk_space": 1018535522304
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "up_time": 32774,
+        "num_objects": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "benchmarks": [],
+        "timestamp": 1700358000362907
+    },
+    "event_zone_server": {
+        "up_time": 32776,
+        "num_occupations": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "timestamp": 1700358000613956
+    },
+    "lidar_hub": {
+        "up_time": 296.780287,
+        "mqtt_publishers_connected": 0,
+        "mqtt_publishers_mbps": 0.0,
+        "tcp_relay_server_connections": 0,
+        "tcp_relay_server_mbps": 0.0,
+        "timestamp": 1700358000080404
+    },
+    "timestamp": 1700358000000000.0,
+    "diagnostics_version": "1.2.0"
+}
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "compute": {
+        "cpu_utilization": 2.7,
+        "cpu_core_utilization": [
+            4.7,
+            1.7,
+            2.4,
+            1.8,
+            2.1,
+            3.3,
+            3.8,
+            2.0,
+            3.0,
+            2.0,
+            4.1,
+            1.1
+        ],
+        "cpu_temperature_deg_c": 0,
+        "cpu_core_temperature_deg_c": [],
+        "available_memory": 4895502336,
+        "available_disk_space": 1018535522304
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "up_time": 32834,
+        "num_objects": 0,
+        "num_websocket_clients": 0,
+        "num_tcp_clients": 1,
+        "benchmarks": [],
+        "timestamp": 1700358060379032
+    },
+    "event_zone_server": {
+        "up_time": 32836,
+        "num_occupations": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "timestamp": 1700358060634643
+    },
+    "lidar_hub": {
+        "up_time": 356.797945,
+        "mqtt_publishers_connected": 0,
+        "mqtt_publishers_mbps": 0.0,
+        "tcp_relay_server_connections": 0,
+        "tcp_relay_server_mbps": 0.0,
+        "timestamp": 1700358060098063
+    },
+    "timestamp": 1700358060000000.0,
+    "diagnostics_version": "1.2.0"
+}
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "compute": {
+        "cpu_utilization": 2.7,
+        "cpu_core_utilization": [
+            4.0,
+            2.5,
+            4.1,
+            2.0,
+            3.0,
+            1.4,
+            3.0,
+            1.6,
+            3.2,
+            2.6,
+            3.6,
+            1.1
+        ],
+        "cpu_temperature_deg_c": 0,
+        "cpu_core_temperature_deg_c": [],
+        "available_memory": 4851720192,
+        "available_disk_space": 1018535514112
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "up_time": 32894,
+        "num_objects": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "benchmarks": [],
+        "timestamp": 1700358120268928
+    },
+    "event_zone_server": {
+        "up_time": 32896,
+        "num_occupations": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "timestamp": 1700358120523563
+    },
+    "lidar_hub": {
+        "up_time": 416.701369,
+        "mqtt_publishers_connected": 0,
+        "mqtt_publishers_mbps": 0.0,
+        "tcp_relay_server_connections": 0,
+        "tcp_relay_server_mbps": 0.0,
+        "timestamp": 1700358120001486
+    },
+    "timestamp": 1700358120000000.0,
+    "diagnostics_version": "1.2.0"
+}
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "compute": {
+        "cpu_utilization": 3.9,
+        "cpu_core_utilization": [
+            7.6,
+            3.6,
+            3.8,
+            4.1,
+            4.9,
+            1.5,
+            5.4,
+            2.4,
+            4.5,
+            2.0,
+            6.0,
+            1.1
+        ],
+        "cpu_temperature_deg_c": 0,
+        "cpu_core_temperature_deg_c": [],
+        "available_memory": 4852285440,
+        "available_disk_space": 1018535522304
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "up_time": 32954,
+        "num_objects": 0,
+        "num_websocket_clients": 0,
+        "num_tcp_clients": 1,
+        "benchmarks": [],
+        "timestamp": 1700358180371649
+    },
+    "event_zone_server": {
+        "up_time": 32956,
+        "num_occupations": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "timestamp": 1700358180633420
+    },
+    "lidar_hub": {
+        "up_time": 476.792563,
+        "mqtt_publishers_connected": 0,
+        "mqtt_publishers_mbps": 0.0,
+        "tcp_relay_server_connections": 0,
+        "tcp_relay_server_mbps": 0.0,
+        "timestamp": 1700358180092680
+    },
+    "timestamp": 1700358180000000.0,
+    "diagnostics_version": "1.2.0"
+}
+{
+    "hardware_id": "02:42:AC:64:00:07",
+    "compute": {
+        "cpu_utilization": 2.9,
+        "cpu_core_utilization": [
+            4.7,
+            2.5,
+            3.3,
+            2.7,
+            3.4,
+            1.5,
+            3.2,
+            1.8,
+            3.8,
+            1.2,
+            3.2,
+            2.8
+        ],
+        "cpu_temperature_deg_c": 0,
+        "cpu_core_temperature_deg_c": [],
+        "available_memory": 4886761472,
+        "available_disk_space": 1018535522304
+    },
+    "lidars": [],
+    "nodes": [],
+    "perception_server": {
+        "up_time": 33014,
+        "num_objects": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "benchmarks": [],
+        "timestamp": 1700358240287741
+    },
+    "event_zone_server": {
+        "up_time": 33016,
+        "num_occupations": 0,
+        "num_websocket_clients": 1,
+        "num_tcp_clients": 1,
+        "timestamp": 1700358240542603
+    },
+    "lidar_hub": {
+        "up_time": 536.719233,
+        "mqtt_publishers_connected": 0,
+        "mqtt_publishers_mbps": 0.0,
+        "tcp_relay_server_connections": 0,
+        "tcp_relay_server_mbps": 0.0,
+        "timestamp": 1700358240019350
+    },
+    "timestamp": 1700358240000000.0,
+    "diagnostics_version": "1.2.0"
+}

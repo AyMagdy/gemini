@@ -1,0 +1,146 @@
+{
+    "software_version": "1.3.0",
+    "settings_version": "1.3.1",
+    "license": "none",
+    "is_running": true,
+    "up_time": 9850.032556,
+    "diagnostics_enabled": true,
+    "aggregation_enabled": true,
+    "mqtt_publishers": 0,
+    "mqtt_publishers_connected": 0,
+    "mqtt_publishers_mbps": 0.0,
+    "tcp_relay_servers": 2,
+    "tcp_relay_server_connections": 0,
+    "tcp_relay_server_mbps": 0.0,
+    "datarecorders": [
+        "EventDataRecorder: JSON(object_list+occupations)+Flatbuf(pointclouds+clusters)",
+        "DataRecorderBinary: pointclouds+clusters+tracked_objects+images+zone_events"
+    ],
+    "configuration": {
+        "application": {
+            "id": "02:42:AC:64:00:07",
+            "logging": {
+                "console_log_level": 10,
+                "file_log_level": 10,
+                "file_log_path": "/opt/ouster/logs"
+            },
+            "ouster_connect": {
+                "host": "geminiconnect.ouster.com",
+                "customer_id": "",
+                "diagnostics_publishing_enabled": true,
+                "aggregation_publishing_enabled": false,
+                "state": "provisioned"
+            },
+            "world": {
+                "latitude": 0,
+                "longitude": 0,
+                "azimuth": 0
+            }
+        },
+        "perception": {
+            "perception_websocket": {
+                "host": "perception",
+                "port": 3001
+            },
+            "event_zone_websocket": {
+                "host": "event-zones",
+                "port": 3004
+            },
+            "object_list": {
+                "host": "perception",
+                "port": 3002
+            },
+            "occupations": {
+                "host": "event-zones",
+                "port": 3003
+            },
+            "aggregation": {
+                "timeseries_secs": 60,
+                "realtime_hertz": 1,
+                "storage_path": "/opt/ouster/conf/data/storage"
+            },
+            "diagnostics": {
+                "interval_secs": 60
+            }
+        },
+        "mqtt_publishers": [
+            {
+                "source": "object_list|clusters|occupations|aggregation_realtime|aggregation_timeseries|diagnostics",
+                "host": "mqttbroker.mycompany.com",
+                "port": 1883,
+                "user_name": "",
+                "password": "",
+                "topic": "/ouster/${device_name}/data",
+                "qos": 1,
+                "data_hertz": 1,
+                "transmit_hertz": 1
+            }
+        ],
+        "tcp_servers": [
+            {
+                "source": "object_list",
+                "port": 3302,
+                "data_hertz": 1,
+                "transmit_hertz": 1,
+                "heartbeat_interval_secs": 5,
+                "heartbeat_message": "{\"object_list\":[{\"frame_count\":998813,\"objects\":[{\"classification\":\"PERSON\",\"classification_confidence\":0.944233238697052,\"creation_ts\":1701174621516041,\"dimensions\":{\"height\":0.34089624881744387,\"length\":0.575372576713562,\"width\":0.3817119598388672},\"distance_to_primary_sensor\":3.2963480949401857,\"frame_count\":343,\"heading\":-37.560306549072269,\"id\":13484,\"initial_position\":{\"x\":-3.0818581581115724,\"y\":-1.2478020191192628,\"z\":-0.5801494717597961},\"num_failed_returns\":0,\"num_points\":57,\"num_points_from_primary_sensor\":41,\"orientation\":{\"qw\":0.9467608332633972,\"qx\":0.0,\"qy\":0.0,\"qz\":-0.3219376504421234},\"position\":{\"x\":-3.018977403640747,\"y\":-1.282448649406433,\"z\":-0.5741612315177918},\"position_uncertainty\":{\"x\":0.008729833462425042,\"y\":0.008729833462425042,\"z\":0.03328978382980633},\"primary_sensor\":\"122312000251\",\"update_ts\":1701174658528965,\"uuid\":\"077e5c42-c121-4c38-893a-3e035960445d\",\"velocity\":{\"x\":0.010820798191984969,\"y\":0.00841168878099952,\"z\":0.0008085310639889887},\"velocity_uncertainty\":{\"x\":0.7745966704355296,\"y\":0.7745966704355296,\"z\":0.8143665789886132}}],\"timestamp\":1701174658528965}]}"
+            },
+            {
+                "source": "occupations",
+                "port": 3303,
+                "data_hertz": 1,
+                "transmit_hertz": 1
+            }
+        ],
+        "event_recorder": {
+            "json_data": {
+                "object_list_enabled": true,
+                "occupations_enabled": true,
+                "aggregation_timeseries_enabled": false,
+                "aggregation_realtime_enabled": false,
+                "diagnostics_enabled": false
+            },
+            "binary_data": {
+                "pointclouds_enabled": true,
+                "clusters_enabled": true,
+                "trackedobjects_enabled": false,
+                "images_enabled": false,
+                "zone_events_enabled": false
+            },
+            "max_rolling_buffer_secs": 60,
+            "reset_on_timeout": false,
+            "post_processor_enabled": false,
+            "retention_count": 9999,
+            "min_available_disk": 0.35,
+            "purge_strategy": "oldest",
+            "use_compression": true
+        },
+        "json_data_recorder": {
+            "object_list_enabled": false,
+            "occupations_enabled": false,
+            "aggregation_timeseries_enabled": false,
+            "aggregation_realtime_enabled": false,
+            "diagnostics_enabled": false,
+            "rotation_minutes": 5,
+            "retention_count": 288,
+            "min_available_disk": 0.35,
+            "purge_strategy": "oldest",
+            "use_compression": true
+        },
+        "binary_data_recorder": {
+            "pointclouds_enabled": true,
+            "clusters_enabled": true,
+            "trackedobjects_enabled": true,
+            "images_enabled": true,
+            "zone_events_enabled": true,
+            "rotation_minutes": 5,
+            "retention_count": 288,
+            "min_available_disk": 0.35,
+            "purge_strategy": "oldest",
+            "use_compression": true
+        },
+        "VERSION": "1.3.1",
+        "TIMESTAMP": "2023-12-14 00:06:53.367"
+    },
+    "timestamp": 1702688655016236
+}

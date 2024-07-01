@@ -1,0 +1,66 @@
+{
+	"aggregation_timeseries": [
+		{
+			"id": 0,
+			"name": "Edge-*129ZKUL5MBMHUEZ",
+			"timestamp": 1701208740000000.0,
+			"classification_metrics": [
+				{
+					"description": "ALL",
+					"active_occupants": 0,
+					"max_active_occupants": 0,
+					"avg_active_occupants": 0,
+					"total_visitors": 637393,
+					"total_visits": 637393,
+					"new_visitors": 0,
+					"new_visits": 0,
+					"departed_visitors": 0,
+					"current_max_speed": 0,
+					"current_avg_speed": 0,
+					"overall_max_speed": 2.931663361596759,
+					"overall_avg_speed": 0.0,
+					"current_avg_dwell": 0,
+					"overall_avg_dwell": 37.474,
+					"last_update": 1701204683267361
+				},
+				{
+					"description": "PERSON",
+					"active_occupants": 0,
+					"max_active_occupants": 0,
+					"avg_active_occupants": 0,
+					"total_visitors": 417120,
+					"total_visits": 417120,
+					"new_visitors": 0,
+					"new_visits": 0,
+					"departed_visitors": 0,
+					"current_max_speed": 0,
+					"current_avg_speed": 0,
+					"overall_max_speed": 2.931663361596759,
+					"overall_avg_speed": 0.0,
+					"current_avg_dwell": 0,
+					"overall_avg_dwell": 23.443,
+					"last_update": 1701204626268301
+				},
+				{
+					"description": "VEHICLE",
+					"active_occupants": 0,
+					"max_active_occupants": 0,
+					"avg_active_occupants": 0,
+					"total_visitors": 234523,
+					"total_visits": 248479,
+					"new_visitors": 0,
+					"new_visits": 0,
+					"departed_visitors": 0,
+					"current_max_speed": 0,
+					"current_avg_speed": 0,
+					"overall_max_speed": 0.5255482350897076,
+					"overall_avg_speed": 0.0,
+					"current_avg_dwell": 0,
+					"overall_avg_dwell": 223.995,
+					"last_update": 1701204683267361
+				}
+			]
+		}
+	],
+	"timestamp": 1701208800358459.3
+}
